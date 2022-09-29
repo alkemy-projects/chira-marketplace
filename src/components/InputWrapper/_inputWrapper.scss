@@ -1,8 +1,27 @@
 .input-wrapper {
 	display: flex;
 	flex-direction: column;
+	color: red;
 	.form__label {
+		margin-bottom: 5px;
+		color: $blackColor;
 	}
 	.form__input {
+		border-radius: 5px;
+		background-color: $inputColor;
+		padding: 10px;
+		box-sizing: border-box;
+		color: #c2c3c9;
+		border: 1px solid #e9e9e9;
+		font-weight: 500;
+		outline: none;
+		&:focus {
+			border-color: $primaryColor;
+		}
+	}
+	.form__select {
+		.form__option {
+			color: $blackColor;
+		}
 	}
 }

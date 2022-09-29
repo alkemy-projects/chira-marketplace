@@ -19,12 +19,41 @@ export default function InputWrapper({
 			>
 				{label}
 			</label>
-			<Field
-				className='form__input'
-				type={type}
-				name={name}
-				placeholder={placeholder}
-			/>
+			{type === 'select' ? (
+				<Field
+					className='form__input form__select'
+					as={type}
+					name={name}
+					placeholder={placeholder}
+				>
+					<option
+						className='form__option'
+						value='Argentina'
+					>
+						Argentina
+					</option>
+					<option
+						className='form__option'
+						value='Colombia'
+					>
+						Colombia
+					</option>
+					<option
+						className='form__option'
+						value='Mexico'
+					>
+						México
+					</option>
+				</Field>
+			) : (
+				<Field
+					className='form__input'
+					type={type}
+					name={name}
+					placeholder={placeholder}
+				/>
+			)}
+
 			<ErrorMessage name={name} />
 		</div>
 	)
