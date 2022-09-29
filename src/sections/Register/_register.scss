@@ -1,0 +1,120 @@
+.register {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	.left {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: $primaryColorDark;
+		padding: 0 20px;
+		box-sizing: border-box;
+		.register-header {
+			color: $whiteColor;
+			.register__title {
+				font-size: 34px;
+				line-height: 1;
+			}
+			.register__description {
+				color: #c2c3c9;
+				line-height: 1;
+			}
+			.register__benefits {
+				font-weight: 600;
+			}
+		}
+		.register__illustration {
+			width: 100%;
+			max-width: 600px;
+		}
+	}
+	.right {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 20px;
+		align-items: center;
+		width: 100%;
+		background-color: $whiteColor;
+		padding: 0 20px;
+		box-sizing: border-box;
+		.form {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			width: 100%;
+			max-width: 420px;
+			.row-1 {
+				display: flex;
+				gap: 10px;
+			}
+			.row-2 .row4 {
+			}
+			.row-3 {
+				display: flex;
+				gap: 10px;
+				width: 100%;
+				.input-wrapper {
+					&:nth-child(1) {
+						flex-grow: 2;
+						min-width: 50px;
+					}
+					&:nth-child(2) {
+						flex-grow: 1;
+						max-width: 50px;
+					}
+					&:nth-child(3) {
+						flex-grow: 2;
+						min-width: 50px;
+					}
+				}
+			}
+			.input-wrapper {
+				width: 100%;
+			}
+			.form__submit {
+				width: 100%;
+				height: 45px;
+				border: none;
+				border-radius: 5px;
+				background-color: $primaryColor;
+				color: $whiteColor;
+				cursor: pointer;
+				transition: background-color 0.5s ease;
+				font-family: $fontFamily;
+				margin-top: 10px;
+				&:hover {
+					background-color: $primaryColorDark;
+				}
+			}
+			.google-register {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 10px;
+				width: 100%;
+				height: 45px;
+				border-radius: 5px;
+				color: $textColorDark;
+				cursor: pointer;
+				transition: color 0.5s ease;
+				font-family: $fontFamily;
+				background-color: $creamColor;
+				border: 1px solid #e9e9e9;
+				&:hover {
+					color: $primaryColor;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.register {
+		.left {
+			display: none;
+		}
+	}
+}
