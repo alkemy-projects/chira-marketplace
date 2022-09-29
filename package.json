@@ -15,8 +15,11 @@
 		"prepush": "npm run lint"
 	},
 	"dependencies": {
+		"formik": "^2.2.9",
 		"react": "^18.2.0",
-		"react-router-dom": "^6.4.1"
+		"react-router-dom": "^6.4.1",
+		"sweetalert2": "^11.4.35",
+		"yup": "^0.32.11"
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.17",
