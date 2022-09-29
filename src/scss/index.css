@@ -93,4 +93,8 @@ html body #root {
   .register .left {
     display: none;
   }
+}
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=index.css.map */
