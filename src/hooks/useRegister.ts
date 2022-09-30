@@ -1,6 +1,9 @@
 import { collection, addDoc } from 'firebase/firestore'
 import db from '../firebase'
 import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router'
+import { useDispatch } from 'react-redux'
+import { startLoader, completeProgressLoader } from '../slicers/loaderSlice'
 
 interface Values {
 	name?: string
@@ -16,14 +19,20 @@ interface Values {
 }
 
 export const useRegister = () => {
+	const navigate = useNavigate()
+	const dispatch = useDispatch()
+
 	const handleSubmit = async (values: Values) => {
+		dispatch(startLoader())
 		console.log(values)
 		try {
-			const docRef = await addDoc(collection(db, 'users'), {
+			await addDoc(collection(db, 'users'), {
 				...values,
 			})
-			console.log('Document written with ID: ', docRef.id)
+			dispatch(completeProgressLoader())
+			navigate('/login')
 		} catch (e) {
+			dispatch(completeProgressLoader())
 			console.error('Error adding document: ', e)
 			fireSweetAlert('Ha ocurrido un error inesperado', e)
 		}
