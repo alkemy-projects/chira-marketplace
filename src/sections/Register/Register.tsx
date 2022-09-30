@@ -3,8 +3,11 @@ import * as Yup from 'yup'
 import InputWrapper from '../../components/InputWrapper/InputWrapper'
 import shoppingCartIllustration from '../../assets/illustrations/shopping-cart.svg'
 import googleIcon from '../../assets/icons/google-icon.svg'
+import { useGoogleSignIn } from '../../hooks/useGoogleSignIn'
 
 export default function Register() {
+	const { signInWithGoogle, desloguear } = useGoogleSignIn()
+
 	return (
 		<section className='register'>
 			<div className='left'>
@@ -30,7 +33,10 @@ export default function Register() {
 						name: '',
 						lastName: '',
 						email: '',
-						country: '',
+						country: {
+							label: '',
+							value: '',
+						},
 						areaCode: '',
 						cellphone: '',
 						password: '',
@@ -59,7 +65,7 @@ export default function Register() {
 							.min(6, 'Debe contener 6 caracteres o mas')
 							.required('Requerido'),
 					})}
-					onSubmit={values => alert(JSON.stringify(values, null, 2))}
+					onSubmit={values => handleSubmit(values)}
 				>
 					{({ values, setFieldValue }) => (
 						<Form className='form'>
@@ -122,13 +128,18 @@ export default function Register() {
 							>
 								Registrarse
 							</button>
-							<button className='google-register'>
+							<button
+								className='google-register'
+								onClick={() => signInWithGoogle()}
+								type='button'
+							>
 								<img
 									src={googleIcon}
 									alt='Ícono de Google'
 								/>
 								<span>Registrarse con Google</span>
 							</button>
+							<button onClick={() => desloguear()}>Desloguear</button>
 						</Form>
 					)}
 				</Formik>
