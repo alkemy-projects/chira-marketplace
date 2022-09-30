@@ -56,15 +56,21 @@ export default function Register() {
 							.email('Correo electrónico inválido')
 							.required('Requerido'),
 						country: Yup.object().required('Requerido'),
-						areaCode: Yup.string().required('Requerido'),
+						areaCode: Yup.string()
+							.required('Requerido')
+							.matches(/^\+(\d{1})?(\d{1,3})$/, 'Código inválido'),
 						cellphone: Yup.string()
-							.min(10, 'Debe contener 10 caracteres')
-							.max(10, 'Debe contener menos de 11 caracteres')
 							.matches(/^[0-9]+$/, 'Solo se permiten números')
+							.min(10, 'Debe contener 10 caracteres')
+							.max(10, 'Debe contener hasta 10 caracteres')
 							.required('Requerido'),
 						password: Yup.string()
 							.max(20, 'Debe contener 20 caracteres o menos')
 							.min(6, 'Debe contener 6 caracteres o mas')
+							.matches(
+								/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,20}$/,
+								'Debe contener al menos una mayúscula, una minúscula, un número y un caracter especial'
+							)
 							.required('Requerido'),
 					})}
 					onSubmit={values => handleSubmit(values)}
