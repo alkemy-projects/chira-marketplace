@@ -4,9 +4,11 @@ import InputWrapper from '../../components/InputWrapper/InputWrapper'
 import shoppingCartIllustration from '../../assets/illustrations/shopping-cart.svg'
 import googleIcon from '../../assets/icons/google-icon.svg'
 import { useGoogleSignIn } from '../../hooks/useGoogleSignIn'
+import { useRegister } from '../../hooks/useRegister'
 
 export default function Register() {
 	const { signInWithGoogle, desloguear } = useGoogleSignIn()
+	const { handleSubmit } = useRegister()
 
 	return (
 		<section className='register'>
