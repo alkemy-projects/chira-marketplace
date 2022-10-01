@@ -20,7 +20,10 @@ export default function InputWrapper({
 		name: string
 		lastName: string
 		email: string
-		country: string
+		country: {
+			label: string
+			value: string
+		}
 		areaCode: string
 		cellphone: string
 		password: string
