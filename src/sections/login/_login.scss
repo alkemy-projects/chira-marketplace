@@ -3,12 +3,21 @@
 .cont{
    display: flex;
    height: 100vh;
-  
-   
 }
 
 .cont > div{
     background-color: variables.$primaryColor;
+}
+.cont > div > img{
+    margin-top: 18px;
+}
+
+.cont > div > h1{
+   text-align: center;
+   padding-top: 40px;
+   color: white;
+   font-size: 34px;
+  
 }
 
 .lab{
@@ -56,7 +65,7 @@ form > div > input{
 }
 
 button{
-    width: 100%;
+                width: 100%;
 				height: 45px;
 				border: none;
 				border-radius: 5px;
@@ -71,3 +80,41 @@ button{
 				}
 }
 
+.Sign-in-google{
+    display: flex;
+    justify-content: center;
+    background-color: $creamColor;
+    color: $grayColor;
+    border: 1px $creamColor solid;
+    
+    transition:  color 0.5s ease;
+
+    &:hover{
+      color: $primaryColor;
+      background-color: $creamColor;
+    }
+}
+
+.Sign-in-google > .gspan{
+   padding-top: 12px;
+}
+
+.googleIcon{
+    width: 26px;
+    margin: 8px 5px 0px 8px;
+}
+
+@media screen and (max-width: 700px) {
+	.cont > div {
+        display: none;
+    }
+    .cont{
+
+        justify-content: center;
+    }
+
+    .form{
+        margin-right: 50%;
+    }
+    
+}

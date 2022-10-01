@@ -1,15 +1,18 @@
 import { Formik, Form } from 'formik'
 import loginIllustratio from '../../assets/illustrations/loginIllustration.svg'
 import InputWrapper from '../../components/InputWrapper/InputWrapper'
-import "./_login.scss"
+import googleIcon from "../../assets/icons/google-icon.svg"
 
 
 export default function Login() {
 
   return (
     <div className='cont'>
-
-      <div ><img src={loginIllustratio} alt="" /></div>
+<h1></h1>
+      <div >
+        <h1>Chira</h1>
+      <img src={loginIllustratio} alt="" />
+      </div>
       <Formik
         initialValues={{
           email: '',
@@ -32,14 +35,18 @@ export default function Login() {
             placeholder='contraseña'
           />
           <div className='cont2'>
-          
-          <label className='lab'> <input type="checkbox" />recuerdame</label>
-          <p>Olvide mi contraseña</p>
-         
-         </div>
 
-          <button>Ingresar</button>
-          <button>Ingresar con Google</button>
+            <label className='lab'> <input type="checkbox" />recuerdame</label>
+            <p>Olvide mi contraseña</p>
+
+          </div>
+
+          <button className='Sign-in'>Ingresar</button>
+          <button className='Sign-in-google'>
+            <div>
+            <img src={googleIcon} alt="" className='googleIcon' /></div>
+            <div className='gspan'><span> Ingresar con Google</span></div>
+            </button>
         </Form>
 
 
