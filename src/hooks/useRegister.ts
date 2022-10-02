@@ -1,9 +1,8 @@
-import { collection, addDoc } from 'firebase/firestore'
-import db from '../firebase'
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router'
 import { useDispatch } from 'react-redux'
 import { startLoader, completeProgressLoader } from '../slicers/loaderSlice'
+import { createUserWithEmailAndPassword, getAuth } from '@firebase/auth'
 
 interface Values {
 	name?: string
@@ -25,10 +24,10 @@ export const useRegister = () => {
 	const handleSubmit = async (values: Values) => {
 		dispatch(startLoader())
 		console.log(values)
+		const auth = getAuth()
+		const { email, password } = values
 		try {
-			await addDoc(collection(db, 'users'), {
-				...values,
-			})
+			await createUserWithEmailAndPassword(auth, email, password)
 			dispatch(completeProgressLoader())
 			navigate('/login')
 		} catch (e) {
