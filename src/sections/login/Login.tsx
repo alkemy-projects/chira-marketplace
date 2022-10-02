@@ -2,25 +2,33 @@ import { Formik, Form } from 'formik'
 import loginIllustratio from '../../assets/illustrations/loginIllustration.svg'
 import InputWrapper from '../../components/InputWrapper/InputWrapper'
 import googleIcon from "../../assets/icons/google-icon.svg"
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 
 export default function Login() {
 
   return (
     <div className='cont'>
-<h1></h1>
-      <div >
+
+      <div className='left-cont'>
         <h1>Chira</h1>
-      <img src={loginIllustratio} alt="" />
+        <img src={loginIllustratio} alt="" />
       </div>
       <Formik
         initialValues={{
           email: '',
           password: '',
         }}
-        onSubmit={values => alert(JSON.stringify(values, null, 2))}
+        onSubmit={values => {
+          const auth = getAuth()
+          console.log(values)
+          const signIn = signInWithEmailAndPassword(auth, values.email, values.password)
+            .then(res => console.log(res)).then(ress => alert("logueado"))
+
+
+        }}
       >
-        <Form className='form'>
+        <Form className='form-log'>
           <h2>Iniciar sesion</h2>
           <InputWrapper
             type='text'
@@ -41,12 +49,12 @@ export default function Login() {
 
           </div>
 
-          <button className='Sign-in'>Ingresar</button>
-          <button className='Sign-in-google'>
+          <button className='Sign-in' type='submit'>Ingresar</button>
+          <button className='Sign-in-google' type='submit'>
             <div>
-            <img src={googleIcon} alt="" className='googleIcon' /></div>
+              <img src={googleIcon} alt="" className='googleIcon' /></div>
             <div className='gspan'><span> Ingresar con Google</span></div>
-            </button>
+          </button>
         </Form>
 
 

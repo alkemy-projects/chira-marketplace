@@ -1,8 +1,10 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
 
+
+
 const firebaseConfig = {
-	apiKey: import.meta.env.VITE_API_KEY,
+	apiKey: "AIzaSyCDdAHyZkQqMqivYDAxDesgpSvpCG8YS0U",
 	authDomain: 'chira-e-commerce.firebaseapp.com',
 	projectId: 'chira-e-commerce',
 	storageBucket: 'chira-e-commerce.appspot.com',
@@ -12,4 +14,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
+
+
 export default db
