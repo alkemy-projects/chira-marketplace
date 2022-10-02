@@ -5,6 +5,7 @@ import shoppingCartIllustration from '../../assets/illustrations/shopping-cart.s
 import googleIcon from '../../assets/icons/google-icon.svg'
 import { useGoogleSignIn } from '../../hooks/useGoogleSignIn'
 import { useRegister } from '../../hooks/useRegister'
+import { Link } from 'react-router-dom'
 
 export default function Register() {
 	const { signInWithGoogle, desloguear } = useGoogleSignIn()
@@ -14,13 +15,10 @@ export default function Register() {
 		<section className='register'>
 			<div className='left'>
 				<header className='register-header'>
-					<h1 className='register__title'>Chira</h1>
+					<h1 className='register__title'>Bienvenido a Chira</h1>
 					<h2 className='register__description'>
 						Crea tu usuario y empieza a explorar todos nuestros productos.
 					</h2>
-					<p className='register__benefits'>
-						¡Tienen envios gratis y es 100% online!
-					</p>
 				</header>
 				<img
 					className='register__illustration'
@@ -151,6 +149,17 @@ export default function Register() {
 						</Form>
 					)}
 				</Formik>
+				<div className='already-registered'>
+					<span className='already-registered__question'>
+						¿Ya tienes una cuenta?
+					</span>
+					<Link
+						to='/login'
+						className='already-registered__link'
+					>
+						Iniciar sesión
+					</Link>
+				</div>
 			</div>
 		</section>
 	)
