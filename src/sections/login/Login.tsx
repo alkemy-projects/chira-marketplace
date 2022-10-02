@@ -2,11 +2,11 @@ import { Formik, Form } from 'formik'
 import loginIllustratio from '../../assets/illustrations/loginIllustration.svg'
 import InputWrapper from '../../components/InputWrapper/InputWrapper'
 import googleIcon from "../../assets/icons/google-icon.svg"
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import  {useLogin}  from '../../hooks/useLogin'
 
 
 export default function Login() {
-
+  const { handleSubmit } = useLogin()
   return (
     <div className='cont'>
 
@@ -19,14 +19,7 @@ export default function Login() {
           email: '',
           password: '',
         }}
-        onSubmit={values => {
-          const auth = getAuth()
-          console.log(values)
-          const signIn = signInWithEmailAndPassword(auth, values.email, values.password)
-            .then(res => console.log(res)).then(ress => alert("logueado"))
-
-
-        }}
+        onSubmit={values => handleSubmit(values)}
       >
         <Form className='form-log'>
           <h2>Iniciar sesion</h2>
