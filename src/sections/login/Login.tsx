@@ -41,20 +41,23 @@ export default function Login() {
         <Form className='form-log'>
           <h2>Iniciar sesion</h2>
           
-          <InputWrapper
-            type='text'
-            name='email'
-            label='correo electronico'
-            placeholder='juan@ejemplo.com'
-          />
-         
-         
-          <InputWrapper
-            type='password'
-            name='password'
-            label='contraseña'
-            placeholder='contraseña'
-          />
+          <div className="log-input">
+              <InputWrapper
+                type='text'
+                name='email'
+                label='correo electronico'
+                placeholder='juan@ejemplo.com'
+              />
+            </div>
+
+            <div className="log-input">
+              <InputWrapper
+                type='password'
+                name='password'
+                label='contraseña'
+                placeholder='contraseña'
+              />
+            </div>
           <div className='cont2'>
 
             <label className='lab'> <input type="checkbox" />recuerdame</label>

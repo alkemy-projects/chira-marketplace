@@ -237,6 +237,10 @@ html body #root {
   width: 30%;
 }
 
+.log-input {
+  margin: 8px 0px 8px 0px;
+}
+
 .form-log > .cont2 {
   display: flex;
   flex-direction: row;
@@ -285,6 +289,103 @@ button:hover {
   padding-top: 12px;
 }
 
+.cont {
+  display: flex;
+  height: 100vh;
+}
+
+.cont > div {
+  background-color: #4e9f3d;
+}
+
+.cont > div > img {
+  margin-top: 18px;
+}
+
+.cont > div > h1 {
+  text-align: center;
+  padding-top: 40px;
+  color: white;
+  font-size: 34px;
+}
+
+.lab {
+  margin-top: 11px;
+  color: #586666;
+}
+
+.cont2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cont2 p {
+  color: #4e9f3d;
+}
+
+form > h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.form p {
+  padding: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 100px 0px 0px 210px;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+form > div > label {
+  font-weight: 600;
+  color: #676767;
+}
+
+form > div > input {
+  width: 300px;
+  margin: 10px 0px 10px 0px;
+}
+
+button {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4e9f3d;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  margin-top: 10px;
+}
+button:hover {
+  background-color: #1e5128;
+}
+
+.Sign-in-google {
+  display: flex;
+  justify-content: center;
+  background-color: #edf1f7;
+  color: #586666;
+  border: 1px #edf1f7 solid;
+  transition: color 0.5s ease;
+}
+.Sign-in-google:hover {
+  color: #4e9f3d;
+  background-color: #edf1f7;
+}
+
+.Sign-in-google > .gspan {
+  padding-top: 12px;
+}
+
 .googleIcon {
   width: 26px;
   margin: 8px 5px 0px 8px;
@@ -297,7 +398,13 @@ button:hover {
   .cont {
     justify-content: center;
   }
-  .form-log {
+  .form-log .cont > div {
+    display: none;
+  }
+  .form-log .cont {
+    justify-content: center;
+  }
+  .form-log .form {
     margin-right: 50%;
   }
 }
