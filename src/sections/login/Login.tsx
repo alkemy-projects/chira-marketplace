@@ -54,25 +54,7 @@ export default function Login() {
                 placeholder='contraseña'
               />
             </div>
-          <div className='cont2'>
 
-            <div className="log-input">
-              <InputWrapper
-                type='text'
-                name='email'
-                label='correo electronico'
-                placeholder='juan@ejemplo.com'
-              />
-            </div>
-
-            <div className="log-input">
-              <InputWrapper
-                type='password'
-                name='password'
-                label='contraseña'
-                placeholder='contraseña'
-              />
-            </div>
             
             <div className='cont2'>
 

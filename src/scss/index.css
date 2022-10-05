@@ -298,11 +298,11 @@ button:hover {
   background-color: #4e9f3d;
 }
 
-.cont > div > img {
+.cont > .cont2 > img {
   margin-top: 18px;
 }
 
-.cont > div > h1 {
+.cont > .cont2 > h1 {
   text-align: center;
   padding-top: 40px;
   color: white;
@@ -324,32 +324,32 @@ button:hover {
   color: #4e9f3d;
 }
 
-form > h2 {
+.form-log > h2 {
   font-size: 1.5rem;
   text-align: center;
 }
 
-.form p {
+.form-log p {
   padding: 0;
 }
 
-.form {
+.form-log {
   display: flex;
   flex-direction: column;
-  margin: 100px 0px 0px 210px;
+  margin: 100px 0px 0px 120px;
 }
 
-form > div {
+.form-log > .cont2 {
   display: flex;
   flex-direction: column;
 }
 
-form > div > label {
+.form-log > .cont2 > label {
   font-weight: 600;
   color: #676767;
 }
 
-form > div > input {
+.form-log > .cont2 > input {
   width: 300px;
   margin: 10px 0px 10px 0px;
 }
@@ -404,7 +404,7 @@ button:hover {
   .form-log .cont {
     justify-content: center;
   }
-  .form-log .form {
+  .form-log .form-log {
     margin-right: 50%;
   }
 }
