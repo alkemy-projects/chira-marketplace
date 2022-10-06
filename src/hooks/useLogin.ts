@@ -25,7 +25,7 @@ export const useLogin = () => {
         } catch (e) {
             dispatch(completeProgressLoader())
             Swal.fire(
-                "Ha ocurrido un error" + e
+                "Email o contraseña incorrectos!"
             )
         }
 
