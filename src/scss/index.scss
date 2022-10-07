@@ -26,6 +26,9 @@ html {
 
 //sections imports
 @import '../sections/Register/register';
+@import '../sections/login/login';
 
 //components imports
 @import '../components/InputWrapper/inputWrapper';
+
+@import '../components/Loader/loader';
