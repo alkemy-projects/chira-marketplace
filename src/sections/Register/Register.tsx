@@ -3,19 +3,22 @@ import * as Yup from 'yup'
 import InputWrapper from '../../components/InputWrapper/InputWrapper'
 import shoppingCartIllustration from '../../assets/illustrations/shopping-cart.svg'
 import googleIcon from '../../assets/icons/google-icon.svg'
+import { useGoogleSignIn } from '../../hooks/useGoogleSignIn'
+import { useRegister } from '../../hooks/useRegister'
+import { Link } from 'react-router-dom'
 
 export default function Register() {
+	const { signInWithGoogle, desloguear } = useGoogleSignIn()
+	const { handleSubmit } = useRegister()
+
 	return (
 		<section className='register'>
 			<div className='left'>
 				<header className='register-header'>
-					<h1 className='register__title'>Chira</h1>
+					<h1 className='register__title'>Bienvenido a Chira</h1>
 					<h2 className='register__description'>
 						Crea tu usuario y empieza a explorar todos nuestros productos.
 					</h2>
-					<p className='register__benefits'>
-						¡Tienen envios gratis y es 100% online!
-					</p>
 				</header>
 				<img
 					className='register__illustration'
@@ -30,7 +33,10 @@ export default function Register() {
 						name: '',
 						lastName: '',
 						email: '',
-						country: '',
+						country: {
+							label: '',
+							value: '',
+						},
 						areaCode: '',
 						cellphone: '',
 						password: '',
@@ -48,18 +54,24 @@ export default function Register() {
 							.email('Correo electrónico inválido')
 							.required('Requerido'),
 						country: Yup.object().required('Requerido'),
-						areaCode: Yup.string().required('Requerido'),
+						areaCode: Yup.string()
+							.required('Requerido')
+							.matches(/^\+(\d{1})?(\d{1,3})$/, 'Código inválido'),
 						cellphone: Yup.string()
-							.min(10, 'Debe contener 10 caracteres')
-							.max(10, 'Debe contener menos de 11 caracteres')
 							.matches(/^[0-9]+$/, 'Solo se permiten números')
+							.min(10, 'Debe contener 10 caracteres')
+							.max(10, 'Debe contener hasta 10 caracteres')
 							.required('Requerido'),
 						password: Yup.string()
 							.max(20, 'Debe contener 20 caracteres o menos')
 							.min(6, 'Debe contener 6 caracteres o mas')
+							.matches(
+								/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,20}$/,
+								'Debe contener al menos una mayúscula, una minúscula, un número y un caracter especial'
+							)
 							.required('Requerido'),
 					})}
-					onSubmit={values => alert(JSON.stringify(values, null, 2))}
+					onSubmit={values => handleSubmit(values)}
 				>
 					{({ values, setFieldValue }) => (
 						<Form className='form'>
@@ -122,16 +134,32 @@ export default function Register() {
 							>
 								Registrarse
 							</button>
-							<button className='google-register'>
+							<button
+								className='google-register'
+								onClick={() => signInWithGoogle()}
+								type='button'
+							>
 								<img
 									src={googleIcon}
 									alt='Ícono de Google'
 								/>
 								<span>Registrarse con Google</span>
 							</button>
+							<button onClick={() => desloguear()}>Desloguear</button>
 						</Form>
 					)}
 				</Formik>
+				<div className='already-registered'>
+					<span className='already-registered__question'>
+						¿Ya tienes una cuenta?
+					</span>
+					<Link
+						to='/login'
+						className='already-registered__link'
+					>
+						Iniciar sesión
+					</Link>
+				</div>
 			</div>
 		</section>
 	)

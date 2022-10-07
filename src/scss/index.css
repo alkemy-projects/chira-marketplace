@@ -59,7 +59,7 @@ html body #root {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #1e5128;
+  background-color: #4e9f3d;
   padding: 0 20px;
   box-sizing: border-box;
 }
@@ -71,11 +71,8 @@ html body #root {
   line-height: 1;
 }
 .register .left .register-header .register__description {
-  color: #c2c3c9;
+  font-weight: 400;
   line-height: 1;
-}
-.register .left .register-header .register__benefits {
-  font-weight: 600;
 }
 .register .left .register__illustration {
   width: 100%;
@@ -156,10 +153,259 @@ html body #root {
 .register .right .form .google-register:hover {
   color: #4e9f3d;
 }
+.register .right .already-registered {
+  display: flex;
+  gap: 5px;
+}
+.register .right .already-registered .already-registered__link {
+  color: #4e9f3d;
+  font-weight: 600;
+}
 
 @media screen and (max-width: 640px) {
   .register .left {
     display: none;
+  }
+}
+@font-face {
+  font-family: "Proxima Nova", sans-serif;
+  src: url("../assets/font/proximanova-thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova", sans-serif;
+  src: url("../assets/font/proximanova-light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova", sans-serif;
+  src: url("../assets/font/proximanova-regular.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Proxima Nova", sans-serif;
+  src: url("../assets/font/proximanova-medium.otf") format("opentype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Proxima Nova", sans-serif;
+  src: url("../assets/font/proximanova-semibold.otf") format("opentype");
+  font-weight: 700;
+}
+.cont {
+  display: flex;
+  min-height: 100vh;
+}
+
+.left-cont {
+  background-color: #4e9f3d;
+  min-width: 45%;
+}
+
+.cont > .left-cont > img {
+  margin: 25px 0px 0px 80px;
+  max-width: 70%;
+}
+
+.cont > .left-cont > h1 {
+  text-align: center;
+  padding-top: 40px;
+  color: white;
+  font-size: 34px;
+}
+
+.lab {
+  margin-top: 11px;
+  color: #586666;
+}
+
+.cont2 p {
+  color: #4e9f3d;
+}
+
+.form-log > h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.form-log {
+  display: flex;
+  flex-direction: column;
+  margin: 100px 0px 0px 98px;
+  width: 30%;
+}
+
+.log-input {
+  margin: 8px 0px 8px 0px;
+}
+
+.form-log > .cont2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-log > .cont2 > label {
+  font-weight: 600;
+  color: #676767;
+}
+
+.form-log > .cont2 > input {
+  width: 300px;
+  margin: 10px 0px 10px 0px;
+}
+
+button {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4e9f3d;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  margin-top: 10px;
+}
+button:hover {
+  background-color: #1e5128;
+}
+
+.Sign-in-google {
+  display: flex;
+  justify-content: center;
+  background-color: #edf1f7;
+  color: #586666;
+  border: 1px #edf1f7 solid;
+  transition: color 0.5s ease;
+}
+.Sign-in-google:hover {
+  color: #4e9f3d;
+  background-color: #edf1f7;
+}
+
+.Sign-in-google > .gspan {
+  padding-top: 12px;
+}
+
+.cont {
+  display: flex;
+  height: 100vh;
+}
+
+.cont > div {
+  background-color: #4e9f3d;
+}
+
+.cont > .cont2 > img {
+  margin-top: 18px;
+}
+
+.cont > .cont2 > h1 {
+  text-align: center;
+  padding-top: 40px;
+  color: white;
+  font-size: 34px;
+}
+
+.lab {
+  margin-top: 11px;
+  color: #586666;
+}
+
+.cont2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cont2 p {
+  color: #4e9f3d;
+}
+
+.form-log > h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.form-log p {
+  padding: 0;
+}
+
+.form-log {
+  display: flex;
+  flex-direction: column;
+  margin: 100px 0px 0px 120px;
+}
+
+.form-log > .cont2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-log > .cont2 > label {
+  font-weight: 600;
+  color: #676767;
+}
+
+.form-log > .cont2 > input {
+  width: 300px;
+  margin: 10px 0px 10px 0px;
+}
+
+button {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4e9f3d;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  margin-top: 10px;
+}
+button:hover {
+  background-color: #1e5128;
+}
+
+.Sign-in-google {
+  display: flex;
+  justify-content: center;
+  background-color: #edf1f7;
+  color: #586666;
+  border: 1px #edf1f7 solid;
+  transition: color 0.5s ease;
+}
+.Sign-in-google:hover {
+  color: #4e9f3d;
+  background-color: #edf1f7;
+}
+
+.Sign-in-google > .gspan {
+  padding-top: 12px;
+}
+
+.googleIcon {
+  width: 26px;
+  margin: 8px 5px 0px 8px;
+}
+
+@media screen and (max-width: 700px) {
+  .cont > .left-cont {
+    display: none;
+  }
+  .cont {
+    justify-content: center;
+  }
+  .form-log .cont > div {
+    display: none;
+  }
+  .form-log .cont {
+    justify-content: center;
+  }
+  .form-log .form-log {
+    margin-right: 50%;
   }
 }
 .input-wrapper {
@@ -198,4 +444,17 @@ html body #root {
   border: 1px solid #e9e9e9;
   outline: none;
   font-weight: 500;
+}
+
+.loader {
+  width: 100%;
+  position: absolute;
+  height: 3px;
+}
+.loader .loader__progress {
+  width: 100%;
+  position: relative;
+  height: 5px;
+  background-color: #4e9f3d;
+  transition: all 1s;
 }/*# sourceMappingURL=index.css.map */

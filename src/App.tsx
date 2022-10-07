@@ -1,29 +1,30 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Register from './sections/Register/Register'
-<<<<<<< HEAD
+
 import Login from './sections/Login/Login'
 
-export default function App() {
-	
-=======
+import { useSelector } from 'react-redux'
+import Loader from './components/Loader/Loader'
+
 
 export default function App() {
->>>>>>> 215845deea05328d3dc9fc54f37012b4e115f22e
+	const loader = useSelector((state: any) => state.loader)
+
+
 	return (
 		<div className='App'>
+			{loader.status && <Loader progress={loader.progress} />}
 			<BrowserRouter>
 				<Routes>
 					<Route
 						path='/register'
 						element={<Register />}
 					/>
-<<<<<<< HEAD
+
 					<Route
 						path='/login'
 						element={<Login />}
 					/>
-=======
->>>>>>> 215845deea05328d3dc9fc54f37012b4e115f22e
 				</Routes>
 			</BrowserRouter>
 		</div>
