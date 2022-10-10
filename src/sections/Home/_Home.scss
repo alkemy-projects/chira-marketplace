@@ -1,0 +1,32 @@
+@use '../../scss/variables';
+@use '../../scss/fonts';
+.card-carr{
+    background-color: grey;
+    height: 250px;
+    margin-right: 20px;
+    border: 1px solid red;
+
+}
+
+.card-carr > h1{
+    font-size: 20px;
+}
+.card-carr > img{
+   width: 100px;
+}
+
+.carr{
+    width: 700px;
+   margin: 0 auto;
+}
+
+
+.slick-slide>div 
+{
+    padding-right:  15px;
+    padding-left:  15px;
+}
+
+
+
+

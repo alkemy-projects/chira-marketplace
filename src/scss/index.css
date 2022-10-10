@@ -408,6 +408,58 @@ button:hover {
     margin-right: 50%;
   }
 }
+@font-face {
+  font-family: "Proxima Nova", sans-serif;
+  src: url("../assets/font/proximanova-thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova", sans-serif;
+  src: url("../assets/font/proximanova-light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova", sans-serif;
+  src: url("../assets/font/proximanova-regular.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Proxima Nova", sans-serif;
+  src: url("../assets/font/proximanova-medium.otf") format("opentype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Proxima Nova", sans-serif;
+  src: url("../assets/font/proximanova-semibold.otf") format("opentype");
+  font-weight: 700;
+}
+.card-carr {
+  background-color: grey;
+  height: 250px;
+  margin-right: 20px;
+  border: 1px solid red;
+}
+
+.card-carr > h1 {
+  font-size: 20px;
+}
+
+.card-carr > img {
+  width: 100px;
+}
+
+.carr {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.slick-slide > div {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
 .input-wrapper {
   display: flex;
   flex-direction: column;

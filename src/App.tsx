@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Register from './sections/Register/Register'
-
-import Login from './sections/Login/Login'
-
+import { Home } from './sections/Home/Home'
+import Login from './sections/login/Login'
 import { useSelector } from 'react-redux'
 import Loader from './components/Loader/Loader'
 
@@ -24,6 +23,10 @@ export default function App() {
 					<Route
 						path='/login'
 						element={<Login />}
+					/>
+					<Route
+						path='/'
+						element={<Home />}
 					/>
 				</Routes>
 			</BrowserRouter>
