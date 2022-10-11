@@ -435,6 +435,68 @@ button:hover {
   src: url("../assets/font/proximanova-semibold.otf") format("opentype");
   font-weight: 700;
 }
+.home-cont {
+  height: 100vh;
+  width: 100vw;
+}
+
+.header {
+  width: 100%;
+  margin: 0;
+  padding-top: 5px;
+  background-color: #4e9f3d;
+}
+
+.PaymentMethods {
+  display: flex;
+  height: 90px;
+  width: 70%;
+  background-color: #E5E5E5;
+  margin: 0 auto;
+  justify-content: space-around;
+  border-radius: 5px;
+}
+
+.p-method {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 30px;
+  padding-left: 10px;
+}
+
+.mercado {
+  width: 35px !important;
+  height: 35px !important;
+}
+
+.p-method > img {
+  background-color: white;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  padding: 8px;
+  margin-top: 19px;
+}
+
+.descrip-cont {
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+}
+
+.descrip-cont > h3 {
+  font-weight: 100;
+  color: #586666;
+  margin: 8px 10px 0px 7px;
+}
+
+.descrip-cont > p {
+  color: #4e9f3d;
+  margin: 0px 0px 23px 9px;
+}
+
 .card-carr {
   background-color: grey;
   height: 250px;
@@ -451,8 +513,14 @@ button:hover {
 }
 
 .carr {
-  width: 700px;
-  margin: 0 auto;
+  width: 80%;
+  margin-left: 150px;
+}
+
+.carr h2 {
+  color: #586666;
+  font-weight: 200;
+  font-size: 32px;
 }
 
 .slick-slide > div {
@@ -460,6 +528,32 @@ button:hover {
   padding-left: 15px;
 }
 
+.carrcont {
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+  .carrcont {
+    display: flex;
+    justify-content: center;
+  }
+  .PaymentMethods {
+    display: none;
+  }
+  .carr {
+    width: 600px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .carrcont {
+    display: flex;
+    justify-content: center;
+  }
+  .carr {
+    width: 250px;
+    margin-right: 400px;
+  }
+}
 .input-wrapper {
   display: flex;
   flex-direction: column;
