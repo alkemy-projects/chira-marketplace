@@ -382,18 +382,21 @@ button:hover {
   }
 }
 .home-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100vh;
   width: 100vw;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
-
-.header {
+.home-cont .header {
   width: 100%;
   margin: 0;
   padding-top: 5px;
   background-color: #4e9f3d;
 }
-
-.PaymentMethods {
+.home-cont .PaymentMethods {
   display: flex;
   height: 90px;
   width: 70%;
@@ -402,40 +405,20 @@ button:hover {
   justify-content: space-around;
   border-radius: 5px;
 }
-
-.card-carr {
-  background-color: grey;
-  height: 250px;
-  margin-right: 20px;
-  border: 1px solid red;
+.home-cont .categories {
+  width: 100%;
+  max-width: 1500px;
 }
-
-.card-carr > h1 {
-  font-size: 20px;
+.home-cont .categories .categories__title {
+  color: #4e9f3d;
+  font-size: 24px;
 }
-
-.card-carr > img {
-  width: 100px;
-}
-
-.carr {
-  width: 80%;
-  margin-left: 150px;
-}
-
-.carr h2 {
-  color: #586666;
-  font-weight: 200;
-  font-size: 32px;
-}
-
-.slick-slide > div {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-.carrcont {
-  margin-top: 40px;
+.home-cont .categories .categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 @media screen and (max-width: 1000px) {
@@ -519,7 +502,6 @@ button:hover {
   height: 100%;
   background-color: white;
   border-radius: 10px;
-  z-index: 100000 !important;
   position: relative;
   padding: 20px;
   box-sizing: border-box;
@@ -548,6 +530,10 @@ button:hover {
   font-weight: 400;
 }
 
+.slider-carrousel {
+  width: 100%;
+  max-width: 1500px;
+}
 .slider-carrousel .slider-carrousel__title {
   font-size: 24px;
   font-weight: 600;
@@ -591,4 +577,26 @@ button:hover {
 .p-method p {
   color: #4e9f3d;
   margin: 0px 0px 23px 9px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 214px;
+  height: 150px;
+  padding: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.category:hover {
+  box-shadow: 1px 5px 20px 0px rgba(0, 0, 0, 0.36);
+}
+.category .category__icon {
+  width: 80px;
+}
+.category .category__title {
+  text-align: center;
 }/*# sourceMappingURL=index.css.map */

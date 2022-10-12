@@ -1,55 +1,41 @@
 .home-cont {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	height: 100vh;
 	width: 100vw;
-}
-.header {
-	width: 100%;
-	margin: 0;
-	padding-top: 5px;
-	background-color: #4e9f3d;
-}
-
-.PaymentMethods {
-	display: flex;
-	height: 90px;
-	width: 70%;
-	background-color: #e5e5e5;
-	margin: 0 auto;
-	justify-content: space-around;
-	border-radius: 5px;
-}
-
-.card-carr {
-	background-color: grey;
-	height: 250px;
-	margin-right: 20px;
-	border: 1px solid red;
-}
-
-.card-carr > h1 {
-	font-size: 20px;
-}
-.card-carr > img {
-	width: 100px;
-}
-
-.carr {
-	width: 80%;
-	margin-left: 150px;
-}
-
-.carr h2 {
-	color: $grayColor;
-	font-weight: 200;
-	font-size: 32px;
-}
-
-.slick-slide > div {
-	padding-right: 15px;
-	padding-left: 15px;
-}
-.carrcont {
-	margin-top: 40px;
+	padding: 0 20px;
+	box-sizing: border-box;
+	.header {
+		width: 100%;
+		margin: 0;
+		padding-top: 5px;
+		background-color: #4e9f3d;
+	}
+	.PaymentMethods {
+		display: flex;
+		height: 90px;
+		width: 70%;
+		background-color: #e5e5e5;
+		margin: 0 auto;
+		justify-content: space-around;
+		border-radius: 5px;
+	}
+	.categories {
+		width: 100%;
+		max-width: 1500px;
+		.categories__title {
+			color: $primaryColor;
+			font-size: 24px;
+		}
+		.categories-list {
+			display: flex;
+			flex-wrap: wrap;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+	}
 }
 
 @media screen and (max-width: 1000px) {

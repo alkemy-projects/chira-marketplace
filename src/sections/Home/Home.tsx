@@ -1,9 +1,10 @@
+import Category from '../../components/Category/Category'
 import PaymentMethod from '../../components/PaymentMethod/PaymentMethod'
 import SliderCarrousel from '../../components/SliderCarrousel/SliderCarrousel'
 import { useHome } from './useHome'
 
 export default function Home() {
-	const { phones } = useHome()
+	const { phones, categories } = useHome()
 
 	console.log(phones)
 
@@ -41,6 +42,17 @@ export default function Home() {
 					/>
 				</div>
 			</div>
+			<section className='categories'>
+				<h2 className='categories__title'>Categorías</h2>
+				<ul className='categories-list'>
+					{categories.map(category => (
+						<Category
+							key={category.id}
+							{...category}
+						/>
+					))}
+				</ul>
+			</section>
 		</div>
 	)
 }
