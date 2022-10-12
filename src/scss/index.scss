@@ -26,10 +26,9 @@ html {
 
 //sections imports
 @import '../sections/Register/register';
-@import '../sections/login/login';
+// @import '../sections/Login/login';
 @import '../sections/Home/Home';
 
 //components imports
 @import '../components/InputWrapper/inputWrapper';
-
 @import '../components/Loader/loader';

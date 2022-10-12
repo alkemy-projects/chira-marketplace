@@ -1,141 +1,115 @@
-@use '../../scss/variables';
-@use '../../scss/fonts';
-
-
-.home-cont{
-   // 
-   height: 100vh;
-   width: 100vw;
-   //position: fixed;
-   
- 
+.home-cont {
+	height: 100vh;
+	width: 100vw;
 }
-.header{
-    width: 100%;
-    margin: 0;
-    padding-top: 5px;
-     background-color: #4e9f3d;
-    
+.header {
+	width: 100%;
+	margin: 0;
+	padding-top: 5px;
+	background-color: #4e9f3d;
 }
 
-.PaymentMethods{
-    display: flex;
-    height: 90px;
-    width: 70%;
-    background-color: #E5E5E5;
-    margin: 0 auto;
-    justify-content: space-around;
-    border-radius: 5px;
-    
-   
+.PaymentMethods {
+	display: flex;
+	height: 90px;
+	width: 70%;
+	background-color: #e5e5e5;
+	margin: 0 auto;
+	justify-content: space-around;
+	border-radius: 5px;
 }
 
-.p-method{
-    width: 500px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 30px;
-    padding-left: 10px;
-    
+.p-method {
+	width: 500px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-left: 30px;
+	padding-left: 10px;
 }
 
-.mercado{
-    width: 35px !important;
-    height: 35px !important;
+.mercado {
+	width: 35px !important;
+	height: 35px !important;
 }
 
-.p-method > img{
-    background-color: white;
-    border-radius: 30px;
-    width: 30px;
-    height: 30px;
-   padding: 8px;
-   margin-top: 19px;
-    
+.p-method > img {
+	background-color: white;
+	border-radius: 30px;
+	width: 30px;
+	height: 30px;
+	padding: 8px;
+	margin-top: 19px;
 }
 
-.descrip-cont{
-    display: flex;
-    flex-direction: column;
-    margin-top: 18px;
-   
+.descrip-cont {
+	display: flex;
+	flex-direction: column;
+	margin-top: 18px;
 }
-.descrip-cont > h3{
-    font-weight: 100;
-    color: $grayColor;
-    margin: 8px 10px 0px 7px;
-}
-
-
-.descrip-cont > p{
-    color: #4e9f3d;
-    margin: 0px 0px 23px 9px;
-}
-.card-carr{
-    background-color: grey;
-    height: 250px;
-    margin-right: 20px;
-    border: 1px solid red;
-
+.descrip-cont > h3 {
+	font-weight: 100;
+	color: $grayColor;
+	margin: 8px 10px 0px 7px;
 }
 
-.card-carr > h1{
-    font-size: 20px;
+.descrip-cont > p {
+	color: #4e9f3d;
+	margin: 0px 0px 23px 9px;
 }
-.card-carr > img{
-   width: 100px;
-}
-
-.carr{
-    width: 80%;
-   margin-left: 150px;
-}
-
-.carr h2{
-    color: $grayColor;
-    font-weight: 200;
-    font-size: 32px;
+.card-carr {
+	background-color: grey;
+	height: 250px;
+	margin-right: 20px;
+	border: 1px solid red;
 }
 
-
-.slick-slide>div 
-{
-    padding-right:  15px;
-    padding-left:  15px;
+.card-carr > h1 {
+	font-size: 20px;
 }
-.carrcont{
-    margin-top: 40px;
+.card-carr > img {
+	width: 100px;
 }
 
+.carr {
+	width: 80%;
+	margin-left: 150px;
+}
 
+.carr h2 {
+	color: $grayColor;
+	font-weight: 200;
+	font-size: 32px;
+}
+
+.slick-slide > div {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+.carrcont {
+	margin-top: 40px;
+}
 
 @media screen and (max-width: 1000px) {
-    .carrcont{
-        display: flex;
-        justify-content: center;
-    }
-    .PaymentMethods{
-      display: none;
-    }
-    .carr{
-        width: 600px;
-    }
-    
+	.carrcont {
+		display: flex;
+		justify-content: center;
+	}
+	.PaymentMethods {
+		display: none;
+	}
+	.carr {
+		width: 600px;
+	}
 }
 
 @media screen and (max-width: 600px) {
-    .carrcont{
-        display: flex;
-        justify-content: center;
-    }
-    .carr{
-        width: 250px;
-        margin-right: 400px;
-    }
-
+	.carrcont {
+		display: flex;
+		justify-content: center;
+	}
+	.carr {
+		width: 250px;
+		margin-right: 400px;
+	}
 }
-
-
-
-
