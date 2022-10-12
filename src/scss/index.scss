@@ -26,10 +26,13 @@ html {
 
 //sections imports
 @import '../sections/Register/register';
-@import '../sections/login/login';
+@import '../sections/Login/login';
 @import '../sections/Home/Home';
 
 //components imports
 @import '../components/InputWrapper/inputWrapper';
-
 @import '../components/Loader/loader';
+@import '../components/Card/card';
+@import '../components/SliderCarrousel/sliderCarrousel';
+@import '../components/PaymentMethod/paymentMethod';
+@import '../components/Category/category';

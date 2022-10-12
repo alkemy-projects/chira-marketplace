@@ -15,6 +15,7 @@ interface Props {
 const Cards = ({ title, array }: Props) => {
 
     return(
+        <>
         <div className='main-box'>            
             <div className='card-title'>
                 <span>{title}</span> 
@@ -33,6 +34,7 @@ const Cards = ({ title, array }: Props) => {
                 ))}
             </div>
         </div>
+        </>
     )
 }
 

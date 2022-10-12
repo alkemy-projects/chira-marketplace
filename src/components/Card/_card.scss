@@ -1,0 +1,37 @@
+.card {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	transition: all 0.3s ease-out;
+	height: 100%;
+	background-color: white;
+	border-radius: 10px;
+	position: relative;
+	padding: 20px;
+	box-sizing: border-box;
+	cursor: pointer;
+	&:hover {
+		box-shadow: 1px 5px 20px 0px rgba(0, 0, 0, 0.36);
+	}
+	.card-header {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 200px;
+		.card__image {
+			width: 100%;
+			max-width: 150px;
+		}
+	}
+	.card-body {
+		.card__title {
+			font-size: 20px;
+		}
+		.card__price {
+			font-size: 18px;
+			font-weight: bold;
+			padding: 0 5px;
+			font-weight: 400;
+		}
+	}
+}

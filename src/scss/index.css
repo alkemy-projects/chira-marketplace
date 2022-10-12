@@ -167,33 +167,6 @@ html body #root {
     display: none;
   }
 }
-@font-face {
-  font-family: "Proxima Nova", sans-serif;
-  src: url("../assets/font/proximanova-thin.otf") format("opentype");
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Proxima Nova", sans-serif;
-  src: url("../assets/font/proximanova-light.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Proxima Nova", sans-serif;
-  src: url("../assets/font/proximanova-regular.otf") format("opentype");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Proxima Nova", sans-serif;
-  src: url("../assets/font/proximanova-medium.otf") format("opentype");
-  font-weight: 500;
-}
-@font-face {
-  font-family: "Proxima Nova", sans-serif;
-  src: url("../assets/font/proximanova-semibold.otf") format("opentype");
-  font-weight: 700;
-}
 .cont {
   display: flex;
   min-height: 100vh;
@@ -408,128 +381,44 @@ button:hover {
     margin-right: 50%;
   }
 }
-@font-face {
-  font-family: "Proxima Nova", sans-serif;
-  src: url("../assets/font/proximanova-thin.otf") format("opentype");
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Proxima Nova", sans-serif;
-  src: url("../assets/font/proximanova-light.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Proxima Nova", sans-serif;
-  src: url("../assets/font/proximanova-regular.otf") format("opentype");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Proxima Nova", sans-serif;
-  src: url("../assets/font/proximanova-medium.otf") format("opentype");
-  font-weight: 500;
-}
-@font-face {
-  font-family: "Proxima Nova", sans-serif;
-  src: url("../assets/font/proximanova-semibold.otf") format("opentype");
-  font-weight: 700;
-}
 .home-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100vh;
   width: 100vw;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
-
-.header {
+.home-cont .header {
   width: 100%;
   margin: 0;
   padding-top: 5px;
   background-color: #4e9f3d;
 }
-
-.PaymentMethods {
+.home-cont .PaymentMethods {
   display: flex;
   height: 90px;
   width: 70%;
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   margin: 0 auto;
   justify-content: space-around;
   border-radius: 5px;
 }
-
-.p-method {
-  width: 500px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: 30px;
-  padding-left: 10px;
+.home-cont .categories {
+  width: 100%;
+  max-width: 1500px;
 }
-
-.mercado {
-  width: 35px !important;
-  height: 35px !important;
-}
-
-.p-method > img {
-  background-color: white;
-  border-radius: 30px;
-  width: 30px;
-  height: 30px;
-  padding: 8px;
-  margin-top: 19px;
-}
-
-.descrip-cont {
-  display: flex;
-  flex-direction: column;
-  margin-top: 18px;
-}
-
-.descrip-cont > h3 {
-  font-weight: 100;
-  color: #586666;
-  margin: 8px 10px 0px 7px;
-}
-
-.descrip-cont > p {
+.home-cont .categories .categories__title {
   color: #4e9f3d;
-  margin: 0px 0px 23px 9px;
+  font-size: 24px;
 }
-
-.card-carr {
-  background-color: grey;
-  height: 250px;
-  margin-right: 20px;
-  border: 1px solid red;
-}
-
-.card-carr > h1 {
-  font-size: 20px;
-}
-
-.card-carr > img {
-  width: 100px;
-}
-
-.carr {
-  width: 80%;
-  margin-left: 150px;
-}
-
-.carr h2 {
-  color: #586666;
-  font-weight: 200;
-  font-size: 32px;
-}
-
-.slick-slide > div {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-.carrcont {
-  margin-top: 40px;
+.home-cont .categories .categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 @media screen and (max-width: 1000px) {
@@ -603,4 +492,111 @@ button:hover {
   height: 5px;
   background-color: #4e9f3d;
   transition: all 1s;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-out;
+  height: 100%;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: 1px 5px 20px 0px rgba(0, 0, 0, 0.36);
+}
+.card .card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+.card .card-header .card__image {
+  width: 100%;
+  max-width: 150px;
+}
+.card .card-body .card__title {
+  font-size: 20px;
+}
+.card .card-body .card__price {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 5px;
+  font-weight: 400;
+}
+
+.slider-carrousel {
+  width: 70%;
+  max-width: 1500px;
+}
+.slider-carrousel .slider-carrousel__title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #4e9f3d;
+}
+.slider-carrousel .slick-slider .slick-list .slick-track .slick-slide div {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.p-method {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 30px;
+  padding-left: 10px;
+}
+.p-method img {
+  background-color: white;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  padding: 8px;
+  margin-top: 19px;
+}
+.p-method .mercado {
+  width: 35px !important;
+  height: 35px !important;
+}
+.p-method .descrip-cont {
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+}
+.p-method h3 {
+  font-weight: 100;
+  color: #586666;
+  margin: 8px 10px 0px 7px;
+}
+.p-method p {
+  color: #4e9f3d;
+  margin: 0px 0px 23px 9px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 214px;
+  height: 150px;
+  padding: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.category:hover {
+  box-shadow: 1px 5px 20px 0px rgba(0, 0, 0, 0.36);
+}
+.category .category__icon {
+  width: 80px;
+}
+.category .category__title {
+  text-align: center;
 }/*# sourceMappingURL=index.css.map */
