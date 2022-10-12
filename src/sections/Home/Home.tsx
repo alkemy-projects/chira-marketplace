@@ -1,23 +1,9 @@
-import { useState, useEffect } from 'react'
 import PaymentMethod from '../../components/PaymentMethod/PaymentMethod'
-import PaymentMethods from '../../components/PaymentMethods/PaymentMethods'
 import SliderCarrousel from '../../components/SliderCarrousel/SliderCarrousel'
+import { useHome } from './useHome'
 
 export default function Home() {
-	const [phones, setPhones] = useState<any[]>([])
-
-	useEffect(() => {
-		const bringPhones = async () => {
-			const data = await fetch(
-				'https://api.mercadolibre.com/sites/MLA/search?category=MLA1055'
-			)
-			const resp = await data.json()
-
-			setPhones(resp.results)
-		}
-
-		bringPhones()
-	}, [])
+	const { phones } = useHome()
 
 	console.log(phones)
 
