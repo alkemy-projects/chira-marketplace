@@ -18,7 +18,7 @@ export default function Card({
 			</header>
 			<section className='card-body'>
 				<h2 className='card__title'>{title}</h2>
-				<span className='card__price'>${price}</span>
+				<span className='card__price'>$ {price}</span>
 			</section>
 		</article>
 	)

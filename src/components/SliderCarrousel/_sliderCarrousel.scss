@@ -1,10 +1,17 @@
-.slick-slider {
-	.slick-list {
-		.slick-track {
-			.slick-slide {
-				div {
-					padding: 20px;
-					box-sizing: border-box;
+.slider-carrousel {
+	.slider-carrousel__title {
+		font-size: 24px;
+		font-weight: 600;
+		color: $primaryColor;
+	}
+	.slick-slider {
+		.slick-list {
+			.slick-track {
+				.slick-slide {
+					div {
+						padding: 20px;
+						box-sizing: border-box;
+					}
 				}
 			}
 		}

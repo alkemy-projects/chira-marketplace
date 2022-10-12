@@ -4,7 +4,13 @@ import 'slick-carousel/slick/slick-theme.css'
 import Card from '../Card/Card'
 import Arrow from '../Arrow/Arrow'
 
-export default function SliderCarrousel({ phones }: { phones: [any] }) {
+export default function SliderCarrousel({
+	phones,
+	title,
+}: {
+	phones: any[]
+	title: string
+}) {
 	const settings = {
 		dots: false,
 		infinite: false,
@@ -43,7 +49,8 @@ export default function SliderCarrousel({ phones }: { phones: [any] }) {
 	}
 
 	return (
-		<>
+		<section className='slider-carrousel'>
+			<h2 className='slider-carrousel__title'>{title}</h2>
 			<Slider {...settings}>
 				{phones?.map(phone => (
 					<Card
@@ -54,6 +61,6 @@ export default function SliderCarrousel({ phones }: { phones: [any] }) {
 					/>
 				))}
 			</Slider>
-		</>
+		</section>
 	)
 }

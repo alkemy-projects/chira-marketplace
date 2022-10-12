@@ -393,56 +393,6 @@ button:hover {
   background-color: #4e9f3d;
 }
 
-.PaymentMethods {
-  display: flex;
-  height: 90px;
-  width: 70%;
-  background-color: #e5e5e5;
-  margin: 0 auto;
-  justify-content: space-around;
-  border-radius: 5px;
-}
-
-.p-method {
-  width: 500px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: 30px;
-  padding-left: 10px;
-}
-
-.mercado {
-  width: 35px !important;
-  height: 35px !important;
-}
-
-.p-method > img {
-  background-color: white;
-  border-radius: 30px;
-  width: 30px;
-  height: 30px;
-  padding: 8px;
-  margin-top: 19px;
-}
-
-.descrip-cont {
-  display: flex;
-  flex-direction: column;
-  margin-top: 18px;
-}
-
-.descrip-cont > h3 {
-  font-weight: 100;
-  color: #586666;
-  margin: 8px 10px 0px 7px;
-}
-
-.descrip-cont > p {
-  color: #4e9f3d;
-  margin: 0px 0px 23px 9px;
-}
-
 .card-carr {
   background-color: grey;
   height: 250px;
@@ -582,13 +532,62 @@ button:hover {
   font-size: 20px;
 }
 .card .card-body .card__price {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   padding: 0 5px;
   font-weight: 400;
 }
 
-.slick-slider .slick-list .slick-track .slick-slide div {
+.slider-carrousel .slider-carrousel__title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #4e9f3d;
+}
+.slider-carrousel .slick-slider .slick-list .slick-track .slick-slide div {
   padding: 20px;
   box-sizing: border-box;
+}
+
+.PaymentMethods {
+  display: flex;
+  height: 90px;
+  width: 70%;
+  background-color: #e5e5e5;
+  margin: 0 auto;
+  justify-content: space-around;
+  border-radius: 5px;
+}
+.PaymentMethods .p-method {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 30px;
+  padding-left: 10px;
+}
+.PaymentMethods .p-method img {
+  background-color: white;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  padding: 8px;
+  margin-top: 19px;
+}
+.PaymentMethods .mercado {
+  width: 35px !important;
+  height: 35px !important;
+}
+.PaymentMethods .descrip-cont {
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+}
+.PaymentMethods h3 {
+  font-weight: 100;
+  color: #586666;
+  margin: 8px 10px 0px 7px;
+}
+.PaymentMethods p {
+  color: #4e9f3d;
+  margin: 0px 0px 23px 9px;
 }/*# sourceMappingURL=index.css.map */
