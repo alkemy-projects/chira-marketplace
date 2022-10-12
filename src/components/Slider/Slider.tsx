@@ -14,7 +14,6 @@ export default function SliderCarrousel({ phones }: { phones: [any] }) {
 		initialSlide: 1,
 		nextArrow: <Arrow />,
 		prevArrow: <Arrow />,
-
 		responsive: [
 			{
 				breakpoint: 1000,
@@ -34,7 +33,7 @@ export default function SliderCarrousel({ phones }: { phones: [any] }) {
 				},
 			},
 			{
-				breakpoint: 480,
+				breakpoint: 320,
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1,
@@ -47,17 +46,12 @@ export default function SliderCarrousel({ phones }: { phones: [any] }) {
 		<>
 			<Slider {...settings}>
 				{phones?.map(phone => (
-					<div
-						className='card-carr'
+					<Card
+						title={phone.title}
+						image={phone.thumbnail}
+						price={phone.price}
 						key={phone.id}
-					>
-						<img
-							src={phone?.thumbnail}
-							alt=''
-						/>
-						<h1>{phone?.title}</h1>
-						<h3>{phone?.price}</h3>
-					</div>
+					/>
 				))}
 			</Slider>
 		</>
