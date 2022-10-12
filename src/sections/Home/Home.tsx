@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import SliderCarrousel from '../../components/Slider/Slider'
+import SliderCarrousel from '../../components/SliderCarrousel/SliderCarrousel'
 
 export default function Home() {
 	const [phones, setPhones] = useState<any[]>([])
