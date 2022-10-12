@@ -557,7 +557,8 @@ button:hover {
   justify-content: space-around;
   border-radius: 5px;
 }
-.PaymentMethods .p-method {
+
+.p-method {
   width: 500px;
   display: flex;
   flex-direction: row;
@@ -565,7 +566,7 @@ button:hover {
   margin-left: 30px;
   padding-left: 10px;
 }
-.PaymentMethods .p-method img {
+.p-method img {
   background-color: white;
   border-radius: 30px;
   width: 30px;
@@ -573,21 +574,21 @@ button:hover {
   padding: 8px;
   margin-top: 19px;
 }
-.PaymentMethods .mercado {
+.p-method .mercado {
   width: 35px !important;
   height: 35px !important;
 }
-.PaymentMethods .descrip-cont {
+.p-method .descrip-cont {
   display: flex;
   flex-direction: column;
   margin-top: 18px;
 }
-.PaymentMethods h3 {
+.p-method h3 {
   font-weight: 100;
   color: #586666;
   margin: 8px 10px 0px 7px;
 }
-.PaymentMethods p {
+.p-method p {
   color: #4e9f3d;
   margin: 0px 0px 23px 9px;
 }/*# sourceMappingURL=index.css.map */
