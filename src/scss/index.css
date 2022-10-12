@@ -393,6 +393,16 @@ button:hover {
   background-color: #4e9f3d;
 }
 
+.PaymentMethods {
+  display: flex;
+  height: 90px;
+  width: 70%;
+  background-color: #e5e5e5;
+  margin: 0 auto;
+  justify-content: space-around;
+  border-radius: 5px;
+}
+
 .card-carr {
   background-color: grey;
   height: 250px;
@@ -546,16 +556,6 @@ button:hover {
 .slider-carrousel .slick-slider .slick-list .slick-track .slick-slide div {
   padding: 20px;
   box-sizing: border-box;
-}
-
-.PaymentMethods {
-  display: flex;
-  height: 90px;
-  width: 70%;
-  background-color: #e5e5e5;
-  margin: 0 auto;
-  justify-content: space-around;
-  border-radius: 5px;
 }
 
 .p-method {
