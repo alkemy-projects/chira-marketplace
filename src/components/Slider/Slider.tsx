@@ -3,9 +3,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Cards from "../Cards/Cards";
 
-export const SliderCarr =(props)=>{
+interface props {
+  phone: 
+    [{title:string,
+    thumbnail:string,
+    price:number}]
+  
+}
 
-    const {phone} = props
+export const SliderCarr =({phone} : props)=>{
+
+    
 
     function Arrow(props) {
         const { className, style, onClick } = props;
@@ -63,15 +71,31 @@ export const SliderCarr =(props)=>{
          <Slider {...settings}>
 
 {phone.map((phones) => (
-  <div className="card-carr">
-    <img src={phones?.thumbnail} alt="" />
-    <h1>{phones?.title}</h1>
-    <h3>{phones?.price}</h3>
+  
 
-  </div>
+ // <Cards title={phones.title} image={phones?.thumbnail} array={[]}/>
+
+ <div className="card-carr">
+ <img src={phones?.thumbnail} alt="" />
+ <h1>{phones?.title}</h1>
+ <h3>{phones?.price}</h3>
+
+</div> 
+
+  
 ))}
 </Slider>
         </>
     )
 }
 
+
+{/**/}
+
+
+{/* <div className="card-carr">
+ <img src={phones?.thumbnail} alt="" />
+ <h1>{phones?.title}</h1>
+ <h3>{phones?.price}</h3>
+
+</div> */}
