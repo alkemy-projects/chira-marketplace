@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { SliderCarr } from '../../components/Slider/Slider'
+import SliderCarrousel from '../../components/Slider/Slider'
 
 export default function Home() {
-	const [phone, setPhones] = useState<any[]>([])
+	const [phones, setPhones] = useState<any[]>([])
 
 	useEffect(() => {
 		const bringPhones = async () => {
@@ -17,7 +17,7 @@ export default function Home() {
 		bringPhones()
 	}, [])
 
-	console.log(phone)
+	console.log(phones)
 
 	return (
 		<div className='home-cont'>
@@ -62,7 +62,7 @@ export default function Home() {
 				<div className='carr'>
 					<h2>Telefonos en oferta</h2>
 
-					<SliderCarr phone={phone} />
+					<SliderCarrousel phones={phones} />
 				</div>
 			</div>
 		</div>
