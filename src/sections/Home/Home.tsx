@@ -2,10 +2,16 @@ import { useState, useEffect } from "react";
 import { SliderCarr } from "../../components/Slider/Slider";
 import Cards from "../../components/Cards/Cards";
 import Header from "../../components/Header/Header";
+
+
+
+
 export const Home = () => {
 
 
-  const [phone, setPhones] = useState<any[]>([])
+  const [phone, setPhones] = useState<[{title:string, thumbnail:string, price:number}]>([{
+    title:"", thumbnail:"", price:0
+  }])
 
   useEffect(() => {
     const bringPhones = async () => {
@@ -61,10 +67,6 @@ export const Home = () => {
       </div>
       </div>
     
-
-
-
-
   )
 }
 

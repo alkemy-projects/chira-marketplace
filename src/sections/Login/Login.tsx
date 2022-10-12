@@ -1,29 +1,81 @@
-//import loginIllustration From '../../assets/illustrations/login-illustration.svg'
-import loginIllustration from '../../assets/illustrations/login-illustration.svg'
-import "./_login.scss"
-export default function Login() {
-    
+import { Formik, Form, ErrorMessage } from 'formik'
+import loginIllustratio from '../../assets/illustrations/loginIllustration.svg'
+import InputWrapper from '../../components/InputWrapper/InputWrapper'
+import googleIcon from "../../assets/icons/google-icon.svg"
+import { useLogin } from '../../hooks/useLogin'
+import { useGoogleSignIn } from '../../hooks/useGoogleSignIn'
+import * as Yup from 'yup'
 
-    return(
-      <div className='coint'>
-        <img src={loginIllustration} alt="" />
-        <h4>Iniciar sesion</h4>
-        <form action="">
-            <div>
-            <label htmlFor="">correo electronico</label>
-            <input type="text" />
-            </div>
-            <div>
-            <label htmlFor="">contraseña</label>
-            <input type="text" />
-            </div>
-            <div>
-               <label htmlFor=""> <input type="checkbox" />Recordame</label>
-               <span>olvide mi contaseña</span>
-            </div>
-            <button>Ingresar</button>
-            <button>Ingresar con Google</button>
-        </form>
+export default function Login() {
+  const { handleSubmit } = useLogin()
+  const { signInWithGoogle } = useGoogleSignIn()
+
+  return (
+    <div className='cont'>
+
+      <div className='left-cont'>
+        <h1>Chira</h1>
+        <img src={loginIllustratio} alt="" />
       </div>
-    )
+
+      <Formik
+        initialValues={{
+          email: '',
+          password: '',
+        }}
+        validationSchema={Yup.object({
+          email: Yup.string().email('Correo electrónico inválido').required("requerido"),
+          password: Yup.string().min(4, "La contraseña debe tener al menos 6 caracteres")
+            .max(20, "la contraseña debe tener menos de 20 caracteres")
+            .required("requerido")
+        })}
+
+        onSubmit={values => handleSubmit(values)}
+
+      >
+         {({ errors, touched }) =>(
+        <Form className='form-log'>
+          <h2>Iniciar sesion</h2>
+          
+          <div className="log-input">
+              <InputWrapper
+                type='text'
+                name='email'
+                label='correo electronico'
+                placeholder='juan@ejemplo.com'
+              />
+            </div>
+
+            <div className="log-input">
+              <InputWrapper
+                type='password'
+                name='password'
+                label='contraseña'
+                placeholder='contraseña'
+              />
+            </div>
+
+            
+            <div className='cont2'>
+
+              <label className='lab'> <input type="checkbox" />recuerdame</label>
+              <p>Olvide mi contraseña</p>
+
+            </div>
+
+            <button className='Sign-in' type='submit'>Ingresar</button>
+            <button className='Sign-in-google' type='submit' onClick={() => signInWithGoogle()}>
+              <div>
+                <img src={googleIcon} alt="" className='googleIcon' /></div>
+              <div className='gspan'><span> Ingresar con Google</span></div>
+            </button>
+          </Form>
+        )}
+
+
+      </Formik>
+
+    </div>
+
+  )
 }
