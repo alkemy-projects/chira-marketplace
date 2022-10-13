@@ -4,6 +4,7 @@ import SliderCarrousel from '../../components/SliderCarrousel/SliderCarrousel'
 import { useHome } from './useHome'
 
 export default function Home() {
+	
 	const { phones, categories } = useHome()
 
 	console.log(phones)
@@ -33,11 +34,11 @@ export default function Home() {
 			<div className='carrcont'>
 				<div className='carr'>
 					<SliderCarrousel
-						phones={phones}
+						products={phones}
 						title='Teléfonos en oferta'
 					/>
 					<SliderCarrousel
-						phones={phones}
+						products={phones}
 						title='Televisores'
 					/>
 				</div>

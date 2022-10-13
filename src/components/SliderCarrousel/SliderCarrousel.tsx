@@ -5,10 +5,10 @@ import Card from '../Card/Card'
 import Arrow from '../Arrow/Arrow'
 
 export default function SliderCarrousel({
-	phones,
+	products,
 	title,
 }: {
-	phones: any[]
+	products: any[]
 	title: string
 }) {
 	const settings = {
@@ -52,12 +52,12 @@ export default function SliderCarrousel({
 		<section  className='slider-carrousel'>
 			<h2 className='slider-carrousel__title'>{title}</h2>
 			<Slider {...settings}>
-				{phones?.map(phone => (
+				{products?.map(product => (
 					<Card
-						title={phone.title}
-						image={phone.thumbnail}
-						price={phone.price}
-						key={phone.id}
+						title={product.title}
+						image={product.thumbnail}
+						price={product.price}
+						key={product.id}
 					/>
 				))}
 			</Slider>

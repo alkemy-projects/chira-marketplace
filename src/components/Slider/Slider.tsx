@@ -4,14 +4,14 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 interface props {
-  phone: 
+  product: 
     [{title:string,
     thumbnail:string,
     price:number}]
   
 }
 
-export const SliderCarr =({phone} : props)=>{
+export const SliderCarr =({product} : props)=>{
 
     
 
@@ -70,7 +70,7 @@ export const SliderCarr =({phone} : props)=>{
         <>
          <Slider {...settings}>
 
-{phone.map((phones) => (
+{product.map((phones) => (
   
 
  // <Cards title={phones.title} image={phones?.thumbnail} array={[]}/>

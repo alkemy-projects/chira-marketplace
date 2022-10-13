@@ -13,6 +13,7 @@ import ballIcon from '../../assets/icons/ball-icon.svg'
 import ovenIcon from '../../assets/icons/oven-icon.svg'
 import toyIcon from '../../assets/icons/toy-icon.svg'
 import carIcon from '../../assets/icons/car-icon.svg'
+
 export const useHome = () => {
 	const [phones, setPhones] = useState<any[]>([])
 	const [categories, setCategories] = useState([
@@ -47,7 +48,7 @@ export const useHome = () => {
 
 	const bringPhones = async () => {
 		const data = await fetch(
-			'https://api.mercadolibre.com/sites/MLA/search?category=MLA1055'
+			'https://api.mercadolibre.com/sites/MLA/search?category=MLA1002'
 		)
 		const resp = await data.json()
 		setPhones(resp.results)
