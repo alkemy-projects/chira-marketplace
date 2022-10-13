@@ -432,7 +432,6 @@ button:hover {
   }
   .PaymentMethods {
     display: none;
-    background-color: red;
   }
   .carr {
     width: 400px;
@@ -446,7 +445,6 @@ button:hover {
   .carr {
     width: 250px;
     margin-right: 400px;
-    background-color: red;
   }
 }
 .input-wrapper {

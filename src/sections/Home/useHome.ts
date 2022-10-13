@@ -48,7 +48,7 @@ export const useHome = () => {
 
 	const bringPhones = async () => {
 		const data = await fetch(
-			'https://api.mercadolibre.com/sites/MLA/search?category=MLA1002'
+			'https://api.mercadolibre.com/sites/MLA/search?category=MLA1055'
 		)
 		const resp = await data.json()
 		setPhones(resp.results)

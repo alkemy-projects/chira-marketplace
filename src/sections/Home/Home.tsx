@@ -1,14 +1,22 @@
+import { useEffect,useState } from 'react'
 import Category from '../../components/Category/Category'
 import PaymentMethod from '../../components/PaymentMethod/PaymentMethod'
 import SliderCarrousel from '../../components/SliderCarrousel/SliderCarrousel'
 import { useHome } from './useHome'
+import { bringProductsById } from '../../Services/apiMercadoLibre'
 
 export default function Home() {
-	
+	const [tv, setTV] = useState<any[]>([])
 	const { phones, categories } = useHome()
 
-	console.log(phones)
+useEffect(()=>{
+	const bringTV = async()=>{
+		const tvprod = await bringProductsById("MLA1002")
+		setTV(tvprod.results)
+	}
 
+	bringTV()
+},[])
 	return (
 		<div className='home-cont'>
 			<div className='header'>
@@ -38,7 +46,7 @@ export default function Home() {
 						title='Teléfonos en oferta'
 					/>
 					<SliderCarrousel
-						products={phones}
+						products={tv}
 						title='Televisores'
 					/>
 				</div>
