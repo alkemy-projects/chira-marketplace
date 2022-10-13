@@ -3,7 +3,7 @@ import Category from '../../components/Category/Category'
 import PaymentMethod from '../../components/PaymentMethod/PaymentMethod'
 import SliderCarrousel from '../../components/SliderCarrousel/SliderCarrousel'
 import { useHome } from './useHome'
-import { bringProductsById } from '../../Services/apiMercadoLibre'
+import { bringProductsByCategories } from '../../Services/apiMercadoLibre'
 
 export default function Home() {
 	const [tv, setTV] = useState<any[]>([])
@@ -11,7 +11,7 @@ export default function Home() {
 
 useEffect(()=>{
 	const bringTV = async()=>{
-		const tvprod = await bringProductsById("MLA1002")
+		const tvprod = await bringProductsByCategories("MLA1002")
 		setTV(tvprod.results)
 	}
 
