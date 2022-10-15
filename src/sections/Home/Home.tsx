@@ -4,6 +4,7 @@ import PaymentMethod from '../../components/PaymentMethod/PaymentMethod'
 import SliderCarrousel from '../../components/SliderCarrousel/SliderCarrousel'
 import { useHome } from './useHome'
 import { bringProductsByCategories } from '../../Services/apiMercadoLibre'
+import Header from '../../components/Header/Header'
 
 export default function Home() {
 	const [tv, setTV] = useState<any[]>([])
@@ -21,9 +22,7 @@ export default function Home() {
 	console.log(phones)
 	return (
 		<div className='home-cont'>
-			<div className='header'>
-				<h1>header</h1>
-			</div>
+			<Header />
 			<div className='PaymentMethods'>
 				<PaymentMethod
 					title='Tarjetas de debito y credito'

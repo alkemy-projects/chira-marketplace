@@ -387,7 +387,6 @@ button:hover {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  padding: 0 20px;
   box-sizing: border-box;
 }
 .home-cont .header {
@@ -694,4 +693,116 @@ button:hover {
 }
 .category .category__title {
   text-align: center;
+}
+
+.header {
+  padding-top: 10px;
+  width: 100%;
+  height: 100px;
+  background-color: #4e9f3d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header-top {
+  width: 80%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.header-top-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #d8e9a8;
+}
+.header-top-logo .diamond {
+  font-size: 50px;
+}
+.header-top-logo-title {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.header-top-logo-title h1 {
+  margin: 0;
+  font-size: 30px;
+}
+.header-top-logo-title h3 {
+  margin: 0;
+}
+.header-top-buscador {
+  height: 80%;
+}
+.header-top-buscador form {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 1px 9px 1px rgba(0, 0, 0, 0.51);
+  -webkit-box-shadow: 0px 1px 9px 1px rgba(0, 0, 0, 0.51);
+  -moz-box-shadow: 0px 1px 9px 1px rgba(0, 0, 0, 0.51);
+  border-radius: 10px;
+}
+.header-top-buscador form input {
+  height: 100%;
+  width: 350px;
+  box-sizing: border-box;
+  padding: 15px;
+  border: none;
+  border-radius: 10px 0 0 10px;
+}
+.header-top-buscador form input:focus {
+  outline: none;
+}
+.header-top-buscador form button {
+  margin: 0;
+  width: 50px;
+  height: 100%;
+  padding: 15px;
+  color: #b6b6b6;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 0px 10px 10px 0px;
+  cursor: pointer;
+}
+.header-top-buscador form button:hover {
+  color: #d8e9a8;
+}
+.header-bottom {
+  width: 80%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.header-bottom-ul {
+  list-style-type: none;
+  display: flex;
+  padding: 0 20px;
+  gap: 30px;
+}
+.header-bottom a {
+  transition: all 0.2s ease-out;
+  color: #191a19;
+  text-decoration: none;
+}
+.header-bottom a:hover {
+  color: #d8e9a8;
+}
+.header-bottom-boxUser {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.header-bottom-boxUser .icon-cart {
+  color: #d8e9a8;
 }/*# sourceMappingURL=index.css.map */
