@@ -447,6 +447,97 @@ button:hover {
     margin-right: 400px;
   }
 }
+.product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #ededed;
+  height: 100vh;
+  overflow-y: scroll;
+  padding-top: 150px;
+}
+.product .product-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1184px;
+  height: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.product .product-wrapper .product__info {
+  color: #586666;
+  font-size: 12px;
+}
+.product .product-wrapper .product__info .product__condition::after {
+  content: " | ";
+}
+.product .product-wrapper .product__name {
+  font-weight: 500;
+  font-size: 24px;
+}
+.product .product-wrapper .left-column {
+  width: 100%;
+  max-width: 700px;
+  height: 500px;
+}
+.product .product-wrapper .left-column .gallery {
+  width: 100%;
+  max-width: 700px;
+  height: 500px;
+  max-height: 500px;
+  position: relative;
+}
+.product .product-wrapper .left-column .gallery .gallery-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  cursor: zoom-in;
+}
+.product .product-wrapper .left-column .gallery .thumbnail-list {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  gap: 20px;
+  left: 0;
+  top: 0;
+  padding: 0;
+  list-style: none;
+}
+.product .product-wrapper .left-column .gallery .thumbnail-list .thumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.product .product-wrapper .left-column .gallery .thumbnail-list .thumbnail .thumbnail__image {
+  width: 44px;
+  height: 44px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.product .product-wrapper .center-column {
+  width: 100%;
+  max-width: 341px;
+}
+.product .product-wrapper .right-column {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.product .product-wrapper .right-column .product__buy {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 700;
+}
+
 .input-wrapper {
   display: flex;
   flex-direction: column;

@@ -1,4 +1,4 @@
-import { useEffect,useState } from 'react'
+import { useEffect, useState } from 'react'
 import Category from '../../components/Category/Category'
 import PaymentMethod from '../../components/PaymentMethod/PaymentMethod'
 import SliderCarrousel from '../../components/SliderCarrousel/SliderCarrousel'
@@ -9,14 +9,16 @@ export default function Home() {
 	const [tv, setTV] = useState<any[]>([])
 	const { phones, categories } = useHome()
 
-useEffect(()=>{
-	const bringTV = async()=>{
-		const tvprod = await bringProductsByCategories("MLA1002")
-		setTV(tvprod.results)
-	}
+	useEffect(() => {
+		const bringTV = async () => {
+			const tvprod = await bringProductsByCategories('MLA1002')
+			setTV(tvprod.results)
+		}
 
-	bringTV()
-},[])
+		bringTV()
+	}, [])
+
+	console.log(phones)
 	return (
 		<div className='home-cont'>
 			<div className='header'>
