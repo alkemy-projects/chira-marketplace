@@ -410,7 +410,7 @@ button:hover {
 }
 .home-cont .categories {
   width: 100%;
-  max-width: 1500px;
+  max-width: 1230px;
 }
 .home-cont .categories .categories__title {
   color: #4e9f3d;
@@ -418,6 +418,7 @@ button:hover {
 }
 .home-cont .categories .categories-list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
@@ -678,7 +679,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 214px;
+  max-width: 175px;
   height: 150px;
   padding: 20px;
   box-sizing: border-box;

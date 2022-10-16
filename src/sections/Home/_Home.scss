@@ -19,21 +19,21 @@
 		margin: 30px 100px 30px 100px;
 		justify-content: space-around;
 		border-radius: 5px;
-		
 	}
-	.carr{
+	.carr {
 		width: 70%;
 		margin-left: 270px;
 	}
 	.categories {
 		width: 100%;
-		max-width: 1500px;
+		max-width: 1230px;
 		.categories__title {
 			color: $primaryColor;
 			font-size: 24px;
 		}
 		.categories-list {
 			display: flex;
+			justify-content: center;
 			flex-wrap: wrap;
 			list-style: none;
 			padding: 0;
@@ -43,7 +43,6 @@
 }
 
 @media screen and (max-width: 1000px) {
-	
 	.carrcont {
 		display: flex;
 		justify-content: center;
@@ -54,7 +53,6 @@
 	.carr {
 		width: 400px;
 	}
-	
 }
 
 @media screen and (max-width: 600px) {
@@ -65,6 +63,5 @@
 	.carr {
 		width: 250px;
 		margin-right: 400px;
-		
 	}
 }
