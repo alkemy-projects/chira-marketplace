@@ -1,0 +1,122 @@
+.header {
+    padding-top: 10px;
+    width: 100%;
+    height: 100px;
+    background-color: $primaryColor;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-top {
+        width: 80%;
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+
+        &-logo {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            color: $primaryColorLight;
+        
+            .diamond {
+                font-size: 50px;
+            }
+            &-title {
+                display: flex;
+                flex-direction: column;;
+                height: 100%;
+                h1 {
+                    margin: 0;
+                    font-size: 30px;
+                }
+                h3 {
+                    margin: 0;
+                }
+            }
+        }
+
+        &-buscador {
+            height: 80%;
+
+            & form {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                box-shadow: 0px 1px 9px 1px rgba(0,0,0,0.51);
+                -webkit-box-shadow: 0px 1px 9px 1px rgba(0,0,0,0.51);
+                -moz-box-shadow: 0px 1px 9px 1px rgba(0,0,0,0.51);
+                border-radius: 10px;
+
+                input {
+                    height: 100%;
+                    width: 350px;
+                    box-sizing: border-box;
+                    padding: 15px;
+                    border: none;
+                    border-radius: 10px 0 0 10px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                button {
+                    margin: 0;
+                    width: 50px;
+                    height: 100%;
+                    padding: 15px;
+                    color: #b6b6b6;
+                    background-color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+                    border-radius: 0px 10px 10px 0px;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $primaryColorLight;
+                    }
+                }
+            }
+        }
+    }
+
+    &-bottom {
+        width: 80%;
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        
+        &-ul {
+            list-style-type: none;
+            display: flex;
+            padding: 0 20px;
+            gap: 30px;
+        }
+        a {
+            transition: all 0.2s ease-out;
+            color: $blackColor;
+            text-decoration: none;
+            &:hover {
+                color: $primaryColorLight;
+            }
+        }
+        &-boxUser {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            .icon-cart {
+                color: $primaryColorLight;
+            }
+        }
+    }
+}

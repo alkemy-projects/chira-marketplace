@@ -1,11 +1,11 @@
 import { Form, Formik } from 'formik'
-import * as Yup from 'yup'
+import { Link } from 'react-router-dom'
+import { useGoogleSignIn } from '../../hooks/useGoogleSignIn'
+import { useRegister } from '../../hooks/useRegister'
 import InputWrapper from '../../components/InputWrapper/InputWrapper'
 import shoppingCartIllustration from '../../assets/illustrations/shopping-cart.svg'
 import googleIcon from '../../assets/icons/google-icon.svg'
-import { useGoogleSignIn } from '../../hooks/useGoogleSignIn'
-import { useRegister } from '../../hooks/useRegister'
-import { Link } from 'react-router-dom'
+import * as Yup from 'yup'
 
 export default function Register() {
 	const { signInWithGoogle, desloguear } = useGoogleSignIn()

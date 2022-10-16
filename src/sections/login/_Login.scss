@@ -1,11 +1,9 @@
-@use '../../scss/variables';
-@use '../../scss/fonts';
 .cont {
 	display: flex;
 	min-height: 100vh;
 }
 .left-cont {
-	background-color: variables.$primaryColor;
+	background-color: $primaryColor;
 
 	min-width: 45%;
 }
@@ -23,11 +21,11 @@
 
 .lab {
 	margin-top: 11px;
-	color: variables.$grayColor;
+	color: $grayColor;
 }
 
 .cont2 p {
-	color: variables.$primaryColor;
+	color: $primaryColor;
 }
 .form-log > h2 {
 	font-size: 1.5rem;
@@ -41,10 +39,8 @@
 	width: 30%;
 }
 
-
-.log-input{
+.log-input {
 	margin: 8px 0px 8px 0px;
-
 }
 .form-log > .cont2 {
 	display: flex;
@@ -54,7 +50,7 @@
 
 .form-log > .cont2 > label {
 	font-weight: 600;
-	color: variables.$textColorDark;
+	color: $textColorDark;
 }
 
 .form-log > .cont2 > input {
@@ -67,14 +63,14 @@ button {
 	height: 45px;
 	border: none;
 	border-radius: 5px;
-	background-color: variables.$primaryColor;
-	color: variables.$whiteColor;
+	background-color: $primaryColor;
+	color: $whiteColor;
 	cursor: pointer;
 	transition: background-color 0.5s ease;
 
 	margin-top: 10px;
 	&:hover {
-		background-color: variables.$primaryColorDark;
+		background-color: $primaryColorDark;
 	}
 }
 
@@ -103,7 +99,7 @@ button {
 }
 
 .cont > div {
-	background-color: variables.$primaryColor;
+	background-color: $primaryColor;
 }
 .cont > .cont2 > img {
 	margin-top: 18px;
@@ -118,7 +114,7 @@ button {
 
 .lab {
 	margin-top: 11px;
-	color: variables.$grayColor;
+	color: $grayColor;
 }
 .cont2 {
 	display: flex;
@@ -127,7 +123,7 @@ button {
 }
 
 .cont2 p {
-	color: variables.$primaryColor;
+	color: $primaryColor;
 }
 .form-log > h2 {
 	font-size: 1.5rem;
@@ -144,14 +140,14 @@ button {
 	margin: 100px 0px 0px 120px;
 }
 
-.form-log> .cont2 {
+.form-log > .cont2 {
 	display: flex;
 	flex-direction: column;
 }
 
 .form-log > .cont2 > label {
 	font-weight: 600;
-	color: variables.$textColorDark;
+	color: $textColorDark;
 }
 
 .form-log > .cont2 > input {
@@ -164,14 +160,14 @@ button {
 	height: 45px;
 	border: none;
 	border-radius: 5px;
-	background-color: variables.$primaryColor;
-	color: variables.$whiteColor;
+	background-color: $primaryColor;
+	color: $whiteColor;
 	cursor: pointer;
 	transition: background-color 0.5s ease;
 
 	margin-top: 10px;
 	&:hover {
-		background-color: variables.$primaryColorDark;
+		background-color: $primaryColorDark;
 	}
 }
 
@@ -209,15 +205,15 @@ button {
 	}
 
 	.form-log {
-	.cont > div {
-		display: none;
-	}
-	.cont {
-		justify-content: center;
-	}
+		.cont > div {
+			display: none;
+		}
+		.cont {
+			justify-content: center;
+		}
 
-	.form-log {
-		margin-right: 50%;
+		.form-log {
+			margin-right: 50%;
+		}
 	}
-}
 }
