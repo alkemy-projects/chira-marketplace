@@ -385,8 +385,9 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
+  padding: 20px;
   box-sizing: border-box;
 }
 .home-cont .header {
@@ -634,11 +635,25 @@ button:hover {
   font-weight: 600;
   color: #4e9f3d;
 }
-.slider-carrousel .slick-slider .slick-list .slick-track .slick-slide div {
+.slider-carrousel .slider-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.slider-carrousel .slider-wrapper .slick-slider {
+  width: 80%;
+}
+.slider-carrousel .slider-wrapper .slick-slider .slick-list .slick-track .slick-slide div {
   padding: 20px;
   box-sizing: border-box;
 }
 
+@media screen and (min-width: 1550px) {
+  .slider-carrousel .slider-wrapper .slick-slider {
+    width: 100%;
+  }
+}
 .p-method {
   width: 500px;
   display: flex;
