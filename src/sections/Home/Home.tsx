@@ -1,22 +1,30 @@
-import { useEffect,useState } from 'react'
+import { useEffect, useState } from 'react'
 import Category from '../../components/Category/Category'
 import PaymentMethod from '../../components/PaymentMethod/PaymentMethod'
 import SliderCarrousel from '../../components/SliderCarrousel/SliderCarrousel'
 import { useHome } from './useHome'
 import { bringProductsByCategories } from '../../Services/apiMercadoLibre'
+import { OfertCard } from '../../components/OfertCard/OfertCard'
 
 export default function Home() {
 	const [tv, setTV] = useState<any[]>([])
+	const [phone, setPhone] = useState<any[]>([])
 	const { phones, categories } = useHome()
 
-useEffect(()=>{
-	const bringTV = async()=>{
-		const tvprod = await bringProductsByCategories("MLA1002")
-		setTV(tvprod.results)
-	}
+	useEffect(() => {
+		const bringTV = async () => {
+			const tvprod = await bringProductsByCategories("MLA1002")
+			setTV(tvprod.results)
+		}
+		const bringPhones = async () => {
+			const phoneprod = await bringProductsByCategories("MLA1055")
+			setPhone(phoneprod.results)
+		}
 
-	bringTV()
-},[])
+
+		bringPhones()
+		bringTV()
+	}, [])
 	return (
 		<div className='home-cont'>
 			<div className='header'>
@@ -42,7 +50,7 @@ useEffect(()=>{
 			<div className='carrcont'>
 				<div className='carr'>
 					<SliderCarrousel
-						products={phones}
+						products={phone}
 						title='Teléfonos en oferta'
 					/>
 					<SliderCarrousel
@@ -50,6 +58,12 @@ useEffect(()=>{
 						title='Televisores'
 					/>
 				</div>
+
+			</div>
+			<h1 className='ofert-Title'>Ofertas dia de la madre</h1>
+			<div className='oferts'>	
+				<OfertCard ofertText='Para tu mama tecnologica' image='https://images.samsung.com/is/image/samsung/ar-galaxy-tab-a-t515-sm-t510nzklaro-frontblack-169407070?$650_519_PNG$' />
+				<OfertCard ofertText='Para que tu mama se luzca' image='https://www.chanel.com/images/w_0.51,h_0.51,c_crop/q_auto:good,f_auto,fl_lossy,dpr_1.2/w_1920/coco-mademoiselle-eau-de-parfum-spray-3-4fl-oz--packshot-default-116520-8848376659998.jpg' />
 			</div>
 			<section className='categories'>
 				<h2 className='categories__title'>Categorías</h2>

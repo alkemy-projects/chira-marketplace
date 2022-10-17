@@ -407,7 +407,19 @@ button:hover {
 }
 .home-cont .carr {
   width: 70%;
-  margin-left: 270px;
+  margin-left: 250px;
+}
+.home-cont .oferts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #676767;
+}
+.home-cont .ofert-Title {
+  text-align: left;
+  width: 100%;
+  margin-left: 76px;
+  color: #4e9f3d;
 }
 .home-cont .categories {
   width: 100%;
@@ -603,4 +615,36 @@ button:hover {
 }
 .category .category__title {
   text-align: center;
+}
+
+.ofertCardCont {
+  display: flex;
+  background-color: #e5e5e5;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 45%;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+.ofertCardCont .ofertText {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  justify-content: center;
+}
+.ofertCardCont .ofertText h1 {
+  margin: 0px;
+}
+.ofertCardCont .ofertText button {
+  width: 100px;
+  height: 30px;
+  margin-top: 30px;
+}
+.ofertCardCont .ofertImg img {
+  width: 250px;
+  height: 250px;
+}
+
+.ofertCardCont:hover {
+  box-shadow: 1px 5px 20px 0px rgba(0, 0, 0, 0.36);
 }/*# sourceMappingURL=index.css.map */

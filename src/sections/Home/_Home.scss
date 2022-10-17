@@ -24,7 +24,20 @@
 	}
 	.carr{
 		width: 70%;
-		margin-left: 270px;
+		margin-left: 250px;
+	}
+	.oferts{
+		display: flex;
+	    flex-direction: row;
+		justify-content: space-around;	
+		color: $textColorDark;
+		
+	}
+	.ofert-Title{
+		text-align: left;
+		width: 100%;
+		margin-left: 76px;
+		color: $primaryColor;
 	}
 	.categories {
 		width: 100%;
