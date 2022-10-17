@@ -2,6 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: 40px;
 	height: 100%;
 	width: 100%;
 	padding: 20px;
@@ -14,29 +15,30 @@
 	}
 	.PaymentMethods {
 		display: flex;
-		height: 100%;
-		width: 70%;
-		background-color: #e5e5e5;
-		margin: 30px 100px 30px 100px;
-		justify-content: space-around;
-		border-radius: 5px;
-	}
-	.carr {
-		width: 70%;
-		margin-left: 250px;
-	}
-	.oferts{
-		display: flex;
-	    //flex-direction: row;
-		justify-content: space-around;	
-		color: $textColorDark;
-		
-	}
-	.ofert-Title{
-		text-align: left;
+		justify-content: center;
+		gap: 15px;
+		flex-wrap: wrap;
 		width: 100%;
-		margin-left: 76px;
-		color: $primaryColor;
+		max-width: 1230px;
+		height: 100%;
+		min-height: 90px;
+		border-radius: 10px;
+	}
+	.offers {
+		width: 100%;
+		max-width: 1230px;
+		.offers__title {
+			color: $primaryColor;
+			font-size: 24px;
+		}
+		.offers-wrapper {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 20px;
+			width: 100%;
+			color: $textColorDark;
+		}
 	}
 	.categories {
 		width: 100%;
@@ -92,5 +94,15 @@
 	.carr {
 		width: 250px !important;
 		margin: 0 auto !important;
+	}
+}
+
+@media screen and (min-width: 1260px) {
+	.home-cont {
+		.offers {
+			.offers-wrapper {
+				justify-content: space-between;
+			}
+		}
 	}
 }

@@ -385,6 +385,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 40px;
   height: 100%;
   width: 100%;
   padding: 20px;
@@ -398,27 +399,30 @@ button:hover {
 }
 .home-cont .PaymentMethods {
   display: flex;
-  height: 100%;
-  width: 70%;
-  background-color: #e5e5e5;
-  margin: 30px 100px 30px 100px;
-  justify-content: space-around;
-  border-radius: 5px;
-}
-.home-cont .carr {
-  width: 70%;
-  margin-left: 250px;
-}
-.home-cont .oferts {
-  display: flex;
-  justify-content: space-around;
-  color: #676767;
-}
-.home-cont .ofert-Title {
-  text-align: left;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
   width: 100%;
-  margin-left: 76px;
+  max-width: 1230px;
+  height: 100%;
+  min-height: 90px;
+  border-radius: 10px;
+}
+.home-cont .offers {
+  width: 100%;
+  max-width: 1230px;
+}
+.home-cont .offers .offers__title {
   color: #4e9f3d;
+  font-size: 24px;
+}
+.home-cont .offers .offers-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  color: #676767;
 }
 .home-cont .categories {
   width: 100%;
@@ -471,6 +475,11 @@ button:hover {
   .carr {
     width: 250px !important;
     margin: 0 auto !important;
+  }
+}
+@media screen and (min-width: 1260px) {
+  .home-cont .offers .offers-wrapper {
+    justify-content: space-between;
   }
 }
 .product {
@@ -653,7 +662,7 @@ button:hover {
 
 .slider-carrousel {
   width: 100%;
-  max-width: 1500px;
+  max-width: 1230px;
 }
 .slider-carrousel .slider-carrousel__title {
   font-size: 24px;
@@ -680,11 +689,16 @@ button:hover {
   }
 }
 .p-method {
-  width: 500px;
   display: flex;
-  flex-wrap: wrap;
-  margin-left: 30px;
-  padding-left: 10px;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+  min-height: 90px;
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 .p-method img {
   background-color: white;
@@ -692,7 +706,6 @@ button:hover {
   width: 30px;
   height: 30px;
   padding: 8px;
-  margin-top: 19px;
 }
 .p-method .mercado {
   width: 35px !important;
@@ -701,18 +714,24 @@ button:hover {
 .p-method .descrip-cont {
   display: flex;
   flex-direction: column;
-  margin-top: 18px;
+  justify-content: center;
 }
-.p-method h3 {
+.p-method .descrip-cont h3 {
   font-weight: 100;
   color: #586666;
-  margin: 8px 10px 0px 7px;
+  line-height: 1;
+  margin: 0;
 }
-.p-method p {
+.p-method .descrip-cont p {
   color: #4e9f3d;
-  margin: 0px 0px 23px 9px;
+  margin: 0;
 }
 
+@media screen and (max-width: 1000px) {
+  .p-method {
+    max-width: 300px;
+  }
+}
 /*
 @media screen and (max-width: 1000px){
 	.p-method{
@@ -744,20 +763,27 @@ button:hover {
 .ofertCardCont {
   display: flex;
   background-color: #e5e5e5;
-  flex-direction: row;
   justify-content: space-between;
-  width: 45%;
+  width: 100%;
+  max-width: 600px;
   border-radius: 10px;
   transition: all 0.5s;
+  padding: 10px;
+  box-sizing: border-box;
 }
 .ofertCardCont .ofertText {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   margin-left: 40px;
   justify-content: center;
 }
-.ofertCardCont .ofertText h1 {
+.ofertCardCont .ofertText p {
+  margin: 0;
+}
+.ofertCardCont .ofertText h3 {
   margin: 0px;
+  line-height: 1;
 }
 .ofertCardCont .ofertText button {
   width: 100px;
@@ -765,20 +791,18 @@ button:hover {
   margin-top: 30px;
 }
 .ofertCardCont .ofertImg img {
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  min-width: 200px;
+  max-width: 250px;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .ofertCardCont:hover {
   box-shadow: 1px 5px 20px 0px rgba(0, 0, 0, 0.36);
 }
 
-@media screen and (max-width: 1000px) {
-  .ofertCardCont {
-    width: 100%;
-    margin: 20px 0px 20px 0px;
-  }
-}
 .header {
   padding-top: 10px;
   width: 100%;
