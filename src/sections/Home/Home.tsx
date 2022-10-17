@@ -5,7 +5,6 @@ import SliderCarrousel from '../../components/SliderCarrousel/SliderCarrousel'
 import { useHome } from './useHome'
 import { bringProductsByCategories } from '../../Services/apiMercadoLibre'
 import { OfertCard } from '../../components/OfertCard/OfertCard'
-import Header from '../../components/Header/Header'
 
 export default function Home() {
 	const [tv, setTV] = useState<any[]>([])
@@ -22,11 +21,11 @@ export default function Home() {
 			setPhone(phoneprod.results)
 		}
 
+
 		bringPhones()
 		bringTV()
 	}, [])
 	return (
-		
 		<div className='home-cont'>
 			<div className='header'>
 				<h1>header</h1>
@@ -54,15 +53,9 @@ export default function Home() {
 						products={phone}
 						title='Teléfonos en oferta'
 					/>
-					<PaymentMethod
-						title='Efectivo'
-						description='Desde cualquier punto de pago'
-						url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIVTvdGgsp9xuWSufhcmC2inQ2LD_TNrxEloiDfLKti9mFX4Cew8z9zkSkvKBXhXmPL4Y&usqp=CAU'
-					/>
-					<PaymentMethod
-						title='Mercado Pago'
-						description='Paga en cualquier lugar'
-						url='https://play-lh.googleusercontent.com/4VWplTzMiteBZVEyTTSyp_mnG5zSN0pgyW_svdJhRsLvAMapuKoFs_af2Qr8jN04ZGKI'
+					<SliderCarrousel
+						products={tv}
+						title='Televisores'
 					/>
 				</div>
 
@@ -70,29 +63,19 @@ export default function Home() {
 			<h1 className='ofert-Title'>Ofertas dia de la madre</h1>
 			<div className='oferts'>	
 				<OfertCard ofertText='Para tu mama tecnologica' image='https://images.samsung.com/is/image/samsung/ar-galaxy-tab-a-t515-sm-t510nzklaro-frontblack-169407070?$650_519_PNG$' />
-				<OfertCard ofertText='Para que tu mama se luzca' image='https://www.chanel.com/images/w_0.51,h_0.51,c_crop/q_auto:good,f_auto,fl_lossy,dpr_1.2/w_1920/coco-mademoiselle-eau-de-parfum-spray-3-4fl-oz--packshot-default-116520-8848376659998.jpg' />
-				<SliderCarrousel
-					products={phones}
-					title='Teléfonos en oferta'
-				/>
-				<SliderCarrousel
-					products={tv}
-					title='Televisores'
-				/>
-				<section className='categories'>
-					<h2 className='categories__title'>Categorías</h2>
-					<ul className='categories-list'>
-						{categories.map(category => (
-							<Category
-								key={category.id}
-								{...category}
-							/>
-						))}
-					</ul>
-				</section>
+				<OfertCard ofertText='Para que tu mama se luzca' image='https://images.samsung.com/is/image/samsung/ar-galaxy-tab-a-t515-sm-t510nzklaro-frontblack-169407070?$650_519_PNG$' />
 			</div>
-			</div>
-		)
-	
-	}
-
+			<section className='categories'>
+				<h2 className='categories__title'>Categorías</h2>
+				<ul className='categories-list'>
+					{categories.map(category => (
+						<Category
+							key={category.id}
+							{...category}
+						/>
+					))}
+				</ul>
+			</section>
+		</div>
+	)
+}

@@ -752,7 +752,9 @@ button:hover {
 }
 
 .ofertCardCont:hover {
-  box-shadow: 1px 5px 20px 0px rgba(0, 0, 0, 0.36);}
+  box-shadow: 1px 5px 20px 0px rgba(0, 0, 0, 0.36);
+}
+
 .header {
   padding-top: 10px;
   width: 100%;
