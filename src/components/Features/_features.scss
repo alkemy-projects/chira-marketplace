@@ -1,0 +1,33 @@
+.main-features {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	.main-features-list {
+		height: 100%;
+		padding: 0;
+		padding-right: 20px;
+		box-sizing: border-box;
+		.attribute {
+			display: flex;
+			border: 1px solid #ededed;
+			.attribute-name-wrapper {
+				width: 100%;
+				background-color: rgba(0, 0, 0, 0.04);
+				padding: 20px;
+				box-sizing: border-box;
+				font-weight: 600;
+				.attribute__name {
+				}
+			}
+			.attribute-value-wrapper {
+				width: 100%;
+				height: 50px;
+				padding: 20px;
+				box-sizing: border-box;
+				height: max-content;
+				.attribute__value {
+				}
+			}
+		}
+	}
+}

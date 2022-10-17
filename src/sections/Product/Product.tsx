@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+import Features from '../../components/Features/Features'
 import Header from '../../components/Header/Header'
 import { useProduct } from './useProduct'
 
@@ -35,30 +36,10 @@ export default function Product() {
 									))}
 								</ul>
 							</div>
-							<div className='main-features'>
-								<h2 className='main-features__title'>
-									Características de {product.title}
-								</h2>
-								<ul className='main-features-list'>
-									{product.attributes.map(attribute => (
-										<li
-											key={attribute.id}
-											className='attribute'
-										>
-											<div className='attribute-name-wrapper'>
-												<span className='attribute__name'>
-													{attribute.name}
-												</span>
-											</div>
-											<div className='attribute-value-wrapper'>
-												<span className='attribute__value'>
-													{attribute.value_name}
-												</span>
-											</div>
-										</li>
-									))}
-								</ul>
-							</div>
+							<Features
+								title={product.title}
+								attributes={product.attributes}
+							/>
 						</div>
 						{product.main_features ? (
 							<>
