@@ -64,7 +64,7 @@ export default function Home() {
 			<h1 className='ofert-Title'>Ofertas dia de la madre</h1>
 			<div className='oferts'>	
 				<OfertCard ofertText='Para tu mama tecnologica' image='https://images.samsung.com/is/image/samsung/ar-galaxy-tab-a-t515-sm-t510nzklaro-frontblack-169407070?$650_519_PNG$' />
-				<OfertCard ofertText='Para que tu mama se luzca' image='https://images.samsung.com/is/image/samsung/ar-galaxy-tab-a-t515-sm-t510nzklaro-frontblack-169407070?$650_519_PNG$' />
+				<OfertCard ofertText='Para que tu mama se luzca' image='https://www.chanel.com/images/w_0.51,h_0.51,c_crop/q_auto:good,f_auto,fl_lossy,dpr_1.2/w_1920/coco-mademoiselle-eau-de-parfum-spray-3-4fl-oz--packshot-default-116520-8848376659998.jpg' />
 			</div>
 			<section className='categories'>
 				<h2 className='categories__title'>Categorías</h2>

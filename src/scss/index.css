@@ -386,7 +386,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   padding: 20px;
   box-sizing: border-box;
 }
@@ -398,7 +398,7 @@ button:hover {
 }
 .home-cont .PaymentMethods {
   display: flex;
-  height: 90px;
+  height: 100%;
   width: 70%;
   background-color: #e5e5e5;
   margin: 30px 100px 30px 100px;
@@ -411,7 +411,6 @@ button:hover {
 }
 .home-cont .oferts {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   color: #676767;
 }
@@ -444,10 +443,16 @@ button:hover {
     justify-content: center;
   }
   .PaymentMethods {
-    display: none;
+    flex-direction: column;
+    height: 100%;
+    width: 600px !important;
+  }
+  .oferts {
+    flex-direction: column;
   }
   .carr {
-    width: 400px;
+    width: 750px !important;
+    margin: 0 auto !important;
   }
 }
 @media screen and (max-width: 600px) {
@@ -455,9 +460,17 @@ button:hover {
     display: flex;
     justify-content: center;
   }
+  .PaymentMethods {
+    flex-direction: column;
+    height: 100%;
+    width: 100% !important;
+  }
+  .oferts {
+    flex-direction: column;
+  }
   .carr {
-    width: 250px;
-    margin-right: 400px;
+    width: 250px !important;
+    margin: 0 auto !important;
   }
 }
 .product {
@@ -669,7 +682,6 @@ button:hover {
 .p-method {
   width: 500px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   margin-left: 30px;
   padding-left: 10px;
@@ -701,6 +713,12 @@ button:hover {
   margin: 0px 0px 23px 9px;
 }
 
+/*
+@media screen and (max-width: 1000px){
+	.p-method{
+		flex-direction: column;
+	}
+}*/
 .category {
   display: flex;
   flex-direction: column;
@@ -755,6 +773,12 @@ button:hover {
   box-shadow: 1px 5px 20px 0px rgba(0, 0, 0, 0.36);
 }
 
+@media screen and (max-width: 1000px) {
+  .ofertCardCont {
+    width: 100%;
+    margin: 20px 0px 20px 0px;
+  }
+}
 .header {
   padding-top: 10px;
   width: 100%;
