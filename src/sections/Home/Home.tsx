@@ -46,18 +46,14 @@ export default function Home() {
 						url='https://play-lh.googleusercontent.com/4VWplTzMiteBZVEyTTSyp_mnG5zSN0pgyW_svdJhRsLvAMapuKoFs_af2Qr8jN04ZGKI'
 					/>
 				</div>
-				<div className='carrcont'>
-					<div className='carr'>
-						<SliderCarrousel
-							products={phone}
-							title='Teléfonos en oferta'
-						/>
-						<SliderCarrousel
-							products={tv}
-							title='Televisores'
-						/>
-					</div>
-				</div>
+				<SliderCarrousel
+					products={phone}
+					title='Teléfonos en oferta'
+				/>
+				<SliderCarrousel
+					products={tv}
+					title='Televisores'
+				/>
 				<section className='offers'>
 					<h1 className='offers__title'>Ofertas dia de la madre</h1>
 					<div className='offers-wrapper'>

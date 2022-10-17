@@ -405,10 +405,6 @@ button:hover {
   justify-content: space-around;
   border-radius: 5px;
 }
-.home-cont .carr {
-  width: 70%;
-  margin-left: 250px;
-}
 .home-cont .offers {
   width: 100%;
   max-width: 1230px;
@@ -649,7 +645,7 @@ button:hover {
 
 .slider-carrousel {
   width: 100%;
-  max-width: 1500px;
+  max-width: 1250px;
 }
 .slider-carrousel .slider-carrousel__title {
   font-size: 24px;
