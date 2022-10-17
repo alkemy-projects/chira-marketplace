@@ -3,6 +3,7 @@ import { getProductById } from '../../Services/apiMercadoLibre'
 
 export const useProduct = productId => {
 	const [product, setProduct] = useState<any>(null)
+	const [showMoreFeatures, setShowMoreFeatures] = useState(false)
 
 	useEffect(() => {
 		getProductById(productId).then(product => setProduct(product))
@@ -17,5 +18,5 @@ export const useProduct = productId => {
 		return formatter.format(price)
 	}
 
-	return { product, formatPrice }
+	return { product, formatPrice, showMoreFeatures, setShowMoreFeatures }
 }

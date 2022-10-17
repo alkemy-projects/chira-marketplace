@@ -18,15 +18,17 @@ interface Attribute {
 export default function Features({
 	title,
 	attributes,
+	limit,
 }: {
 	title: string
 	attributes: Attribute[]
+	limit?: number | undefined
 }) {
 	return (
 		<div className='main-features'>
 			<h2 className='main-features__title'>Características de {title}</h2>
 			<ul className='main-features-list'>
-				{attributes.map(attribute => (
+				{attributes.slice(0, limit).map(attribute => (
 					<li
 						key={attribute.id}
 						className='attribute'

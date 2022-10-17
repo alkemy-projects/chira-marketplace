@@ -5,11 +5,31 @@ import { useProduct } from './useProduct'
 
 export default function Product() {
 	const { id } = useParams()
-	const { product, formatPrice } = useProduct(id)
+	const { product, formatPrice, showMoreFeatures, setShowMoreFeatures } =
+		useProduct(id)
 	console.log(product)
 
 	return (
 		<>
+			{showMoreFeatures && (
+				<div className='features-pop-up'>
+					<div className='features-pop-up-wrapper'>
+						<button
+							className='features-pop-up__close-button'
+							onClick={() => setShowMoreFeatures(false)}
+						>
+							Cerrar
+						</button>
+						<div className='features-wrapper'>
+							<Features
+								title={product.title}
+								attributes={product.attributes}
+								limit={undefined}
+							/>
+						</div>
+					</div>
+				</div>
+			)}
 			<Header />
 			{product && (
 				<section className='product'>
@@ -39,7 +59,15 @@ export default function Product() {
 							<Features
 								title={product.title}
 								attributes={product.attributes}
+								limit={5}
 							/>
+							<button
+								className='show-more-features'
+								onClick={() => setShowMoreFeatures(true)}
+							>
+								{' '}
+								Ver más características{' '}
+							</button>
 						</div>
 						{product.main_features ? (
 							<>
