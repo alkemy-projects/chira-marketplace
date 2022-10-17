@@ -6,15 +6,32 @@
 		font-weight: 600;
 		color: $primaryColor;
 	}
-	.slick-slider {
-		.slick-list {
-			.slick-track {
-				.slick-slide {
-					div { 
-						padding: 20px;
-						box-sizing: border-box;
+	.slider-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		.slick-slider {
+			width: 80%;
+			.slick-list {
+				.slick-track {
+					.slick-slide {
+						div {
+							padding: 20px;
+							box-sizing: border-box;
+						}
 					}
 				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1550px) {
+	.slider-carrousel {
+		.slider-wrapper {
+			.slick-slider {
+				width: 100%;
 			}
 		}
 	}

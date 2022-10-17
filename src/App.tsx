@@ -4,6 +4,7 @@ import Home from './sections/Home/Home'
 import Login from './sections/login/Login'
 import { useSelector } from 'react-redux'
 import Loader from './components/Loader/Loader'
+import Product from './sections/Product/Product'
 
 export default function App() {
 	const loader = useSelector((state: any) => state.loader)
@@ -21,10 +22,13 @@ export default function App() {
 						path='/login'
 						element={<Login />}
 					/>
-					
 					<Route
 						path='/'
 						element={<Home />}
+					/>
+					<Route
+						path='/product/:id*'
+						element={<Product />}
 					/>
 				</Routes>
 			</BrowserRouter>
