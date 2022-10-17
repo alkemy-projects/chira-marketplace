@@ -5,6 +5,7 @@ import SliderCarrousel from '../../components/SliderCarrousel/SliderCarrousel'
 import { useHome } from './useHome'
 import { bringProductsByCategories } from '../../Services/apiMercadoLibre'
 import { OfertCard } from '../../components/OfertCard/OfertCard'
+import Header from '../../components/Header/Header'
 
 export default function Home() {
 	const [tv, setTV] = useState<any[]>([])
@@ -26,10 +27,10 @@ export default function Home() {
 		bringTV()
 	}, [])
 	return (
+		<>
+		<Header/>
 		<div className='home-cont'>
-			<div className='header'>
-				<h1>header</h1>
-			</div>
+			
 			<div className='PaymentMethods'>
 				<PaymentMethod
 					title='Tarjetas de debito y credito'
@@ -77,5 +78,6 @@ export default function Home() {
 				</ul>
 			</section>
 		</div>
+		</>
 	)
 }
