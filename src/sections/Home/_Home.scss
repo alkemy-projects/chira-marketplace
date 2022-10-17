@@ -25,18 +25,21 @@
 		width: 70%;
 		margin-left: 250px;
 	}
-	.oferts{
-		display: flex;
-	    flex-direction: row;
-		justify-content: space-around;	
-		color: $textColorDark;
-		
-	}
-	.ofert-Title{
-		text-align: left;
+	.offers {
 		width: 100%;
-		margin-left: 76px;
-		color: $primaryColor;
+		max-width: 1230px;
+		.offers__title {
+			color: $primaryColor;
+			font-size: 24px;
+		}
+		.offers-wrapper {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 20px;
+			width: 100%;
+			color: $textColorDark;
+		}
 	}
 	.categories {
 		width: 100%;
@@ -77,5 +80,15 @@
 	.carr {
 		width: 250px;
 		margin-right: 400px;
+	}
+}
+
+@media screen and (min-width: 1260px) {
+	.home-cont {
+		.offers {
+			.offers-wrapper {
+				justify-content: space-between;
+			}
+		}
 	}
 }
