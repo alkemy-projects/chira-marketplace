@@ -36,18 +36,25 @@ export default function Product() {
 								</ul>
 							</div>
 							<div className='main-features'>
+								<h2 className='main-features__title'>
+									Características de {product.title}
+								</h2>
 								<ul className='main-features-list'>
 									{product.attributes.map(attribute => (
 										<li
 											key={attribute.id}
 											className='attribute'
 										>
-											<span className='attribute__group-name'>
-												{attribute.attribute_group_name}
-											</span>
-											<span className='attribute__value'>
-												{attribute.value_name}
-											</span>
+											<div className='attribute-name-wrapper'>
+												<span className='attribute__name'>
+													{attribute.name}
+												</span>
+											</div>
+											<div className='attribute-value-wrapper'>
+												<span className='attribute__value'>
+													{attribute.value_name}
+												</span>
+											</div>
 										</li>
 									))}
 								</ul>
