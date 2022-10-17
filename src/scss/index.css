@@ -385,8 +385,10 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  gap: 40px;
+  height: 100%;
   width: 100vw;
+  padding: 20px;
   box-sizing: border-box;
 }
 .home-cont .header {
@@ -397,20 +399,34 @@ button:hover {
 }
 .home-cont .PaymentMethods {
   display: flex;
-  height: 90px;
-  width: 70%;
-  background-color: #e5e5e5;
-  margin: 30px 100px 30px 100px;
-  justify-content: space-around;
-  border-radius: 5px;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1230px;
+  height: 100%;
+  min-height: 90px;
+  border-radius: 10px;
 }
-.home-cont .carr {
-  width: 70%;
-  margin-left: 270px;
+.home-cont .offers {
+  width: 100%;
+  max-width: 1230px;
+}
+.home-cont .offers .offers__title {
+  color: #4e9f3d;
+  font-size: 24px;
+}
+.home-cont .offers .offers-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  color: #676767;
 }
 .home-cont .categories {
   width: 100%;
-  max-width: 1500px;
+  max-width: 1230px;
 }
 .home-cont .categories .categories__title {
   color: #4e9f3d;
@@ -418,6 +434,7 @@ button:hover {
 }
 .home-cont .categories .categories-list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
@@ -444,6 +461,11 @@ button:hover {
   .carr {
     width: 250px;
     margin-right: 400px;
+  }
+}
+@media screen and (min-width: 1260px) {
+  .home-cont .offers .offers-wrapper {
+    justify-content: space-between;
   }
 }
 .product {
@@ -626,25 +648,43 @@ button:hover {
 
 .slider-carrousel {
   width: 100%;
-  max-width: 1500px;
+  max-width: 1230px;
 }
 .slider-carrousel .slider-carrousel__title {
   font-size: 24px;
   font-weight: 600;
   color: #4e9f3d;
 }
-.slider-carrousel .slick-slider .slick-list .slick-track .slick-slide div {
+.slider-carrousel .slider-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.slider-carrousel .slider-wrapper .slick-slider {
+  width: 80%;
+}
+.slider-carrousel .slider-wrapper .slick-slider .slick-list .slick-track .slick-slide div {
   padding: 20px;
   box-sizing: border-box;
 }
 
+@media screen and (min-width: 1550px) {
+  .slider-carrousel .slider-wrapper .slick-slider {
+    width: 100%;
+  }
+}
 .p-method {
-  width: 500px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: 30px;
-  padding-left: 10px;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+  min-height: 90px;
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 .p-method img {
   background-color: white;
@@ -652,7 +692,6 @@ button:hover {
   width: 30px;
   height: 30px;
   padding: 8px;
-  margin-top: 19px;
 }
 .p-method .mercado {
   width: 35px !important;
@@ -661,24 +700,30 @@ button:hover {
 .p-method .descrip-cont {
   display: flex;
   flex-direction: column;
-  margin-top: 18px;
+  justify-content: center;
 }
-.p-method h3 {
+.p-method .descrip-cont h3 {
   font-weight: 100;
   color: #586666;
-  margin: 8px 10px 0px 7px;
+  line-height: 1;
+  margin: 0;
 }
-.p-method p {
+.p-method .descrip-cont p {
   color: #4e9f3d;
-  margin: 0px 0px 23px 9px;
+  margin: 0;
 }
 
+@media screen and (max-width: 1000px) {
+  .p-method {
+    max-width: 300px;
+  }
+}
 .category {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 214px;
+  max-width: 175px;
   height: 150px;
   padding: 20px;
   box-sizing: border-box;
@@ -693,6 +738,49 @@ button:hover {
 }
 .category .category__title {
   text-align: center;
+}
+
+.ofertCardCont {
+  display: flex;
+  background-color: #e5e5e5;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  transition: all 0.5s;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.ofertCardCont .ofertText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 40px;
+  justify-content: center;
+}
+.ofertCardCont .ofertText p {
+  margin: 0;
+}
+.ofertCardCont .ofertText h3 {
+  margin: 0px;
+  line-height: 1;
+}
+.ofertCardCont .ofertText button {
+  width: 100px;
+  height: 30px;
+  margin-top: 30px;
+}
+.ofertCardCont .ofertImg img {
+  width: 100%;
+  min-width: 200px;
+  max-width: 250px;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.ofertCardCont:hover {
+  box-shadow: 1px 5px 20px 0px rgba(0, 0, 0, 0.36);
 }
 
 .header {

@@ -2,8 +2,10 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	height: 100vh;
+	gap: 40px;
+	height: 100%;
 	width: 100vw;
+	padding: 20px;
 	box-sizing: border-box;
 	.header {
 		width: 100%;
@@ -13,27 +15,41 @@
 	}
 	.PaymentMethods {
 		display: flex;
-		height: 90px;
-		width: 70%;
-		background-color: #e5e5e5;
-		margin: 30px 100px 30px 100px;
-		justify-content: space-around;
-		border-radius: 5px;
-		
+		justify-content: center;
+		gap: 15px;
+		flex-wrap: wrap;
+		width: 100%;
+		max-width: 1230px;
+		height: 100%;
+		min-height: 90px;
+		border-radius: 10px;
 	}
-	.carr{
-		width: 70%;
-		margin-left: 270px;
+	.offers {
+		width: 100%;
+		max-width: 1230px;
+		.offers__title {
+			color: $primaryColor;
+			font-size: 24px;
+		}
+		.offers-wrapper {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 20px;
+			width: 100%;
+			color: $textColorDark;
+		}
 	}
 	.categories {
 		width: 100%;
-		max-width: 1500px;
+		max-width: 1230px;
 		.categories__title {
 			color: $primaryColor;
 			font-size: 24px;
 		}
 		.categories-list {
 			display: flex;
+			justify-content: center;
 			flex-wrap: wrap;
 			list-style: none;
 			padding: 0;
@@ -43,7 +59,6 @@
 }
 
 @media screen and (max-width: 1000px) {
-	
 	.carrcont {
 		display: flex;
 		justify-content: center;
@@ -54,7 +69,6 @@
 	.carr {
 		width: 400px;
 	}
-	
 }
 
 @media screen and (max-width: 600px) {
@@ -65,6 +79,15 @@
 	.carr {
 		width: 250px;
 		margin-right: 400px;
-		
+	}
+}
+
+@media screen and (min-width: 1260px) {
+	.home-cont {
+		.offers {
+			.offers-wrapper {
+				justify-content: space-between;
+			}
+		}
 	}
 }

@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+import Header from '../../components/Header/Header'
 import { useProduct } from './useProduct'
 
 export default function Product() {
@@ -8,6 +9,7 @@ export default function Product() {
 
 	return (
 		<>
+			<Header />
 			{product && (
 				<section className='product'>
 					<div className='product-wrapper'>
@@ -29,6 +31,23 @@ export default function Product() {
 												src={picture.url}
 												alt={`Imágen de ${product.title}`}
 											/>
+										</li>
+									))}
+								</ul>
+							</div>
+							<div className='main-features'>
+								<ul className='main-features-list'>
+									{product.attributes.map(attribute => (
+										<li
+											key={attribute.id}
+											className='attribute'
+										>
+											<span className='attribute__group-name'>
+												{attribute.attribute_group_name}
+											</span>
+											<span className='attribute__value'>
+												{attribute.value_name}
+											</span>
 										</li>
 									))}
 								</ul>

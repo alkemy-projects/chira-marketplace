@@ -1,0 +1,42 @@
+.ofertCardCont {
+	display: flex;
+	background-color: #e5e5e5;
+	justify-content: space-between;
+	width: 100%;
+	max-width: 600px;
+	border-radius: 10px;
+	transition: all 0.5s;
+	padding: 10px;
+	box-sizing: border-box;
+	.ofertText {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		margin-left: 40px;
+		justify-content: center;
+	}
+	.ofertText p {
+		margin: 0;
+	}
+	.ofertText h3 {
+		margin: 0px;
+		line-height: 1;
+	}
+	.ofertText button {
+		width: 100px;
+		height: 30px;
+		margin-top: 30px;
+	}
+	.ofertImg img {
+		width: 100%;
+		min-width: 200px;
+		max-width: 250px;
+		height: 100%;
+		object-fit: contain;
+		// max-height: 250px;
+	}
+}
+
+.ofertCardCont:hover {
+	box-shadow: 1px 5px 20px 0px rgba(0, 0, 0, 0.36);
+}

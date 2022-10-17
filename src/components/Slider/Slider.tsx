@@ -72,9 +72,6 @@ export const SliderCarr =({product} : props)=>{
 
 {product.map((phones) => (
   
-
- // <Cards title={phones.title} image={phones?.thumbnail} array={[]}/>
-
  <div className="card-carr">
  <img src={phones?.thumbnail} alt="" />
  <h1>{phones?.title}</h1>
@@ -93,9 +90,3 @@ export const SliderCarr =({product} : props)=>{
 {/**/}
 
 
-{/* <div className="card-carr">
- <img src={phones?.thumbnail} alt="" />
- <h1>{phones?.title}</h1>
- <h3>{phones?.price}</h3>
-
-</div> */}
