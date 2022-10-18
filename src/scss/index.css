@@ -541,6 +541,10 @@ button:hover {
   height: max-content;
 }
 .product .product-wrapper .left-column .gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 700px;
   height: 500px;
@@ -558,6 +562,7 @@ button:hover {
 }
 .product .product-wrapper .left-column .gallery .gallery-image {
   width: 100%;
+  max-width: 500px;
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
@@ -580,6 +585,10 @@ button:hover {
   width: 44px;
   height: 44px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.product .product-wrapper .left-column .gallery .thumbnail-list .thumbnail.active {
+  border: 2px solid #4e9f3d;
 }
 .product .product-wrapper .left-column .gallery .thumbnail-list .thumbnail .thumbnail__image {
   width: 44px;

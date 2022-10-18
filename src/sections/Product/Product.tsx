@@ -6,11 +6,18 @@ import { useProduct } from './useProduct'
 import prizeIcon from '../../assets/icons/prize-icon.svg'
 import devolutionIcon from '../../assets/icons/devolution-icon.svg'
 import protectIcon from '../../assets/icons/protect-icon.svg'
-
+import 'react-inner-image-zoom/lib/InnerImageZoom/styles.min.css'
+import InnerImageZoom from 'react-inner-image-zoom'
 export default function Product() {
 	const { id } = useParams()
-	const { product, formatPrice, showMoreFeatures, setShowMoreFeatures } =
-		useProduct(id)
+	const {
+		product,
+		formatPrice,
+		showMoreFeatures,
+		setShowMoreFeatures,
+		currentImage,
+		setCurrentImage,
+	} = useProduct(id)
 	console.log(product)
 
 	return (
@@ -40,16 +47,24 @@ export default function Product() {
 					<div className='product-wrapper'>
 						<div className='left-column'>
 							<div className='gallery'>
-								<img
+								{/* <img
 									className='gallery-image'
-									src={product.pictures[0].url}
+									src={currentImage}
 									alt={`Imágen de ${product.title}`}
+								/> */}
+								<InnerImageZoom
+									src={currentImage}
+									zoomScale={1.5}
+									zoomType='hover'
 								/>
 								<ul className='thumbnail-list'>
 									{product.pictures.map((picture, index) => (
 										<li
 											key={index}
-											className='thumbnail'
+											className={`thumbnail ${
+												currentImage === picture.url && 'active'
+											}`}
+											onMouseEnter={() => setCurrentImage(picture.url)}
 										>
 											<img
 												className='thumbnail__image'
