@@ -80,14 +80,14 @@ export default function Product() {
 								Ver más características
 							</button>
 						</div>
-						<div className='right-column'>
-							{windowWidth > 1151 && (
+						{windowWidth > 1151 && (
+							<div className='right-column'>
 								<ProductInfo
 									product={product}
 									formatPrice={formatPrice}
 								/>
-							)}
-						</div>
+							</div>
+						)}
 					</div>
 				</section>
 			)}

@@ -2,16 +2,17 @@
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	padding-right: 20px;
+	box-sizing: border-box;
 	.main-features-list {
 		height: 100%;
 		padding: 0;
-		padding-right: 20px;
 		box-sizing: border-box;
 		.attribute {
 			display: flex;
 			border: 1px solid #ededed;
 			.attribute-name-wrapper {
-				width: 100%;
+				width: 50%;
 				background-color: rgba(0, 0, 0, 0.04);
 				padding: 20px;
 				box-sizing: border-box;
@@ -20,14 +21,22 @@
 				}
 			}
 			.attribute-value-wrapper {
-				width: 100%;
+				width: 50%;
 				height: 50px;
 				padding: 20px;
 				box-sizing: border-box;
 				height: max-content;
 				.attribute__value {
+					word-wrap: break-word;
 				}
 			}
 		}
+	}
+}
+
+@media screen and (max-width: 1151px) {
+	.main-features {
+		padding-right: 0;
+		margin-top: 40px;
 	}
 }

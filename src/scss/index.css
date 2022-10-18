@@ -911,11 +911,12 @@ button:hover {
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding-right: 20px;
+  box-sizing: border-box;
 }
 .main-features .main-features-list {
   height: 100%;
   padding: 0;
-  padding-right: 20px;
   box-sizing: border-box;
 }
 .main-features .main-features-list .attribute {
@@ -923,20 +924,30 @@ button:hover {
   border: 1px solid #ededed;
 }
 .main-features .main-features-list .attribute .attribute-name-wrapper {
-  width: 100%;
+  width: 50%;
   background-color: rgba(0, 0, 0, 0.04);
   padding: 20px;
   box-sizing: border-box;
   font-weight: 600;
 }
 .main-features .main-features-list .attribute .attribute-value-wrapper {
-  width: 100%;
+  width: 50%;
   height: 50px;
   padding: 20px;
   box-sizing: border-box;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+}
+.main-features .main-features-list .attribute .attribute-value-wrapper .attribute__value {
+  word-wrap: break-word;
+}
+
+@media screen and (max-width: 1151px) {
+  .main-features {
+    padding-right: 0;
+    margin-top: 40px;
+  }
 }
 .benefit {
   display: flex;
@@ -978,6 +989,10 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.pictures-carrousel .pictures-wrapper .slick-slider .slick-list .slick-track .slick-slide div {
+  display: flex;
+  justify-content: center;
 }
 .pictures-carrousel .pictures-wrapper .slick-slider .slick-list .slick-track .slick-slide .picture__image {
   width: 100%;
