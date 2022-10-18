@@ -9,6 +9,7 @@ import protectIcon from '../../assets/icons/protect-icon.svg'
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.min.css'
 import InnerImageZoom from 'react-inner-image-zoom'
 import PicturesCarrousel from '../../components/PicturesCarrousel/PicturesCarrousel'
+import FeaturesPopUp from '../../components/FeaturesPopUp/FeaturesPopUp'
 
 export default function Product() {
 	const { id } = useParams()
@@ -27,23 +28,12 @@ export default function Product() {
 	return (
 		<>
 			{showMoreFeatures && (
-				<div className='features-pop-up'>
-					<div className='features-pop-up-wrapper'>
-						<button
-							className='features-pop-up__close-button'
-							onClick={() => setShowMoreFeatures(false)}
-						>
-							Cerrar
-						</button>
-						<div className='features-wrapper'>
-							<Features
-								title={product.title}
-								attributes={product.attributes}
-								limit={undefined}
-							/>
-						</div>
-					</div>
-				</div>
+				<FeaturesPopUp
+					title={product.title}
+					attributes={product.attributes}
+					limit={undefined}
+					setShowMoreFeatures={setShowMoreFeatures}
+				/>
 			)}
 			<Header />
 			{product && (
