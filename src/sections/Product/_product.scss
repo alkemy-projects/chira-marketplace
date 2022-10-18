@@ -81,6 +81,9 @@
 					border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 					content: '';
 					display: block;
+					position: absolute;
+					left: 0;
+					bottom: 0;
 					height: 1px;
 					width: 100%;
 					margin: 40px 0;
@@ -158,6 +161,21 @@
 					padding: 0;
 					margin: 0;
 					list-style: none;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1151px) {
+	.product {
+		padding: 0;
+		.product-wrapper {
+			justify-content: center;
+			align-items: center;
+			.left-column {
+				.gallery {
+					height: 300px;
 				}
 			}
 		}

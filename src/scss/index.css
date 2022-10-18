@@ -556,6 +556,9 @@ button:hover {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   content: "";
   display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   height: 1px;
   width: 100%;
   margin: 40px 0;
@@ -635,6 +638,18 @@ button:hover {
   list-style: none;
 }
 
+@media screen and (max-width: 1151px) {
+  .product {
+    padding: 0;
+  }
+  .product .product-wrapper {
+    justify-content: center;
+    align-items: center;
+  }
+  .product .product-wrapper .left-column .gallery {
+    height: 300px;
+  }
+}
 .input-wrapper {
   display: flex;
   flex-direction: column;
@@ -1020,4 +1035,40 @@ button:hover {
 }
 .benefit .benefit__text .benefit__description {
   color: #191a19;
+}
+
+.pictures-carrousel {
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+}
+.pictures-carrousel .pictures-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 300px;
+}
+.pictures-carrousel .pictures-wrapper .slick-slider {
+  width: 80%;
+  max-height: 300px;
+}
+.pictures-carrousel .pictures-wrapper .slick-slider .slick-list .slick-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pictures-carrousel .pictures-wrapper .slick-slider .slick-list .slick-track .slick-slide .picture__image {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-height: 300px;
+}
+.pictures-carrousel .pictures-wrapper .slick-slider .slick-dots .slick-active button::before {
+  color: #4e9f3d;
+}
+.pictures-carrousel .pictures-wrapper .slick-slider .slick-dots button::before {
+  color: #1e5128;
 }/*# sourceMappingURL=index.css.map */

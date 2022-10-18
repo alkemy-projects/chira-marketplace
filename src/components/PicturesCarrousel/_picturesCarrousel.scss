@@ -1,0 +1,46 @@
+.pictures-carrousel {
+	width: 100%;
+	height: 100%;
+	max-height: 300px;
+	.pictures-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		max-height: 300px;
+		.slick-slider {
+			width: 80%;
+			max-height: 300px;
+			.slick-list {
+				.slick-track {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					.slick-slide {
+						.picture__image {
+							width: 100%;
+							max-width: 500px;
+							height: 100%;
+							object-fit: contain;
+							max-height: 300px;
+						}
+					}
+				}
+			}
+			.slick-dots {
+				.slick-active {
+					button {
+						&::before {
+							color: $primaryColor;
+						}
+					}
+				}
+				button {
+					&::before {
+						color: $primaryColorDark;
+					}
+				}
+			}
+		}
+	}
+}
