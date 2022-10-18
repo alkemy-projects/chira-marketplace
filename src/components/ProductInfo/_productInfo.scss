@@ -16,6 +16,19 @@
 .benefits {
 	width: 100%;
 	margin-top: 20px;
+	position: relative;
+	margin-bottom: 80px;
+	&::after {
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 1px;
+		width: 100%;
+		margin-bottom: -40px;
+	}
 	.benefits-list {
 		display: flex;
 		flex-direction: column;

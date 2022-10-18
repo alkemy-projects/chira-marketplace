@@ -943,12 +943,6 @@ button:hover {
   word-wrap: break-word;
 }
 
-@media screen and (max-width: 1151px) {
-  .main-features {
-    padding-right: 0;
-    margin-top: 40px;
-  }
-}
 .benefit {
   display: flex;
   align-items: center;
@@ -1015,8 +1009,8 @@ button:hover {
   justify-content: center;
   align-items: center;
   position: fixed;
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: 100%;
   background-color: rgba(75, 75, 75, 0.5058823529);
   z-index: 1000;
 }
@@ -1024,6 +1018,8 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
+  max-width: 800px;
 }
 .features-pop-up .features-pop-up-wrapper .features-pop-up__close-button {
   width: 80px;
@@ -1035,7 +1031,8 @@ button:hover {
 }
 .features-pop-up .features-pop-up-wrapper .features-wrapper {
   height: 500px;
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   overflow-y: auto;
   background-color: white;
   padding: 20px;
@@ -1083,6 +1080,19 @@ button:hover {
 .benefits {
   width: 100%;
   margin-top: 20px;
+  position: relative;
+  margin-bottom: 80px;
+}
+.benefits::after {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  margin-bottom: -40px;
 }
 .benefits .benefits-list {
   display: flex;
