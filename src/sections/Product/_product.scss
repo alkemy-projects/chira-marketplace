@@ -71,25 +71,6 @@
 					top: 0;
 					padding: 0;
 					list-style: none;
-					.thumbnail {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						width: 44px;
-						height: 44px;
-						border: 1px solid rgba(0, 0, 0, 0.1);
-						border-radius: 10px;
-						&.active {
-							border: 2px solid $primaryColor;
-						}
-						.thumbnail__image {
-							width: 44px;
-							height: 44px;
-							object-fit: cover;
-							padding: 5px;
-							box-sizing: border-box;
-						}
-					}
 				}
 			}
 		}

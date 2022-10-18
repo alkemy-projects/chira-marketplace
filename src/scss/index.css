@@ -547,26 +547,6 @@ button:hover {
   padding: 0;
   list-style: none;
 }
-.product .product-wrapper .left-column .gallery .thumbnail-list .thumbnail {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-.product .product-wrapper .left-column .gallery .thumbnail-list .thumbnail.active {
-  border: 2px solid #4e9f3d;
-}
-.product .product-wrapper .left-column .gallery .thumbnail-list .thumbnail .thumbnail__image {
-  width: 44px;
-  height: 44px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  padding: 5px;
-  box-sizing: border-box;
-}
 .product .product-wrapper .center-column {
   width: 100%;
   max-width: 341px;
@@ -1071,4 +1051,25 @@ button:hover {
   padding: 20px;
   box-sizing: border-box;
   position: relative;
+}
+
+.thumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.thumbnail.active {
+  border: 2px solid #4e9f3d;
+}
+.thumbnail .thumbnail__image {
+  width: 44px;
+  height: 44px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 5px;
+  box-sizing: border-box;
 }/*# sourceMappingURL=index.css.map */

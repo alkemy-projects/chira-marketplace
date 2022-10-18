@@ -10,6 +10,7 @@ import 'react-inner-image-zoom/lib/InnerImageZoom/styles.min.css'
 import InnerImageZoom from 'react-inner-image-zoom'
 import PicturesCarrousel from '../../components/PicturesCarrousel/PicturesCarrousel'
 import FeaturesPopUp from '../../components/FeaturesPopUp/FeaturesPopUp'
+import Picture from '../../components/Picture/Picture'
 
 export default function Product() {
 	const { id } = useParams()
@@ -50,19 +51,13 @@ export default function Product() {
 										/>
 										<ul className='thumbnail-list'>
 											{product.pictures.map((picture, index) => (
-												<li
+												<Picture
+													picture={picture.url}
+													productTitle={product.title}
+													currentImage={currentImage}
+													setCurrentImage={setCurrentImage}
 													key={index}
-													className={`thumbnail ${
-														currentImage === picture.url && 'active'
-													}`}
-													onMouseEnter={() => setCurrentImage(picture.url)}
-												>
-													<img
-														className='thumbnail__image'
-														src={picture.url}
-														alt={`Imágen de ${product.title}`}
-													/>
-												</li>
+												/>
 											))}
 										</ul>
 									</>
