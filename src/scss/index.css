@@ -598,10 +598,32 @@ button:hover {
   border-radius: 10px;
   padding: 20px;
   box-sizing: border-box;
+  max-width: 412px;
+}
+.product .product-wrapper .right-column .product__available-quantity span {
+  font-weight: 600;
 }
 .product .product-wrapper .right-column .product__buy {
   font-family: "Proxima Nova", sans-serif;
   font-weight: 700;
+}
+.product .product-wrapper .right-column .product__add-cart {
+  background-color: #d8e9a8;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 700;
+  color: #4e9f3d;
+}
+.product .product-wrapper .right-column .benefits {
+  width: 100%;
+  margin-top: 20px;
+}
+.product .product-wrapper .right-column .benefits .benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .input-wrapper {
@@ -970,4 +992,23 @@ button:hover {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+}
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.benefit .benefit__icon {
+  width: 20px;
+}
+.benefit .benefit__text {
+  padding: 0;
+  margin: 0;
+  color: #4e9f3d;
+}
+.benefit .benefit__text .benefit__text--bold {
+  margin-right: 5px;
+}
+.benefit .benefit__text .benefit__description {
+  color: #191a19;
 }/*# sourceMappingURL=index.css.map */

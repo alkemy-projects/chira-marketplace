@@ -1,0 +1,19 @@
+.benefit {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	.benefit__icon {
+		width: 20px;
+	}
+	.benefit__text {
+		padding: 0;
+		margin: 0;
+		color: $primaryColor;
+		.benefit__text--bold {
+			margin-right: 5px;
+		}
+		.benefit__description {
+			color: $blackColor;
+		}
+	}
+}

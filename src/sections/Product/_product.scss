@@ -40,7 +40,6 @@
 	height: 100%;
 	padding-top: 50px;
 	position: relative;
-
 	.product-wrapper {
 		display: flex;
 		flex-wrap: wrap;
@@ -118,23 +117,39 @@
 		.center-column {
 			width: 100%;
 			max-width: 341px;
-			.product__info {
-				.product__condition {
-				}
-				.product__sold-quantity {
-				}
-			}
 		}
 		.right-column {
 			border: 1px solid rgba(0, 0, 0, 0.1);
 			border-radius: 10px;
 			padding: 20px;
 			box-sizing: border-box;
-			.product__available_quantity {
+			max-width: 412px;
+			.product__available-quantity {
+				span {
+					font-weight: 600;
+				}
 			}
 			.product__buy {
 				font-family: $fontFamily;
 				font-weight: 700;
+			}
+			.product__add-cart {
+				background-color: $primaryColorLight;
+				font-family: $fontFamily;
+				font-weight: 700;
+				color: $primaryColor;
+			}
+			.benefits {
+				width: 100%;
+				margin-top: 20px;
+				.benefits-list {
+					display: flex;
+					flex-direction: column;
+					gap: 10px;
+					padding: 0;
+					margin: 0;
+					list-style: none;
+				}
 			}
 		}
 	}
