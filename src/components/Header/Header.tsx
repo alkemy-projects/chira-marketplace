@@ -31,8 +31,8 @@ const Header = () => {
                     </ul>
                 </nav>
                 <div className='header-bottom-boxUser'>
-                    <Link to="/">Crea tu cuenta</Link>
-                    <Link to="/">Ingresa</Link>
+                    <Link to="/register">Crea tu cuenta</Link>
+                    <Link to="/login">Ingresa</Link>
                     <Link to="/"><ShoppingCartIcon className='icon-cart' /></Link>
                 </div>
             </div>
