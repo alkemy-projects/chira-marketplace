@@ -1,0 +1,24 @@
+.description {
+	padding-top: 80px;
+	position: relative;
+	&::before {
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 1px;
+		width: 100%;
+		margin: 40px 0;
+	}
+	.description__title {
+		line-height: 1;
+		margin-top: 0;
+	}
+	.description__text {
+		color: $grayColor;
+		font-size: 16px;
+		line-height: 1.5;
+	}
+}
