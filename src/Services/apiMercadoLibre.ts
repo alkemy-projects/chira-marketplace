@@ -9,3 +9,9 @@ export const getProductById = id => {
 		res.json()
 	)
 }
+
+export const getDescriptionByProductId = id => {
+	return fetch(`https://api.mercadolibre.com/items/${id}/description`).then(
+		res => res.json()
+	)
+}

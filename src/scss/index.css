@@ -505,6 +505,8 @@ button:hover {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  padding-right: 20px;
+  box-sizing: border-box;
 }
 .product .product-wrapper .left-column .gallery {
   display: flex;
@@ -566,6 +568,9 @@ button:hover {
   .product .product-wrapper {
     justify-content: center;
     align-items: center;
+  }
+  .product .product-wrapper .left-column {
+    padding-right: 0;
   }
   .product .product-wrapper .left-column .gallery {
     height: 300px;
@@ -911,8 +916,6 @@ button:hover {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding-right: 20px;
-  box-sizing: border-box;
 }
 .main-features .main-features-list {
   height: 100%;
@@ -1101,4 +1104,29 @@ button:hover {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+.description {
+  padding-top: 80px;
+  position: relative;
+}
+.description::before {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1px;
+  width: 100%;
+  margin: 40px 0;
+}
+.description .description__title {
+  line-height: 1;
+  margin-top: 0;
+}
+.description .description__text {
+  color: #586666;
+  font-size: 16px;
+  line-height: 1.5;
 }/*# sourceMappingURL=index.css.map */

@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react'
-import { getProductById } from '../../Services/apiMercadoLibre'
+import {
+	getDescriptionByProductId,
+	getProductById,
+} from '../../Services/apiMercadoLibre'
 
 export const useProduct = productId => {
 	const [product, setProduct] = useState<any>(null)
+	const [productDescription, setProductDescription] = useState('')
 	const [showMoreFeatures, setShowMoreFeatures] = useState(false)
 	const [currentImage, setCurrentImage] = useState(undefined)
 
@@ -10,6 +14,9 @@ export const useProduct = productId => {
 		getProductById(productId).then(product => {
 			setProduct(product)
 			setCurrentImage(product?.pictures[0].url)
+		})
+		getDescriptionByProductId(productId).then(description => {
+			setProductDescription(description.plain_text)
 		})
 	}, [productId])
 
@@ -33,5 +40,6 @@ export const useProduct = productId => {
 		setShowMoreFeatures,
 		currentImage,
 		setCurrentImage,
+		productDescription,
 	}
 }
