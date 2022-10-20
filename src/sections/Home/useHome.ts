@@ -54,9 +54,5 @@ export const useHome = () => {
 		setPhones(resp.results)
 	}
 
-	const getCategories = async () => {
-		//todo: get categories from api
-	}
-
 	return { phones, categories }
 }
