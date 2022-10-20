@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import DiamondIcon from '@mui/icons-material/Diamond'
 import SearchIcon from '@mui/icons-material/Search'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
@@ -8,11 +8,15 @@ import { useState } from 'react'
 
 export default function Header() {
 	const [showMenu, setShowMenu] = useState(false)
+	const navigate = useNavigate()
 
 	return (
 		<header className='header'>
 			<div className='header-top'>
-				<div className='header-top-logo'>
+				<div
+					className='header-top-logo'
+					onClick={() => navigate('/')}
+				>
 					<DiamondIcon className='diamond' />
 					<div className='header-top-logo-title'>
 						<h1>Chira</h1>
