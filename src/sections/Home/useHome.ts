@@ -13,9 +13,12 @@ import ballIcon from '../../assets/icons/ball-icon.svg'
 import ovenIcon from '../../assets/icons/oven-icon.svg'
 import toyIcon from '../../assets/icons/toy-icon.svg'
 import carIcon from '../../assets/icons/car-icon.svg'
+import { getResultsByQuery } from '../../Services/apiMercadoLibre'
 
 export const useHome = () => {
 	const [phones, setPhones] = useState<any[]>([])
+	const [results, setResults] = useState<any[]>([])
+
 	const [categories, setCategories] = useState([
 		{ id: 'MLA1051', title: 'Autos, Motos y Otros', icon: carIcon },
 		{ id: 'MLA5725', title: 'Computación', icon: computerIcon },
@@ -54,5 +57,11 @@ export const useHome = () => {
 		setPhones(resp.results)
 	}
 
-	return { phones, categories }
+	const searchProduct = async query => {
+		const data = await getResultsByQuery(query)
+		const foundResults = data.results
+		setResults([...results, foundResults])
+	}
+
+	return { phones, categories, results, searchProduct }
 }

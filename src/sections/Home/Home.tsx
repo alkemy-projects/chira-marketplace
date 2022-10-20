@@ -10,7 +10,7 @@ import Header from '../../components/Header/Header'
 export default function Home() {
 	const [tv, setTV] = useState<any[]>([])
 	const [phone, setPhone] = useState<any[]>([])
-	const { phones, categories } = useHome()
+	const { phones, categories, results, searchProduct } = useHome()
 
 	useEffect(() => {
 		const bringTV = async () => {
@@ -21,7 +21,6 @@ export default function Home() {
 			const phoneprod = await bringProductsByCategories('MLA1055')
 			setPhone(phoneprod.results)
 		}
-
 		bringPhones()
 		bringTV()
 	}, [])
