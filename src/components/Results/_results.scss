@@ -1,8 +1,9 @@
 .results {
 	position: absolute;
 	bottom: -40px;
-	left: 0px;
-	width: 400px;
+	right: 0px;
+	width: 100%;
+	max-width: 400px;
 	height: 100%;
 	z-index: 100;
 	.results-list {
@@ -38,5 +39,33 @@
 				width: 100%;
 			}
 		}
+	}
+}
+
+@media screen and (max-width: 1150px) {
+	.results {
+		bottom: -27px;
+		.results-list {
+			.result {
+				padding: 20px 10px;
+				.icon-search {
+					width: 20px;
+				}
+				.result-wrapper {
+					.result__title {
+						font-size: 12px;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						width: 80%;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: 500px) and (max-width: 640px) {
+	.results {
+		left: 50%;
+		transform: translateX(-50%);
 	}
 }

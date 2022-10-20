@@ -1,14 +1,14 @@
+import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import { setSearch } from '../../slicers/searchSlice'
 import DiamondIcon from '@mui/icons-material/Diamond'
 import SearchIcon from '@mui/icons-material/Search'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
-import menuIcon from '../../assets/icons/menu-icon.svg'
 import closeIcon from '../../assets/icons/close-icon.svg'
-import { useState } from 'react'
-import { useHeader } from './useHeader'
-import { useDispatch, useSelector } from 'react-redux'
+import menuIcon from '../../assets/icons/menu-icon.svg'
 import Results from '../Results/Results'
-import { setSearch } from '../../slicers/searchSlice'
+import { useHeader } from './useHeader'
 
 export default function Header() {
 	const [showMenu, setShowMenu] = useState(false)

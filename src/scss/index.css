@@ -959,14 +959,14 @@ button:hover {
     margin-right: 20px;
     width: 100%;
   }
-  .header-top-buscador form {
+  .header-top-buscador .form {
     display: flex;
     justify-content: center;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
   }
-  .header-top-buscador form input {
+  .header-top-buscador .form input {
     width: 100vw;
     max-width: 350px;
   }
@@ -986,10 +986,10 @@ button:hover {
     width: 100%;
     margin: 0;
   }
-  .header-top-buscador form {
+  .header-top-buscador .form {
     width: 100%;
   }
-  .header-top-buscador form input {
+  .header-top-buscador .form input {
     width: 100%;
   }
   .header-top-logo .diamond {
@@ -1005,8 +1005,9 @@ button:hover {
 .results {
   position: absolute;
   bottom: -40px;
-  left: 0px;
-  width: 400px;
+  right: 0px;
+  width: 100%;
+  max-width: 400px;
   height: 100%;
   z-index: 100;
 }
@@ -1043,4 +1044,28 @@ button:hover {
 .results .results-list .result .result-wrapper {
   display: flex;
   width: 100%;
+}
+
+@media screen and (max-width: 1150px) {
+  .results {
+    bottom: -27px;
+  }
+  .results .results-list .result {
+    padding: 20px 10px;
+  }
+  .results .results-list .result .icon-search {
+    width: 20px;
+  }
+  .results .results-list .result .result-wrapper .result__title {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 640px) {
+  .results {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }/*# sourceMappingURL=index.css.map */
