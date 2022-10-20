@@ -5,10 +5,15 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import menuIcon from '../../assets/icons/menu-icon.svg'
 import closeIcon from '../../assets/icons/close-icon.svg'
 import { useState } from 'react'
+import { useHeader } from './useHeader'
+import { useSelector } from 'react-redux'
+import Results from '../Results/Results'
 
 export default function Header() {
 	const [showMenu, setShowMenu] = useState(false)
 	const navigate = useNavigate()
+	const { search, setSearch } = useHeader()
+	const results = useSelector((state: any) => state.results)
 
 	return (
 		<header className='header'>
@@ -28,11 +33,14 @@ export default function Header() {
 						<input
 							type='text'
 							placeholder='Busca tu producto'
+							value={search}
+							onChange={e => setSearch(e.target.value)}
 						/>
 						<button type='submit'>
 							<SearchIcon className='icon-search' />
 						</button>
 					</form>
+					{results.length >= 1 && <Results results={results} />}
 				</div>
 				{showMenu ? (
 					<button

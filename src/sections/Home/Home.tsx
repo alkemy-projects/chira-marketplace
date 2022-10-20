@@ -1,29 +1,13 @@
-import { useEffect, useState } from 'react'
-import Category from '../../components/Category/Category'
-import PaymentMethod from '../../components/PaymentMethod/PaymentMethod'
-import SliderCarrousel from '../../components/SliderCarrousel/SliderCarrousel'
 import { useHome } from './useHome'
-import { bringProductsByCategories } from '../../Services/apiMercadoLibre'
+import SliderCarrousel from '../../components/SliderCarrousel/SliderCarrousel'
+import PaymentMethod from '../../components/PaymentMethod/PaymentMethod'
 import { OfertCard } from '../../components/OfertCard/OfertCard'
+import Category from '../../components/Category/Category'
 import Header from '../../components/Header/Header'
 
 export default function Home() {
-	const [tv, setTV] = useState<any[]>([])
-	const [phone, setPhone] = useState<any[]>([])
-	const { phones, categories, results, searchProduct } = useHome()
+	const { phones, televisions, categories } = useHome()
 
-	useEffect(() => {
-		const bringTV = async () => {
-			const tvprod = await bringProductsByCategories('MLA1002')
-			setTV(tvprod.results)
-		}
-		const bringPhones = async () => {
-			const phoneprod = await bringProductsByCategories('MLA1055')
-			setPhone(phoneprod.results)
-		}
-		bringPhones()
-		bringTV()
-	}, [])
 	return (
 		<>
 			<Header />
@@ -46,11 +30,11 @@ export default function Home() {
 					/>
 				</div>
 				<SliderCarrousel
-					products={phone}
+					products={phones}
 					title='Teléfonos en oferta'
 				/>
 				<SliderCarrousel
-					products={tv}
+					products={televisions}
 					title='Televisores'
 				/>
 				<section className='offers'>

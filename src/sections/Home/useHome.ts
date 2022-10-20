@@ -13,13 +13,12 @@ import ballIcon from '../../assets/icons/ball-icon.svg'
 import ovenIcon from '../../assets/icons/oven-icon.svg'
 import toyIcon from '../../assets/icons/toy-icon.svg'
 import carIcon from '../../assets/icons/car-icon.svg'
-import { getResultsByQuery } from '../../Services/apiMercadoLibre'
+import { bringProductsByCategories } from '../../Services/apiMercadoLibre'
 
 export const useHome = () => {
 	const [phones, setPhones] = useState<any[]>([])
-	const [results, setResults] = useState<any[]>([])
-
-	const [categories, setCategories] = useState([
+	const [televisions, setTelevisions] = useState<any[]>([])
+	const categories = [
 		{ id: 'MLA1051', title: 'Autos, Motos y Otros', icon: carIcon },
 		{ id: 'MLA5725', title: 'Computación', icon: computerIcon },
 		{ id: 'MLA1144', title: 'Ropa y Accesorios', icon: clothIcon },
@@ -28,7 +27,7 @@ export const useHome = () => {
 		{ id: 'MLA1648', title: 'Juguetes', icon: toyIcon },
 		{ id: 'MLA1276', title: 'Alimentos y bebidas', icon: chefIcon },
 		{ id: 'MLA1039', title: 'Hogar, Muebles y Jardín', icon: couchIcon },
-		{ id: 'MLA1246', title: 'Consolas y Videojuegos', icon: gamesIcon },
+		{ id: 'MLA1243', title: 'Consolas y Videojuegos', icon: gamesIcon },
 		{
 			id: 'MLA1246',
 			title: 'Electrónica, audio y video',
@@ -42,26 +41,24 @@ export const useHome = () => {
 			icon: steeringWheelIcon,
 		},
 		{ id: 'MLA1743', title: 'Electrodomésticos', icon: ovenIcon },
-	])
+	]
 
 	useEffect(() => {
 		if (phones.length >= 1) return
-		bringPhones()
+		getPhones()
+		getTelevisions()
 	}, [])
 
-	const bringPhones = async () => {
-		const data = await fetch(
-			'https://api.mercadolibre.com/sites/MLA/search?category=MLA1055'
-		)
-		const resp = await data.json()
-		setPhones(resp.results)
+	const getTelevisions = async () => {
+		const televisionsCategory = 'MLA1002'
+		const tvprod = await bringProductsByCategories(televisionsCategory)
+		setTelevisions(tvprod.results)
+	}
+	const getPhones = async () => {
+		const phonesCategory = 'MLA1055'
+		const phoneprod = await bringProductsByCategories(phonesCategory)
+		setPhones(phoneprod.results)
 	}
 
-	const searchProduct = async query => {
-		const data = await getResultsByQuery(query)
-		const foundResults = data.results
-		setResults([...results, foundResults])
-	}
-
-	return { phones, categories, results, searchProduct }
+	return { phones, televisions, categories }
 }

@@ -1,0 +1,23 @@
+.results {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 350px;
+	.results-list {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		.result {
+			height: 20px;
+			padding: 20px;
+			box-sizing: border-box;
+			.icon-search {
+			}
+			.result__name {
+			}
+		}
+	}
+}
