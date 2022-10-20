@@ -1,17 +1,18 @@
 import SearchIcon from '@mui/icons-material/Search'
 
 export default function Results({ results }: { results: any }) {
-	console.log(results)
 	return (
 		<section className='results'>
 			<ul className='results-list'>
-				{results.map(result => (
+				{results.slice(0, 6).map(result => (
 					<li
 						className='result'
 						key={result.id}
 					>
 						<SearchIcon className='icon-search' />
-						<span className='result__name'>{result.title}</span>
+						<div className='result-wrapper'>
+							<span className='result__title'>{result.title}</span>
+						</div>
 					</li>
 				))}
 			</ul>

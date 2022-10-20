@@ -6,14 +6,16 @@ import menuIcon from '../../assets/icons/menu-icon.svg'
 import closeIcon from '../../assets/icons/close-icon.svg'
 import { useState } from 'react'
 import { useHeader } from './useHeader'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Results from '../Results/Results'
+import { setSearch } from '../../slicers/searchSlice'
 
 export default function Header() {
 	const [showMenu, setShowMenu] = useState(false)
 	const navigate = useNavigate()
-	const { search, setSearch } = useHeader()
+	const { search } = useHeader()
 	const results = useSelector((state: any) => state.results)
+	const dispatch = useDispatch()
 
 	return (
 		<header className='header'>
@@ -29,12 +31,12 @@ export default function Header() {
 					</div>
 				</div>
 				<div className='header-top-buscador'>
-					<form>
+					<form className={results.length >= 1 ? 'form active' : 'form'}>
 						<input
 							type='text'
 							placeholder='Busca tu producto'
-							value={search}
-							onChange={e => setSearch(e.target.value)}
+							value={search.search}
+							onChange={e => dispatch(setSearch(e.target.value))}
 						/>
 						<button type='submit'>
 							<SearchIcon className='icon-search' />

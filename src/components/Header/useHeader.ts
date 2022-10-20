@@ -1,21 +1,21 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { getResultsByQuery } from '../../Services/apiMercadoLibre'
 import { setResults } from '../../slicers/resultsSlice'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 
 export const useHeader = () => {
-	const [search, setSearch] = useState('')
+	const search = useSelector((state: any) => state.search)
 	const dispatch = useDispatch()
 
 	useEffect(() => {
-		if (search.length <= 0) return
+		if (search.search.length <= 0) return
 		const timer = setTimeout(() => {
-			searchProduct(search)
+			searchProduct(search.search)
 		}, 1000)
 		return () => {
 			clearTimeout(timer)
 		}
-	}, [search])
+	}, [search.search])
 
 	const searchProduct = async query => {
 		const data = await getResultsByQuery(query)
@@ -23,5 +23,5 @@ export const useHeader = () => {
 		dispatch(setResults(foundResults))
 	}
 
-	return { search, setSearch, searchProduct }
+	return { search, searchProduct }
 }
