@@ -400,6 +400,7 @@ button:hover {
 .home-cont .PaymentMethods {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 15px;
   flex-wrap: wrap;
   width: 100%;
@@ -445,11 +446,6 @@ button:hover {
   .carrcont {
     display: flex;
     justify-content: center;
-  }
-  .PaymentMethods {
-    flex-direction: column;
-    height: 100%;
-    width: 600px !important;
   }
   .oferts {
     flex-direction: column;
@@ -732,12 +728,6 @@ button:hover {
     max-width: 300px;
   }
 }
-/*
-@media screen and (max-width: 1000px){
-	.p-method{
-		flex-direction: column;
-	}
-}*/
 .category {
   display: flex;
   flex-direction: column;
