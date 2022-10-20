@@ -9,11 +9,19 @@ import closeIcon from '../../assets/icons/close-icon.svg'
 import menuIcon from '../../assets/icons/menu-icon.svg'
 import Results from '../Results/Results'
 import { useHeader } from './useHeader'
+import { clearResults } from '../../slicers/resultsSlice'
 
 export default function Header() {
 	const [showMenu, setShowMenu] = useState(false)
 	const navigate = useNavigate()
-	const { search, showResults, setShowResults } = useHeader()
+	const {
+		search,
+		showResults,
+		setShowResults,
+		showLoader,
+		setShowLoader,
+		defineFormClassName,
+	} = useHeader()
 	const results = useSelector((state: any) => state.results)
 	const dispatch = useDispatch()
 
@@ -31,20 +39,29 @@ export default function Header() {
 					</div>
 				</div>
 				<div className='header-top-buscador'>
-					<form className={results.length >= 1 ? 'form active' : 'form'}>
+					<form className={defineFormClassName()}>
 						<input
 							className='form__input'
 							type='text'
 							placeholder='Busca tu producto'
 							value={search.search}
-							onChange={e => dispatch(setSearch(e.target.value))}
-							onFocus={() => setShowResults(true)}
+							onChange={e => {
+								setShowLoader(true)
+								dispatch(clearResults())
+								dispatch(setSearch(e.target.value))
+							}}
+							onFocus={() => search.search.length >= 1 && setShowResults(true)}
 						/>
 						<button type='submit'>
 							<SearchIcon className='icon-search' />
 						</button>
 					</form>
-					{showResults && <Results results={results} />}
+					{showResults && (
+						<Results
+							results={results}
+							showLoader={showLoader}
+						/>
+					)}
 				</div>
 				{showMenu ? (
 					<button

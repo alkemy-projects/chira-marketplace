@@ -9,9 +9,10 @@ export const resultsSlice = createSlice({
 		setResults: (state, action) => {
 			Object.assign(state, action.payload)
 		},
+		clearResults: state => initialState,
 	},
 })
 
-export const { setResults } = resultsSlice.actions
+export const { setResults, clearResults } = resultsSlice.actions
 
 export default resultsSlice.reducer

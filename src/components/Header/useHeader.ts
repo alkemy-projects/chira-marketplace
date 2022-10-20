@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 
 export const useHeader = () => {
 	const [showResults, setShowResults] = useState(false)
+	const [showLoader, setShowLoader] = useState(false)
 	const search = useSelector((state: any) => state.search)
 	const dispatch = useDispatch()
 
@@ -21,6 +22,7 @@ export const useHeader = () => {
 	const searchProduct = async query => {
 		const data = await getResultsByQuery(query)
 		const foundResults = data.results
+		setShowLoader(false)
 		dispatch(setResults(foundResults))
 	}
 
@@ -29,7 +31,7 @@ export const useHeader = () => {
 		setShowResults(true)
 	}, [search.search])
 
-	window.onclick = (event: React.MouseEvent) => {
+	window.onclick = (event: MouseEvent) => {
 		console.log(document.querySelector('.results'))
 		if (
 			showResults &&
@@ -40,5 +42,17 @@ export const useHeader = () => {
 			setShowResults(false)
 	}
 
-	return { search, searchProduct, showResults, setShowResults }
+	const defineFormClassName = () => {
+		if (!showResults) return 'form'
+		else return 'form active'
+	}
+
+	return {
+		search,
+		showResults,
+		setShowResults,
+		showLoader,
+		setShowLoader,
+		defineFormClassName,
+	}
 }

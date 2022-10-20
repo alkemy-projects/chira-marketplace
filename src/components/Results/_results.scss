@@ -16,6 +16,9 @@
 		background-color: white;
 		border: 1px solid rgba(0, 0, 0, 0.1);
 		border-top: 0;
+		&.loading {
+			align-items: center;
+		}
 		.result {
 			display: flex;
 			justify-content: space-between;
