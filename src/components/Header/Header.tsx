@@ -13,7 +13,7 @@ import { useHeader } from './useHeader'
 export default function Header() {
 	const [showMenu, setShowMenu] = useState(false)
 	const navigate = useNavigate()
-	const { search } = useHeader()
+	const { search, showResults, setShowResults } = useHeader()
 	const results = useSelector((state: any) => state.results)
 	const dispatch = useDispatch()
 
@@ -33,16 +33,18 @@ export default function Header() {
 				<div className='header-top-buscador'>
 					<form className={results.length >= 1 ? 'form active' : 'form'}>
 						<input
+							className='form__input'
 							type='text'
 							placeholder='Busca tu producto'
 							value={search.search}
 							onChange={e => dispatch(setSearch(e.target.value))}
+							onFocus={() => setShowResults(true)}
 						/>
 						<button type='submit'>
 							<SearchIcon className='icon-search' />
 						</button>
 					</form>
-					{results.length >= 1 && <Results results={results} />}
+					{showResults && <Results results={results} />}
 				</div>
 				{showMenu ? (
 					<button
