@@ -5,7 +5,6 @@ import { useProduct } from './useProduct'
 export default function Product() {
 	const { id } = useParams()
 	const { product, formatPrice } = useProduct(id)
-	console.log(product)
 
 	return (
 		<>

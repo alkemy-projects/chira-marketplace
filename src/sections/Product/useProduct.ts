@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { getProductById } from '../../Services/apiMercadoLibre'
 
 export const useProduct = productId => {
 	const [product, setProduct] = useState<any>(null)
+	const navigate = useNavigate()
 
 	useEffect(() => {
-		getProductById(productId).then(product => setProduct(product))
+		getProductById(productId).then(data => {
+			if (!data) navigate('/notfound')
+			setProduct(data)
+		})
 	}, [productId])
 
 	const formatPrice = price => {

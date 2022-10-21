@@ -29,12 +29,16 @@ export default function App() {
 						element={<Home />}
 					/>
 					<Route
-						path='/product/:id*'
+						path='/product/:id/*'
 						element={<Product />}
 					/>
 					<Route
 						path='/products'
 						element={<ProductsList />}
+					/>
+					<Route
+						path='/notfound'
+						element={<NotFound />}
 					/>
 					<Route
 						path='*'
