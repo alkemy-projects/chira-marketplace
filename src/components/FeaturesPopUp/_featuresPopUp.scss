@@ -1,0 +1,36 @@
+.features-pop-up {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	width: 100vw;
+	height: 100%;
+	background-color: #4b4b4b81;
+	z-index: 1000;
+	.features-pop-up-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		width: 100%;
+		max-width: 800px;
+		.features-pop-up__close-button {
+			width: 80px;
+			height: 50px;
+			align-self: flex-end;
+			font-family: $fontFamily;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+		.features-wrapper {
+			height: 500px;
+			width: 100%;
+			max-width: 800px;
+			overflow-y: auto;
+			background-color: white;
+			padding: 20px;
+			box-sizing: border-box;
+			position: relative;
+		}
+	}
+}

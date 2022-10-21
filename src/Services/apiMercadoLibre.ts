@@ -12,3 +12,9 @@ export const getResultsByQuery = query =>
 	fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${query}`).then(res =>
 		!res.ok ? res.ok : res.json()
 	)
+
+export const getDescriptionByProductId = id => {
+	return fetch(`https://api.mercadolibre.com/items/${id}/description`).then(
+		res => res.json()
+	)
+}

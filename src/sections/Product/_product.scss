@@ -4,9 +4,9 @@
 	align-items: center;
 	width: 100%;
 	background-color: #ededed;
-	height: 100vh;
-	overflow-y: scroll;
-	padding-top: 150px;
+	height: 100%;
+	padding-top: 50px;
+	position: relative;
 	.product-wrapper {
 		display: flex;
 		flex-wrap: wrap;
@@ -32,15 +32,34 @@
 		.left-column {
 			width: 100%;
 			max-width: 700px;
-			height: 500px;
+			height: max-content;
+			padding-right: 20px;
+			box-sizing: border-box;
 			.gallery {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
 				width: 100%;
 				max-width: 700px;
 				height: 500px;
 				max-height: 500px;
 				position: relative;
+				padding-bottom: 80px;
+				&::after {
+					border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+					content: '';
+					display: block;
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					height: 1px;
+					width: 100%;
+					margin: 40px 0;
+				}
 				.gallery-image {
 					width: 100%;
+					max-width: 500px;
 					height: 100%;
 					object-fit: contain;
 					cursor: zoom-in;
@@ -54,44 +73,34 @@
 					top: 0;
 					padding: 0;
 					list-style: none;
-					.thumbnail {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						width: 44px;
-						height: 44px;
-						border: 1px solid rgba(0, 0, 0, 0.1);
-						.thumbnail__image {
-							width: 44px;
-							height: 44px;
-							object-fit: cover;
-							padding: 5px;
-							box-sizing: border-box;
-						}
-					}
 				}
 			}
 		}
 		.center-column {
 			width: 100%;
 			max-width: 341px;
-			.product__info {
-				.product__condition {
-				}
-				.product__sold-quantity {
-				}
-			}
 		}
 		.right-column {
 			border: 1px solid rgba(0, 0, 0, 0.1);
 			border-radius: 10px;
 			padding: 20px;
 			box-sizing: border-box;
-			.product__available_quantity {
-			}
-			.product__buy {
-				font-family: $fontFamily;
-				font-weight: 700;
+			max-width: 412px;
+		}
+	}
+}
+
+@media screen and (max-width: 1151px) {
+	.product {
+		padding: 0;
+		.product-wrapper {
+			justify-content: center;
+			align-items: center;
+			.left-column {
+				padding-right: 0;
+				.gallery {
+					height: 300px;
+				}
 			}
 		}
 	}
