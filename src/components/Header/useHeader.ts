@@ -35,9 +35,11 @@ export const useHeader = () => {
 		console.log(document.querySelector('.results'))
 		if (
 			showResults &&
-			!document.querySelector('.results').contains(event.target) &&
-			event.target.className !== 'results-list' &&
-			event.target.className !== 'form__input'
+			!(document.querySelector('.results') as HTMLElement).contains(
+				event.target as Node
+			) &&
+			(event.target as HTMLUListElement).className !== 'results-list' &&
+			(event.target as HTMLUListElement).className !== 'form__input'
 		)
 			setShowResults(false)
 	}
