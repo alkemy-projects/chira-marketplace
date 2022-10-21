@@ -1,10 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import Header from '../../components/Header/Header'
 import { updateQuantity } from '../../slicers/cartSlice'
+import { useCart } from './useCart'
 
 export default function Cart() {
 	const cart = useSelector((state: any) => state.cart)
-	const dispatch = useDispatch()
+	const { handleAddQuantity, handleRemoveQuantity } = useCart()
 
 	return (
 		<>
@@ -34,7 +35,11 @@ export default function Cart() {
 										<button
 											className='quantity__operation quantity__operation--plus'
 											onClick={() =>
-												dispatch(updateQuantity({ id: product.id, event: '+' }))
+												handleAddQuantity(
+													product.available_quantity,
+													product.quantity,
+													product.id
+												)
 											}
 										>
 											+
@@ -47,7 +52,7 @@ export default function Cart() {
 										<button
 											className='quantity__operation quantity__operation--rest'
 											onClick={() =>
-												dispatch(updateQuantity({ id: product.id, event: '-' }))
+												handleRemoveQuantity(product.quantity, product.id)
 											}
 										>
 											-
