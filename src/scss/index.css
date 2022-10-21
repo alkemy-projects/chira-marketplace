@@ -400,6 +400,7 @@ button:hover {
 .home-cont .PaymentMethods {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 15px;
   flex-wrap: wrap;
   width: 100%;
@@ -445,11 +446,6 @@ button:hover {
   .carrcont {
     display: flex;
     justify-content: center;
-  }
-  .PaymentMethods {
-    flex-direction: column;
-    height: 100%;
-    width: 600px !important;
   }
   .oferts {
     flex-direction: column;
@@ -571,6 +567,19 @@ button:hover {
 .product .product-wrapper .right-column .product__buy {
   font-family: "Proxima Nova", sans-serif;
   font-weight: 700;
+}
+
+.listCont {
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.listCards {
+  width: 200px;
 }
 
 .input-wrapper {
@@ -732,12 +741,6 @@ button:hover {
     max-width: 300px;
   }
 }
-/*
-@media screen and (max-width: 1000px){
-	.p-method{
-		flex-direction: column;
-	}
-}*/
 .category {
   display: flex;
   flex-direction: column;
@@ -760,6 +763,14 @@ button:hover {
   text-align: center;
 }
 
+@media screen and (max-width: 600px) {
+  .category {
+    max-width: 125px;
+  }
+  .category .category__icon {
+    width: 60px;
+  }
+}
 .ofertCardCont {
   display: flex;
   background-color: #e5e5e5;
@@ -814,12 +825,18 @@ button:hover {
   align-items: center;
 }
 .header-top {
-  width: 80%;
+  width: 100%;
   height: 50%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+}
+.header-top .menu {
+  display: none;
+}
+.header-top .menu-button {
+  display: none;
 }
 .header-top-logo {
   display: flex;
@@ -828,6 +845,7 @@ button:hover {
   align-items: center;
   gap: 10px;
   color: #d8e9a8;
+  cursor: pointer;
 }
 .header-top-logo .diamond {
   font-size: 50px;
@@ -846,28 +864,40 @@ button:hover {
 }
 .header-top-buscador {
   height: 80%;
+  position: relative;
 }
-.header-top-buscador form {
+.header-top-buscador .form {
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-  box-shadow: 0px 1px 9px 1px rgba(0, 0, 0, 0.51);
-  -webkit-box-shadow: 0px 1px 9px 1px rgba(0, 0, 0, 0.51);
-  -moz-box-shadow: 0px 1px 9px 1px rgba(0, 0, 0, 0.51);
   border-radius: 10px;
 }
-.header-top-buscador form input {
+.header-top-buscador .form.active {
+  border-radius: 10px 10px 0 0;
+}
+.header-top-buscador .form.active input {
+  border-radius: 10px 0px 0 0;
+}
+.header-top-buscador .form.active button {
+  border-radius: 0px 10px 0 0;
+}
+.header-top-buscador .form input {
   height: 100%;
-  width: 350px;
+  width: 100vw;
+  max-width: 350px;
   box-sizing: border-box;
   padding: 15px;
   border: none;
   border-radius: 10px 0 0 10px;
+  box-shadow: 0px 1px 9px 1px rgba(0, 0, 0, 0.51);
+  -webkit-clip-path: inset(-9px 0px -9px -9px);
+          clip-path: inset(-9px 0px -9px -9px);
 }
-.header-top-buscador form input:focus {
+.header-top-buscador .form input:focus {
   outline: none;
 }
-.header-top-buscador form button {
+.header-top-buscador .form button {
   margin: 0;
   width: 50px;
   height: 100%;
@@ -880,8 +910,11 @@ button:hover {
   border: none;
   border-radius: 0px 10px 10px 0px;
   cursor: pointer;
+  box-shadow: 0px 1px 9px 1px rgba(0, 0, 0, 0.51);
+  -webkit-clip-path: inset(-9px -9px -9px 0px);
+          clip-path: inset(-9px -9px -9px 0px);
 }
-.header-top-buscador form button:hover {
+.header-top-buscador .form button:hover {
   color: #d8e9a8;
 }
 .header-bottom {
@@ -901,10 +934,12 @@ button:hover {
 .header-bottom a {
   transition: all 0.2s ease-out;
   color: #191a19;
+  color: #d8e9a8;
   text-decoration: none;
+  font-weight: 600;
 }
 .header-bottom a:hover {
-  color: #d8e9a8;
+  color: white;
 }
 .header-bottom-boxUser {
   display: flex;
@@ -913,4 +948,140 @@ button:hover {
 }
 .header-bottom-boxUser .icon-cart {
   color: #d8e9a8;
+}
+
+@media screen and (max-width: 1150px) {
+  .header-top {
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  .header-top .menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+  }
+  .header-top .menu-button .menu-button__icon {
+    width: 100%;
+  }
+  .header-top-buscador {
+    display: flex;
+    justify-content: right;
+    margin-right: 20px;
+    width: 100%;
+  }
+  .header-top-buscador .form {
+    display: flex;
+    justify-content: center;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .header-top-buscador .form input {
+    width: 100vw;
+    max-width: 350px;
+  }
+  .header-bottom {
+    justify-self: right;
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  .header {
+    height: 60px;
+  }
+  .header-top .menu {
+    display: none;
+  }
+  .header-top-buscador {
+    width: 100%;
+    margin: 0;
+  }
+  .header-top-buscador .form {
+    width: 100%;
+  }
+  .header-top-buscador .form input {
+    width: 100%;
+  }
+  .header-top-logo .diamond {
+    font-size: 30px;
+  }
+  .header-top-logo-title h1 {
+    display: none;
+  }
+  .header-top-logo-title h3 {
+    display: none;
+  }
+}
+.results {
+  position: absolute;
+  bottom: -40px;
+  right: 0px;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  z-index: 100;
+}
+.results .results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 0;
+}
+.results .results-list.loading {
+  align-items: center;
+}
+.results .results-list .result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+.results .results-list .result:hover {
+  background-color: #d8e9a8;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.results .results-list .result .icon-search {
+  color: #4e9f3d;
+}
+.results .results-list .result .result-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+@media screen and (max-width: 1150px) {
+  .results {
+    bottom: -27px;
+  }
+  .results .results-list .result {
+    padding: 20px 10px;
+  }
+  .results .results-list .result .icon-search {
+    width: 20px;
+  }
+  .results .results-list .result .result-wrapper .result__title {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 640px) {
+  .results {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }/*# sourceMappingURL=index.css.map */

@@ -9,3 +9,9 @@ export const getProductById = id => {
 		res.json()
 	)
 }
+
+export const getResultsByQuery = query => {
+	return fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${query}`).then(
+		res => res.json()
+	)
+}

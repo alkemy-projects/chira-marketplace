@@ -29,6 +29,7 @@ html {
 @import '../sections/Login/login';
 @import '../sections/Home/Home';
 @import '../sections/Product/product';
+@import "../sections/ProductsList/ProductsList";
 
 //components imports
 @import '../components/InputWrapper/inputWrapper';
@@ -38,5 +39,6 @@ html {
 @import '../components/PaymentMethod/paymentMethod';
 @import '../components/Category/category';
 @import '../components/OfertCard/ofertCard';
-
 @import '../components/Header/header';
+@import '../components/Results/results';
+
