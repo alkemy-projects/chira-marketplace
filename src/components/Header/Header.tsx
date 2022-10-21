@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate,useParams} from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import { setSearch } from '../../slicers/searchSlice'
 import DiamondIcon from '@mui/icons-material/Diamond'
@@ -10,7 +10,6 @@ import menuIcon from '../../assets/icons/menu-icon.svg'
 import Results from '../Results/Results'
 import { useHeader } from './useHeader'
 import { clearResults } from '../../slicers/resultsSlice'
-
 
 export default function Header() {
 	const [showMenu, setShowMenu] = useState(false)
@@ -25,13 +24,12 @@ export default function Header() {
 	} = useHeader()
 	const results = useSelector((state: any) => state.results)
 	const dispatch = useDispatch()
-    const searching =(e)=>{
-        e.preventDefault()
-        if(window.location.href != "http://localhost:3000/products"){
-            navigate("products")
-        }
-       
-    }
+	const searching = e => {
+		e.preventDefault()
+		if (window.location.href != 'http://localhost:3000/products') {
+			navigate('products')
+		}
+	}
 
 	return (
 		<header className='header'>
@@ -47,7 +45,10 @@ export default function Header() {
 					</div>
 				</div>
 				<div className='header-top-buscador'>
-					<form className={defineFormClassName()} onSubmit={searching}>
+					<form
+						className={defineFormClassName()}
+						onSubmit={searching}
+					>
 						<input
 							className='form__input'
 							type='text'
@@ -57,7 +58,6 @@ export default function Header() {
 								setShowLoader(true)
 								dispatch(clearResults())
 								dispatch(setSearch(e.target.value))
-                            
 							}}
 							onFocus={() => search.search.length >= 1 && setShowResults(true)}
 						/>
@@ -118,7 +118,7 @@ export default function Header() {
 				<div className='header-bottom-boxUser'>
 					<Link to='/register'>Crea tu cuenta</Link>
 					<Link to='/login'>Ingresa</Link>
-					<Link to='/'>
+					<Link to='/cart'>
 						<ShoppingCartIcon className='icon-cart' />
 					</Link>
 				</div>

@@ -7,6 +7,7 @@ import Loader from './components/Loader/Loader'
 import Product from './sections/Product/Product'
 import { ProductsList } from './sections/ProductsList/ProductsList'
 import NotFound from './sections/NotFound/NotFound'
+import Cart from './sections/Cart/Cart'
 
 export default function App() {
 	const loader = useSelector((state: any) => state.loader)
@@ -35,6 +36,10 @@ export default function App() {
 					<Route
 						path='/products'
 						element={<ProductsList />}
+					/>
+					<Route
+						path='/cart'
+						element={<Cart />}
 					/>
 					<Route
 						path='/notfound'
