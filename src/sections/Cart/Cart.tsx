@@ -76,13 +76,15 @@ export default function Cart() {
 						<p className='summary__total'>
 							<span>Total</span>: {calculateTotal(cart)}
 						</p>
-						<button className='summary__checkout'>Continuar compra</button>
-						<button
-							className='summary__clear'
-							onClick={() => dispatch(clearCart())}
-						>
-							Vaciar carrito
-						</button>
+						<div className='summary-buttons'>
+							<button className='summary__checkout'>Continuar compra</button>
+							<button
+								className='summary__clear'
+								onClick={() => dispatch(clearCart())}
+							>
+								Vaciar carrito
+							</button>
+						</div>
 					</div>
 				</div>
 			</section>
