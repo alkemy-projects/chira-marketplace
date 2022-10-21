@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux'
 import Loader from './components/Loader/Loader'
 import Product from './sections/Product/Product'
 import { ProductsList } from './sections/ProductsList/ProductsList'
+import NotFound from './sections/NotFound/NotFound'
 
 export default function App() {
 	const loader = useSelector((state: any) => state.loader)
@@ -34,6 +35,10 @@ export default function App() {
 					<Route
 						path='/products'
 						element={<ProductsList />}
+					/>
+					<Route
+						path='*'
+						element={<NotFound />}
 					/>
 				</Routes>
 			</BrowserRouter>
