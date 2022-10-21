@@ -977,7 +977,7 @@ button:hover {
   align-items: center;
   gap: 10px;
   color: #d8e9a8;
-  cursor: pointer;
+  text-decoration: none;
 }
 .header-top-logo .diamond {
   font-size: 50px;

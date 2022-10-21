@@ -34,16 +34,16 @@ export default function Header() {
 	return (
 		<header className='header'>
 			<div className='header-top'>
-				<div
+				<Link
 					className='header-top-logo'
-					onClick={() => navigate('/')}
+					to='/'
 				>
 					<DiamondIcon className='diamond' />
 					<div className='header-top-logo-title'>
 						<h1>Chira</h1>
 						<h3>marketplace</h3>
 					</div>
-				</div>
+				</Link>
 				<div className='header-top-buscador'>
 					<form
 						className={defineFormClassName()}
