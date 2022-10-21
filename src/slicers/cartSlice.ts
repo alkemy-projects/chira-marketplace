@@ -14,7 +14,7 @@ export const cartSlice = createSlice({
 	initialState,
 	reducers: {
 		addProductToCart: (state, action) => {
-			Object.assign(state, action.payload)
+			state.push(action.payload)
 		},
 		clearCart: state => initialState,
 	},
