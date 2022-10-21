@@ -1,7 +1,14 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { updateQuantity } from '../../slicers/cartSlice'
+import { useState, useEffect } from 'react'
 
 export const useCart = () => {
+	const cartState = useSelector((state: any) => state.cart)
+	const [cart, setCart] = useState(
+		cartState.length >= 1
+			? cartState
+			: JSON.parse(localStorage.getItem('cart') || '[]')
+	)
 	const dispatch = useDispatch()
 
 	const handleAddQuantity = (availableQuantity, currentQuantity, productId) => {
@@ -31,10 +38,16 @@ export const useCart = () => {
 		return formatPrice(total)
 	}
 
+	useEffect(() => {
+		if (cartState.length <= 0) return
+		setCart(cartState)
+	}, [cartState])
+
 	return {
 		handleAddQuantity,
 		handleRemoveQuantity,
 		formatPrice,
 		calculateTotal,
+		cart,
 	}
 }

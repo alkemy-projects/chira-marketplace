@@ -7,7 +7,9 @@ interface CartProduct {
 	quantity: number
 }
 
-const initialState = [] as CartProduct[]
+const initialState = JSON.parse(localStorage.getItem('cart') || '[]')
+	? JSON.parse(localStorage.getItem('cart') || '[]')
+	: ([] as CartProduct[])
 
 export const cartSlice = createSlice({
 	name: 'cart',
@@ -17,6 +19,7 @@ export const cartSlice = createSlice({
 			const productToAdd = action.payload
 			productToAdd.quantity = 1
 			state.push(productToAdd)
+			localStorage.setItem('cart', JSON.stringify(state))
 		},
 		updateQuantity: (state, action) => {
 			const { id, event } = action.payload
@@ -24,8 +27,12 @@ export const cartSlice = createSlice({
 			event === '+'
 				? state[productIndex].quantity++
 				: state[productIndex].quantity--
+			localStorage.setItem('cart', JSON.stringify(state))
 		},
-		clearCart: state => initialState,
+		clearCart: state => {
+			localStorage.removeItem('cart')
+			return initialState
+		},
 	},
 })
 

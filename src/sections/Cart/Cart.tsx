@@ -1,15 +1,17 @@
-import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import Header from '../../components/Header/Header'
-import { updateQuantity } from '../../slicers/cartSlice'
+import { clearCart } from '../../slicers/cartSlice'
 import { useCart } from './useCart'
 
 export default function Cart() {
-	const cart = useSelector((state: any) => state.cart)
+	const dispatch = useDispatch()
+
 	const {
 		handleAddQuantity,
 		handleRemoveQuantity,
 		formatPrice,
 		calculateTotal,
+		cart,
 	} = useCart()
 
 	return (
@@ -75,7 +77,12 @@ export default function Cart() {
 							<span>Total</span>: {calculateTotal(cart)}
 						</p>
 						<button className='summary__checkout'>Continuar compra</button>
-						<button className='summary__clear'>Vaciar carrito</button>
+						<button
+							className='summary__clear'
+							onClick={() => dispatch(clearCart())}
+						>
+							Vaciar carrito
+						</button>
 					</div>
 				</div>
 			</section>
