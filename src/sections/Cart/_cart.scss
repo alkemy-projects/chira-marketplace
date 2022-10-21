@@ -92,8 +92,26 @@
 			}
 		}
 	}
-	.delivery {
+	.summary {
 		width: 350px;
-		background-color: red;
+		background-color: $whiteColor;
+		padding: 20px;
+		box-sizing: border-box;
+		.summary__title {
+		}
+		.summary__wrapper {
+			.summary__total {
+				font-size: 20px;
+				span {
+					color: $primaryColor;
+				}
+			}
+			.summary__checkout {
+			}
+			.summary__clear {
+				background-color: $primaryColorLight;
+				color: $primaryColorDark;
+			}
+		}
 	}
 }

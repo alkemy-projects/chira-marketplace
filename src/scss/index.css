@@ -709,9 +709,21 @@ button:hover {
   outline: none;
   padding-left: 15px;
 }
-.cart .delivery {
+.cart .summary {
   width: 350px;
-  background-color: red;
+  background-color: #ffffff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.cart .summary .summary__wrapper .summary__total {
+  font-size: 20px;
+}
+.cart .summary .summary__wrapper .summary__total span {
+  color: #4e9f3d;
+}
+.cart .summary .summary__wrapper .summary__clear {
+  background-color: #d8e9a8;
+  color: #1e5128;
 }
 
 .input-wrapper {

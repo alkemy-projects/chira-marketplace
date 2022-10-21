@@ -14,5 +14,27 @@ export const useCart = () => {
 		dispatch(updateQuantity({ id: productId, event: '-' }))
 	}
 
-	return { handleAddQuantity, handleRemoveQuantity }
+	const formatPrice = price => {
+		const formatter = new Intl.NumberFormat('es-AR', {
+			style: 'currency',
+			currency: 'ARS',
+			minimumFractionDigits: 0,
+		})
+		return formatter.format(price)
+	}
+
+	const calculateTotal = cart => {
+		const total = cart.reduce(
+			(acc, product) => acc + product.price * product.quantity,
+			0
+		)
+		return formatPrice(total)
+	}
+
+	return {
+		handleAddQuantity,
+		handleRemoveQuantity,
+		formatPrice,
+		calculateTotal,
+	}
 }

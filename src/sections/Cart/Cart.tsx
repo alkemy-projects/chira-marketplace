@@ -5,7 +5,12 @@ import { useCart } from './useCart'
 
 export default function Cart() {
 	const cart = useSelector((state: any) => state.cart)
-	const { handleAddQuantity, handleRemoveQuantity } = useCart()
+	const {
+		handleAddQuantity,
+		handleRemoveQuantity,
+		formatPrice,
+		calculateTotal,
+	} = useCart()
 
 	return (
 		<>
@@ -28,10 +33,23 @@ export default function Cart() {
 									<div className='cart-item-data'>
 										<h2 className='cart-item__name'>{product.title}</h2>
 										<p className='cart-item__price'>
-											$ {product.price * product.quantity}
+											{formatPrice(product.price * product.quantity)}
 										</p>
 									</div>
 									<div className='quantity'>
+										<button
+											className='quantity__operation quantity__operation--rest'
+											onClick={() =>
+												handleRemoveQuantity(product.quantity, product.id)
+											}
+										>
+											-
+										</button>
+										<input
+											className='quantity__number'
+											type='tel'
+											value={product.quantity}
+										/>
 										<button
 											className='quantity__operation quantity__operation--plus'
 											onClick={() =>
@@ -44,26 +62,22 @@ export default function Cart() {
 										>
 											+
 										</button>
-										<input
-											className='quantity__number'
-											type='tel'
-											value={product.quantity}
-										/>
-										<button
-											className='quantity__operation quantity__operation--rest'
-											onClick={() =>
-												handleRemoveQuantity(product.quantity, product.id)
-											}
-										>
-											-
-										</button>
 									</div>
 								</div>
 							</li>
 						))}
 					</ul>
 				</div>
-				<div className='delivery'></div>
+				<div className='summary'>
+					<h2 className='summary__title'>Resumen</h2>
+					<div className='summary__wrapper'>
+						<p className='summary__total'>
+							<span>Total</span>: {calculateTotal(cart)}
+						</p>
+						<button className='summary__checkout'>Continuar compra</button>
+						<button className='summary__clear'>Vaciar carrito</button>
+					</div>
+				</div>
 			</section>
 		</>
 	)
