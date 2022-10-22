@@ -858,6 +858,7 @@ button:hover {
   padding: 20px;
   box-sizing: border-box;
   cursor: pointer;
+  text-decoration: none;
 }
 .card:hover {
   box-shadow: 1px 5px 20px 0px rgba(0, 0, 0, 0.36);
@@ -872,6 +873,9 @@ button:hover {
   width: 100%;
   max-width: 150px;
 }
+.card .card-body {
+  color: #191a19;
+}
 .card .card-body .card__title {
   font-size: 20px;
 }
@@ -880,6 +884,7 @@ button:hover {
   font-weight: bold;
   padding: 0 5px;
   font-weight: 400;
+  color: #4e9f3d;
 }
 
 .slider-carrousel {
