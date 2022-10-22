@@ -181,14 +181,14 @@ html body #root {
   width: 100%;
 }
 
-.header {
+.left-cont-header {
   display: flex;
   align-items: initial !important;
   max-width: 600px;
   text-align: left;
   color: #ffffff;
 }
-.header h1 {
+.left-cont-header h1 {
   font-size: 34px;
 }
 

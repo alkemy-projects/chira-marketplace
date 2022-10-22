@@ -13,7 +13,7 @@ export default function Login() {
 	return (
 		<div className='cont'>
 			<div className='left-cont'>
-				<header className='header'>
+				<header className='left-cont-header'>
 					<h1>Chira</h1>
 				</header>
 				<img
