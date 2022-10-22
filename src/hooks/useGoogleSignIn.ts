@@ -10,6 +10,7 @@ import { provider } from '../authGoogleProvider'
 
 export const useGoogleSignIn = () => {
 	const auth = getAuth()
+
 	useEffect(() => {
 		getRedirectResult(auth)
 			.then((result: any) => {
@@ -27,13 +28,11 @@ export const useGoogleSignIn = () => {
 			})
 	}, [])
 
-	const desloguear = () => {
+	const closeSession = () => {
+		localStorage.removeItem('user')
 		signOut(auth)
 	}
+	const signInWithGoogle = () => signInWithRedirect(auth, provider)
 
-	const signInWithGoogle = () => {
-		signInWithRedirect(auth, provider)
-	}
-
-	return { signInWithGoogle, desloguear }
+	return { signInWithGoogle, closeSession }
 }

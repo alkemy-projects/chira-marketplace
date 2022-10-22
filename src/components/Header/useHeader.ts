@@ -6,8 +6,10 @@ import { useEffect, useState } from 'react'
 export const useHeader = () => {
 	const [showResults, setShowResults] = useState(false)
 	const [showLoader, setShowLoader] = useState(false)
+	const [showCloseSession, setShowCloseSession] = useState(false)
 	const search = useSelector((state: any) => state.search)
 	const dispatch = useDispatch()
+	const loggedUser = JSON.parse(localStorage.getItem('user') || 'null')
 
 	useEffect(() => {
 		if (search.search.length <= 0) return
@@ -56,5 +58,8 @@ export const useHeader = () => {
 		showLoader,
 		setShowLoader,
 		defineFormClassName,
+		loggedUser,
+		showCloseSession,
+		setShowCloseSession,
 	}
 }

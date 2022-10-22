@@ -17,7 +17,13 @@ export const useLogin = () => {
 		dispatch(startLoader())
 		const auth = getAuth()
 		try {
-			await signInWithEmailAndPassword(auth, values.email, values.password)
+			const data = await signInWithEmailAndPassword(
+				auth,
+				values.email,
+				values.password
+			)
+			console.log(data)
+			localStorage.setItem('user', JSON.stringify(data.user))
 			dispatch(completeProgressLoader())
 			navigate('/')
 		} catch (e) {
