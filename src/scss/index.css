@@ -217,7 +217,7 @@ html body #root {
   text-align: center;
 }
 
-.right-column {
+.right-col {
   display: flex;
   align-items: center;
   justify-content: center;

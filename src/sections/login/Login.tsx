@@ -37,7 +37,7 @@ export default function Login() {
 				})}
 				onSubmit={values => handleSubmit(values)}
 			>
-				<div className='right-column'>
+				<div className='right-col'>
 					<Form className='form-log'>
 						<h2>Iniciar sesión</h2>
 						<div className='log-input'>
