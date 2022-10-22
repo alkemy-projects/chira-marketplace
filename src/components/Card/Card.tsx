@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Card({
 	title,
@@ -11,12 +11,10 @@ export default function Card({
 	price: string
 	id: string
 }) {
-	const navigate = useNavigate()
-
 	return (
-		<article
+		<Link
 			className='card'
-			onClick={() => navigate(`/product/${id}`)}
+			to={`/product/${id}`}
 		>
 			<header className='card-header'>
 				<img
@@ -29,6 +27,6 @@ export default function Card({
 				<h2 className='card__title'>{title}</h2>
 				<span className='card__price'>$ {price}</span>
 			</section>
-		</article>
+		</Link>
 	)
 }

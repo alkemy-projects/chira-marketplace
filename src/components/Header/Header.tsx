@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import { setSearch } from '../../slicers/searchSlice'
 import DiamondIcon from '@mui/icons-material/Diamond'
@@ -10,6 +10,7 @@ import menuIcon from '../../assets/icons/menu-icon.svg'
 import Results from '../Results/Results'
 import { useHeader } from './useHeader'
 import { clearResults } from '../../slicers/resultsSlice'
+import { useGoogleSignIn } from '../../hooks/useGoogleSignIn'
 
 export default function Header() {
 	const [showMenu, setShowMenu] = useState(false)
@@ -21,9 +22,13 @@ export default function Header() {
 		showLoader,
 		setShowLoader,
 		defineFormClassName,
+		loggedUser,
+		showCloseSession,
+		setShowCloseSession,
 	} = useHeader()
 	const results = useSelector((state: any) => state.results)
 	const dispatch = useDispatch()
+	const { closeSession } = useGoogleSignIn()
 	const searching = e => {
 		e.preventDefault()
 		if (window.location.href != 'http://localhost:3000/products') {
@@ -116,8 +121,30 @@ export default function Header() {
 					</ul>
 				</nav>
 				<div className='header-bottom-boxUser'>
-					<Link to='/register'>Crea tu cuenta</Link>
-					<Link to='/login'>Ingresa</Link>
+					{loggedUser ? (
+						<div
+							className='logged-user'
+							onClick={() => setShowCloseSession(!showCloseSession)}
+						>
+							<span className='logged-user__email'>{loggedUser.email}</span>
+							{showCloseSession && (
+								<button
+									className='logged-user__close-session'
+									onClick={() => {
+										closeSession()
+										location.reload()
+									}}
+								>
+									Cerrar sesión
+								</button>
+							)}
+						</div>
+					) : (
+						<>
+							<Link to='/register'>Crea tu cuenta</Link>
+							<Link to='/login'>Ingresa</Link>
+						</>
+					)}
 					<Link to='/cart'>
 						<ShoppingCartIcon className='icon-cart' />
 					</Link>

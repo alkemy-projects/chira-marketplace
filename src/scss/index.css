@@ -173,13 +173,27 @@ html body #root {
 }
 
 .left-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #4e9f3d;
-  min-width: 45%;
+  width: 100%;
+}
+
+.left-cont-header {
+  display: flex;
+  align-items: initial !important;
+  max-width: 600px;
+  text-align: left;
+  color: #ffffff;
+}
+.left-cont-header h1 {
+  font-size: 34px;
 }
 
 .cont > .left-cont > img {
-  margin: 25px 0px 0px 80px;
-  max-width: 70%;
+  max-width: 600px;
 }
 
 .cont > .left-cont > h1 {
@@ -203,11 +217,20 @@ html body #root {
   text-align: center;
 }
 
+.right-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+}
+
 .form-log {
   display: flex;
   flex-direction: column;
-  margin: 100px 0px 0px 98px;
-  width: 30%;
+  width: 100%;
+  max-width: 420px;
 }
 
 .log-input {
@@ -267,10 +290,6 @@ button:hover {
   height: 100vh;
 }
 
-.cont > div {
-  background-color: #4e9f3d;
-}
-
 .cont > .cont2 > img {
   margin-top: 18px;
 }
@@ -309,7 +328,6 @@ button:hover {
 .form-log {
   display: flex;
   flex-direction: column;
-  margin: 100px 0px 0px 120px;
 }
 
 .form-log > .cont2 {
@@ -362,6 +380,17 @@ button:hover {
 .googleIcon {
   width: 26px;
   margin: 8px 5px 0px 8px;
+}
+
+.not-registered {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 5px;
+}
+.not-registered .not-registered__link {
+  color: #4e9f3d;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 700px) {
@@ -558,6 +587,9 @@ button:hover {
   top: 0;
   padding: 0;
   list-style: none;
+  height: 100%;
+  max-height: 500px;
+  overflow-y: auto;
 }
 .product .product-wrapper .center-column {
   width: 100%;
@@ -739,6 +771,11 @@ button:hover {
   background-color: #d8e9a8;
   color: #1e5128;
   max-width: 300px;
+  transition: all 0.5s;
+}
+.cart .summary .summary__wrapper .summary-buttons .summary__clear:hover {
+  background-color: #1e5128;
+  color: #d8e9a8;
 }
 
 @media screen and (max-width: 660px) {
@@ -839,6 +876,7 @@ button:hover {
   padding: 20px;
   box-sizing: border-box;
   cursor: pointer;
+  text-decoration: none;
 }
 .card:hover {
   box-shadow: 1px 5px 20px 0px rgba(0, 0, 0, 0.36);
@@ -853,6 +891,9 @@ button:hover {
   width: 100%;
   max-width: 150px;
 }
+.card .card-body {
+  color: #191a19;
+}
 .card .card-body .card__title {
   font-size: 20px;
 }
@@ -861,6 +902,7 @@ button:hover {
   font-weight: bold;
   padding: 0 5px;
   font-weight: 400;
+  color: #4e9f3d;
 }
 
 .slider-carrousel {
@@ -1023,8 +1065,9 @@ button:hover {
   height: 50%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  max-width: 1184px;
 }
 .header-top .menu {
   display: none;
@@ -1112,11 +1155,12 @@ button:hover {
   color: #d8e9a8;
 }
 .header-bottom {
-  width: 80%;
+  width: 100%;
+  max-width: 1184px;
   height: 50%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 .header-bottom-ul {
@@ -1142,6 +1186,24 @@ button:hover {
 }
 .header-bottom-boxUser .icon-cart {
   color: #d8e9a8;
+}
+.header-bottom-boxUser .logged-user {
+  color: #ffffff;
+  position: relative;
+  cursor: pointer;
+}
+.header-bottom-boxUser .logged-user .logged-user__close-session {
+  position: absolute;
+  left: 0;
+  top: 24px;
+  width: 100%;
+  height: 40px;
+  background-color: #4e9f3d;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.header-bottom-boxUser .logged-user .logged-user__close-session:hover {
+  background-color: #1e5128;
 }
 
 @media screen and (max-width: 1150px) {
@@ -1418,6 +1480,7 @@ button:hover {
   height: 44px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  cursor: pointer;
 }
 .thumbnail.active {
   border: 2px solid #4e9f3d;
