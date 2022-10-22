@@ -66,6 +66,7 @@ export default function SliderCarrousel({
 							title={product.title}
 							image={product.thumbnail}
 							price={product.price}
+							id={product.id}
 							key={product.id}
 						/>
 					))}

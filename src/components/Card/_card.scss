@@ -10,6 +10,7 @@
 	padding: 20px;
 	box-sizing: border-box;
 	cursor: pointer;
+	text-decoration: none;
 	&:hover {
 		box-shadow: 1px 5px 20px 0px rgba(0, 0, 0, 0.36);
 	}
@@ -24,6 +25,7 @@
 		}
 	}
 	.card-body {
+		color: $blackColor;
 		.card__title {
 			font-size: 20px;
 		}
@@ -32,6 +34,7 @@
 			font-weight: bold;
 			padding: 0 5px;
 			font-weight: 400;
+			color: $primaryColor;
 		}
 	}
 }

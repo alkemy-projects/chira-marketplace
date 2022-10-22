@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
-	getDescriptionByProductId,
 	getProductById,
+	getDescriptionByProductId,
 } from '../../Services/apiMercadoLibre'
 
 export const useProduct = productId => {
@@ -9,9 +10,12 @@ export const useProduct = productId => {
 	const [productDescription, setProductDescription] = useState('')
 	const [showMoreFeatures, setShowMoreFeatures] = useState(false)
 	const [currentImage, setCurrentImage] = useState(undefined)
+	const navigate = useNavigate()
 
 	useEffect(() => {
-		getProductById(productId).then(product => {
+		getProductById(productId).then(data => {
+			if (!data) navigate('/notfound')
+			const product = data
 			setProduct(product)
 			setCurrentImage(product?.pictures[0].url)
 		})

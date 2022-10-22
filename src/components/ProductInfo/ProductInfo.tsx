@@ -2,6 +2,8 @@ import Benefit from '../Benefit/Benefit'
 import prizeIcon from '../../assets/icons/prize-icon.svg'
 import devolutionIcon from '../../assets/icons/devolution-icon.svg'
 import protectIcon from '../../assets/icons/protect-icon.svg'
+import { useDispatch } from 'react-redux'
+import { addProductToCart } from '../../slicers/cartSlice'
 
 export default function ProductInfo({
 	product,
@@ -10,6 +12,8 @@ export default function ProductInfo({
 	product: any
 	formatPrice: (price: number) => string
 }) {
+	const dispatch = useDispatch()
+
 	return (
 		<>
 			<div className='product__info'>
@@ -29,7 +33,12 @@ export default function ProductInfo({
 					: '¡Último disponible!'}
 			</p>
 			<button className='product__buy'>Comprar ahora</button>
-			<button className='product__add-cart'>Agregar al carrito</button>
+			<button
+				className='product__add-cart'
+				onClick={() => dispatch(addProductToCart(product))}
+			>
+				Agregar al carrito
+			</button>
 			<div className='benefits'>
 				<ul className='benefits-list'>
 					<Benefit

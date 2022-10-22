@@ -4,7 +4,7 @@
 	align-items: center;
 	gap: 40px;
 	height: 100%;
-	width: 100vw;
+	width: 100%;
 	padding: 20px;
 	box-sizing: border-box;
 	.header {
@@ -16,6 +16,7 @@
 	.PaymentMethods {
 		display: flex;
 		justify-content: center;
+		align-items: center;
 		gap: 15px;
 		flex-wrap: wrap;
 		width: 100%;
@@ -63,11 +64,12 @@
 		display: flex;
 		justify-content: center;
 	}
-	.PaymentMethods {
-		display: none;
+	.oferts {
+		flex-direction: column;
 	}
 	.carr {
-		width: 400px;
+		width: 750px !important;
+		margin: 0 auto !important;
 	}
 }
 
@@ -76,9 +78,17 @@
 		display: flex;
 		justify-content: center;
 	}
+	.PaymentMethods {
+		flex-direction: column;
+		height: 100%;
+		width: 100% !important;
+	}
+	.oferts {
+		flex-direction: column;
+	}
 	.carr {
-		width: 250px;
-		margin-right: 400px;
+		width: 250px !important;
+		margin: 0 auto !important;
 	}
 }
 

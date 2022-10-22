@@ -5,6 +5,7 @@ import InputWrapper from '../../components/InputWrapper/InputWrapper'
 import loginIllustratio from '../../assets/illustrations/loginIllustration.svg'
 import googleIcon from '../../assets/icons/google-icon.svg'
 import * as Yup from 'yup'
+import { Link } from 'react-router-dom'
 
 export default function Login() {
 	const { handleSubmit } = useLogin()
@@ -13,7 +14,9 @@ export default function Login() {
 	return (
 		<div className='cont'>
 			<div className='left-cont'>
-				<h1>Chira</h1>
+				<header className='left-cont-header'>
+					<h1>Chira</h1>
+				</header>
 				<img
 					src={loginIllustratio}
 					alt=''
@@ -27,63 +30,76 @@ export default function Login() {
 				validationSchema={Yup.object({
 					email: Yup.string()
 						.email('Correo electrónico inválido')
-						.required('requerido'),
+						.required('Requerido'),
 					password: Yup.string()
 						.min(4, 'La contraseña debe tener al menos 6 caracteres')
-						.max(20, 'la contraseña debe tener menos de 20 caracteres')
-						.required('requerido'),
+						.max(20, 'La contraseña debe tener menos de 20 caracteres')
+						.required('Requerido'),
 				})}
 				onSubmit={values => handleSubmit(values)}
 			>
-				<Form className='form-log'>
-					<h2>Iniciar sesion</h2>
-					<div className='log-input'>
-						<InputWrapper
-							type='text'
-							name='email'
-							label='correo electronico'
-							placeholder='juan@ejemplo.com'
-						/>
-					</div>
-					<div className='log-input'>
-						<InputWrapper
-							type='password'
-							name='password'
-							label='contraseña'
-							placeholder='contraseña'
-						/>
-					</div>
-					<div className='cont2'>
-						<label className='lab'>
-							{' '}
-							<input type='checkbox' />
-							recuerdame
-						</label>
-						<p>Olvide mi contraseña</p>
-					</div>
-					<button
-						className='Sign-in'
-						type='submit'
-					>
-						Ingresar
-					</button>
-					<button
-						className='Sign-in-google'
-						type='submit'
-						onClick={() => signInWithGoogle()}
-					>
-						<div>
-							<img
-								src={googleIcon}
-								alt=''
-								className='googleIcon'
+				<div className='right-col'>
+					<Form className='form-log'>
+						<h2>Iniciar sesión</h2>
+						<div className='log-input'>
+							<InputWrapper
+								type='text'
+								name='email'
+								label='Correo electrónico'
+								placeholder='juan@ejemplo.com'
 							/>
 						</div>
-						<div className='gspan'>
-							<span> Ingresar con Google</span>
+						<div className='log-input'>
+							<InputWrapper
+								type='password'
+								name='password'
+								label='Contraseña'
+								placeholder='Contraseña'
+							/>
 						</div>
-					</button>
-				</Form>
+						<div className='cont2'>
+							<label className='lab'>
+								{' '}
+								<input type='checkbox' />
+								Recuerdame
+							</label>
+							<p>Olvidé mi contraseña</p>
+						</div>
+						<button
+							className='Sign-in'
+							type='submit'
+						>
+							Ingresar
+						</button>
+						<button
+							className='Sign-in-google'
+							type='submit'
+							onClick={() => signInWithGoogle()}
+						>
+							<div>
+								<img
+									src={googleIcon}
+									alt=''
+									className='googleIcon'
+								/>
+							</div>
+							<div className='gspan'>
+								<span> Ingresar con Google</span>
+							</div>
+						</button>
+						<div className='not-registered'>
+							<span className='not-registered__question'>
+								¿No tienes una cuenta?
+							</span>
+							<Link
+								to='/register'
+								className='not-registered__link'
+							>
+								Registrarme
+							</Link>
+						</div>
+					</Form>
+				</div>
 			</Formik>
 		</div>
 	)

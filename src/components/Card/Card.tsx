@@ -1,14 +1,21 @@
+import { Link } from 'react-router-dom'
+
 export default function Card({
 	title,
 	image,
 	price,
+	id,
 }: {
 	title: string
 	image: string
 	price: string
+	id: string
 }) {
 	return (
-		<article className='card'>
+		<Link
+			className='card'
+			to={`/product/${id}`}
+		>
 			<header className='card-header'>
 				<img
 					className='card__image'
@@ -20,6 +27,6 @@ export default function Card({
 				<h2 className='card__title'>{title}</h2>
 				<span className='card__price'>$ {price}</span>
 			</section>
-		</article>
+		</Link>
 	)
 }
