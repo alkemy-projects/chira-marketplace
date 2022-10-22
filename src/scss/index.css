@@ -597,6 +597,8 @@ button:hover {
 
 .listCards {
   width: 200px;
+  height: 350px;
+  margin: 40px;
 }
 
 .not-found {

@@ -17,6 +17,14 @@ export const ProductsList =()=>{
 	} = useHeader()
     const [products, setProducts] = useState<Array<products>>([])
 
+const short=(string)=>{
+    if(string.length > 35){
+        return string.substring(0,35).concat("...")
+    }else{
+        return string
+    }
+}
+
     useEffect(()=>{
         const bringProducts  = async()=>{
             const data = await fetch("https://api.mercadolibre.com/sites/MLA/search?q="+search.search)
@@ -33,7 +41,7 @@ export const ProductsList =()=>{
         <div className="listCont">
            {products.map((product,i)=>(
             <div className="listCards">
-            <Card title={product.title}
+            <Card title={short(product.title)}
             image={product.thumbnail}
             price={product.price}
             id={product.id}
