@@ -8,7 +8,7 @@ import googleIcon from '../../assets/icons/google-icon.svg'
 import * as Yup from 'yup'
 
 export default function Register() {
-	const { signInWithGoogle, desloguear } = useGoogleSignIn()
+	const { signInWithGoogle } = useGoogleSignIn()
 	const { handleSubmit } = useRegister()
 
 	return (
@@ -145,7 +145,6 @@ export default function Register() {
 								/>
 								<span>Registrarse con Google</span>
 							</button>
-							<button onClick={() => desloguear()}>Desloguear</button>
 						</Form>
 					)}
 				</Formik>

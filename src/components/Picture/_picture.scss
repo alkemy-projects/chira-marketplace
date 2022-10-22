@@ -6,6 +6,7 @@
 	height: 44px;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
+	cursor: pointer;
 	&.active {
 		border: 2px solid $primaryColor;
 	}

@@ -49,7 +49,7 @@ export default function Product() {
 											zoomType='hover'
 										/>
 										<ul className='thumbnail-list'>
-											{product.pictures.map((picture, index) => (
+											{product.pictures.slice(0, 7).map((picture, index) => (
 												<Picture
 													picture={picture.url}
 													productTitle={product.title}

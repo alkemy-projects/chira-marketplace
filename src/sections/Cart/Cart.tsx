@@ -21,6 +21,9 @@ export default function Cart() {
 				<div className='cart-wrapper'>
 					<h1 className='cart__title'>Carrito</h1>
 					<ul className='cart-list'>
+						{cart.length <= 0 && (
+							<p className='cart-list__empty'>No hay productos en el carrito</p>
+						)}
 						{cart.map((product: any) => (
 							<li
 								className='cart-item'
@@ -77,10 +80,19 @@ export default function Cart() {
 							<span>Total</span>: {calculateTotal(cart)}
 						</p>
 						<div className='summary-buttons'>
-							<button className='summary__checkout'>Continuar compra</button>
+							<button
+								className='summary__checkout'
+								disabled={cart.length <= 0}
+							>
+								Continuar compra
+							</button>
 							<button
 								className='summary__clear'
-								onClick={() => dispatch(clearCart())}
+								disabled={cart.length <= 0}
+								onClick={() => {
+									dispatch(clearCart())
+									location.reload()
+								}}
 							>
 								Vaciar carrito
 							</button>
