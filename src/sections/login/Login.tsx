@@ -5,6 +5,7 @@ import InputWrapper from '../../components/InputWrapper/InputWrapper'
 import loginIllustratio from '../../assets/illustrations/loginIllustration.svg'
 import googleIcon from '../../assets/icons/google-icon.svg'
 import * as Yup from 'yup'
+import { Link } from 'react-router-dom'
 
 export default function Login() {
 	const { handleSubmit } = useLogin()
@@ -86,6 +87,17 @@ export default function Login() {
 								<span> Ingresar con Google</span>
 							</div>
 						</button>
+						<div className='not-registered'>
+							<span className='not-registered__question'>
+								¿No tienes una cuenta?
+							</span>
+							<Link
+								to='/register'
+								className='not-registered__link'
+							>
+								Registrarme
+							</Link>
+						</div>
 					</Form>
 				</div>
 			</Formik>

@@ -212,6 +212,17 @@ button {
 	margin: 8px 5px 0px 8px;
 }
 
+.not-registered {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+	gap: 5px;
+	.not-registered__link {
+		color: $primaryColor;
+		font-weight: 600;
+	}
+}
+
 @media screen and (max-width: 700px) {
 	.cont > .left-cont {
 		display: none;
