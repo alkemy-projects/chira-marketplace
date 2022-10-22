@@ -12,8 +12,9 @@
 		height: 50%;
 		display: flex;
 		flex-direction: row;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		align-items: center;
+		max-width: 1184px;
 		.menu {
 			display: none;
 		}
@@ -99,11 +100,12 @@
 		}
 	}
 	&-bottom {
-		width: 80%;
+		width: 100%;
+		max-width: 1184px;
 		height: 50%;
 		display: flex;
 		flex-direction: row;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		align-items: center;
 		&-ul {
 			list-style-type: none;
