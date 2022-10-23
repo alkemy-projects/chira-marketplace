@@ -1,0 +1,35 @@
+.cost {
+	display: flex;
+	font-size: 1rem;
+
+	& span {
+		font-size: 0.6rem;
+	}
+
+	&-discount {
+		position: relative;
+		color: gray;
+		&::after {
+			content: '';
+			height: 1px;
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			background-color: gray;
+		}
+	}
+}
+
+.radio {
+	accent-color: $primaryColor;
+}
+
+@media screen and (max-width: 850px) {
+	.location-info p:first-of-type {
+		font-size: 0.8rem;
+	}
+
+	.location-info p {
+		font-size: 0.7rem;
+	}
+}

@@ -1,10 +1,4 @@
-import {
-	BrowserRouter,
-	Navigate,
-	Route,
-	Routes,
-	useLocation,
-} from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Register from './sections/Register/Register'
 import Home from './sections/Home/Home'
 import Login from './sections/login/Login'
@@ -15,6 +9,7 @@ import { ProductsList } from './sections/ProductsList/ProductsList'
 import NotFound from './sections/NotFound/NotFound'
 import Cart from './sections/Cart/Cart'
 import CheckSession from './components/CheckSession/CheckSession'
+import { Payment } from './sections/payment/Payment'
 
 export default function App() {
 	const loader = useSelector((state: any) => state.loader)
@@ -63,6 +58,10 @@ export default function App() {
 								<Cart />
 							</CheckSession>
 						}
+					/>
+					<Route
+						path='/payment'
+						element={<Payment />}
 					/>
 					<Route
 						path='/notfound'
