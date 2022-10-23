@@ -1,6 +1,7 @@
 .slider-carrousel {
 	width: 100%;
 	max-width: 1230px;
+	height: 420px;
 	.slider-carrousel__title {
 		font-size: 24px;
 		font-weight: 600;
@@ -8,9 +9,8 @@
 	}
 	.slider-wrapper {
 		display: flex;
-		justify-content: center;
-		align-items: center;
 		width: 100%;
+		height: 300px;
 		.slick-slider {
 			width: 80%;
 			.slick-list {

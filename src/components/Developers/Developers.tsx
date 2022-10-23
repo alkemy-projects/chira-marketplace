@@ -1,28 +1,31 @@
-import React from 'react';
-import imagen from '../../assets/asd.jpg';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import './Developers.css';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
-const Developers = () => {
+interface Props {
+    developers: any[]
+}
+
+const Developers = ({ developers }: Props) => {
 
     return(
-        <div className='main-box'>
-            <h3>Developers</h3>
+        <div className='main-developers'>
+            <h3>Desarrolladores</h3>
             <div className='box'>
-                <div className='cardProfile'>
-                    <div className='box-img'>
-                        <img src={imagen} alt="asd" />
+                {developers.map((dev) => (
+                    <div key={dev.id} className='box-cardProfile'>
+                        <div className='box-cardProfile-boxImg'>
+                            <img src={dev.img} alt="asd" />
+                        </div>
+                        <div className='box-cardProfile-description'>
+                            <h4>{dev.name}</h4>
+                            <span>Front-end developer</span>
+                            <div className='box-cardProfile-description-redes'>
+                                <a href={dev.linkedin} target='new' ><LinkedInIcon className='icon-linkedin' /></a>
+                                <a href={dev.gmail} target='new' ><GitHubIcon className='icon-github' /></a>
+                            </div>
+                        </div> 
                     </div>
-                    <div className='box-description'>
-                        <h4>Ezequiel Bibe</h4>
-                        <span>Front-end developer</span>
-                        <a href='https://www.linkedin.com/in/ezequielbibee1337/' target='new' ><LinkedInIcon className='icon-linkedin' /></a>
-                    </div> 
-                </div>
-                <div className='cardProfile'></div>
-                <div className='cardProfile'></div>
-                <div className='cardProfile'></div>
-                <div className='cardProfile'></div>
+                ))}
             </div>
         </div>
     )

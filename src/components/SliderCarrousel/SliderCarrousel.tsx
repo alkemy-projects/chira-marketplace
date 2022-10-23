@@ -1,7 +1,7 @@
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import Card from '../Card/Card'
+import Cards from '../Cards/Cards'
 import Arrow from '../Arrow/Arrow'
 import { useEffect } from 'react'
 
@@ -62,7 +62,7 @@ export default function SliderCarrousel({
 			<div className='slider-wrapper'>
 				<Slider {...settings}>
 					{products?.map(product => (
-						<Card
+						<Cards
 							title={product.title}
 							image={product.thumbnail}
 							price={product.price}

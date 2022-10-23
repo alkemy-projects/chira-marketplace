@@ -4,6 +4,7 @@ import PaymentMethod from '../../components/PaymentMethod/PaymentMethod'
 import { OfertCard } from '../../components/OfertCard/OfertCard'
 import Category from '../../components/Category/Category'
 import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 
 export default function Home() {
 	const { phones, televisions, categories } = useHome()
@@ -62,6 +63,7 @@ export default function Home() {
 					</ul>
 				</section>
 			</div>
+			<Footer />
 		</>
 	)
 }

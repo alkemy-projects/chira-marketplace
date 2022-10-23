@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Card from '../../components/Card/Card'
+import Cards from '../../components/Card/Card'
 import { useHeader } from '../../components/Header/useHeader'
 import Header from '../../components/Header/Header'
 
@@ -41,7 +41,7 @@ export const ProductsList = () => {
 						className='listCards'
 						key={product.id}
 					>
-						<Card
+						<Cards
 							title={short(product.title)}
 							image={product.thumbnail}
 							price={product.price}
