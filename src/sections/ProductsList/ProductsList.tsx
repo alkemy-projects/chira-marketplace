@@ -12,6 +12,7 @@ export const ProductsList = () => {
 	}
 	const { search } = useHeader()
 	const [products, setProducts] = useState<Array<products>>([])
+    const [order, setOrder] = useState<string>("low")
 
 	const short = string => {
 		if (string.length > 35) {
@@ -21,6 +22,8 @@ export const ProductsList = () => {
 		}
 	}
 
+  
+
 	useEffect(() => {
 		const bringProducts = async () => {
 			const data = await fetch(
@@ -29,6 +32,8 @@ export const ProductsList = () => {
 			const response = await data.json()
 			setProducts(response.results)
 		}
+
+        
 		bringProducts()
 	}, [search.search])
 
@@ -36,7 +41,12 @@ export const ProductsList = () => {
 		<>
 			<Header />
 			<div className='listCont'>
-				{products.map(product => (
+                <select name="ordenar" id="" style={{height:"30px"}} onChange={(e)=>setOrder(e.target.value)}>
+                
+                    <option value="low">low price</option>
+                    <option value="high">high price</option>
+                </select>
+				{order =="low" && products.sort((productsa,productsb) => productsa.price > productsb.price ? 1 : -1).map(product => (
 					<div
 						className='listCards'
 						key={product.id}
@@ -49,6 +59,20 @@ export const ProductsList = () => {
 						/>
 					</div>
 				))}
+                {order == "high" && products.sort((productsa,productsb) => productsa.price > productsb.price ? 1 : -1).reverse().map(product => (
+					<div
+						className='listCards'
+						key={product.id}
+					>
+						<Card
+							title={short(product.title)}
+							image={product.thumbnail}
+							price={product.price}
+							id={product.id}
+						/>
+					</div>
+				))}
+                
 			</div>
 		</>
 	)
