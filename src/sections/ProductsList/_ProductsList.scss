@@ -1,27 +1,28 @@
 .listCont{
     width: 80%;
     //margin: 0 auto;
-    margin: -100px 0 0 150px;
+    margin: -100px 0 0 200px;
     height: 100vh;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
   
     
 }
 .listCards{
     width: 250px;
     height: 400px;
-    margin: 20px;
+    margin: 20px 20px -70px 20px;
 }
 .selectPrice{
     padding-top: 110px;
-    margin-left: 0px;
+    margin-left: 20px;
 }
 
 .selectPrice select{
     width: 150px;
     height: 30px;
     border-radius: 7px;
+    color: $primaryColor;
     
 }
