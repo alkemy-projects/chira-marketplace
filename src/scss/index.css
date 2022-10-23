@@ -439,6 +439,9 @@ button:hover {
   min-height: 90px;
   border-radius: 10px;
 }
+.home-cont .carr-prod {
+  margin-left: 227px;
+}
 .home-cont .offers {
   width: 100%;
   max-width: 1230px;
@@ -480,7 +483,7 @@ button:hover {
   .oferts {
     flex-direction: column;
   }
-  .carr {
+  .carr-prod {
     width: 750px !important;
     margin: 0 auto !important;
   }
@@ -498,7 +501,7 @@ button:hover {
   .oferts {
     flex-direction: column;
   }
-  .carr {
+  .carr-prod {
     width: 250px !important;
     margin: 0 auto !important;
   }

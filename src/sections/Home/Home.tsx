@@ -30,6 +30,7 @@ export default function Home() {
 						url='https://play-lh.googleusercontent.com/4VWplTzMiteBZVEyTTSyp_mnG5zSN0pgyW_svdJhRsLvAMapuKoFs_af2Qr8jN04ZGKI'
 					/>
 				</div>
+				<div className='carr-prod'>
 				<SliderCarrousel
 					products={phones}
 					title='Teléfonos en oferta'
@@ -38,6 +39,7 @@ export default function Home() {
 					products={televisions}
 					title='Televisores'
 				/>
+				</div>
 				<section className='offers'>
 					<h1 className='offers__title'>Ofertas dia de la madre</h1>
 					<div className='offers-wrapper'>
@@ -47,7 +49,7 @@ export default function Home() {
 						/>
 						<OfertCard
 							ofertText='Para que tu mama se luzca'
-							image='https://images.samsung.com/is/image/samsung/ar-galaxy-tab-a-t515-sm-t510nzklaro-frontblack-169407070?$650_519_PNG$'
+							image='https://www.chanel.com/images/w_0.51,h_0.51,c_crop/q_auto:good,f_auto,fl_lossy,dpr_1.2/w_1920/coco-mademoiselle-eau-de-parfum-spray-3-4fl-oz--packshot-default-116520-8848376659998.jpg'
 						/>
 					</div>
 				</section>
