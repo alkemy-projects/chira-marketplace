@@ -3,6 +3,7 @@ import { getResultsByQuery } from '../../Services/apiMercadoLibre'
 import { setResults } from '../../slicers/resultsSlice'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { clearSearch } from '../../slicers/searchSlice'
 
 export const useHeader = () => {
 	const [showResults, setShowResults] = useState(false)
@@ -15,6 +16,7 @@ export const useHeader = () => {
 
 	useEffect(() => {
 		if (search.search.length <= 0) return
+		setShowResults(true)
 		const timer = setTimeout(() => {
 			searchProduct(search.search)
 		}, 1000)
@@ -23,17 +25,16 @@ export const useHeader = () => {
 		}
 	}, [search.search])
 
+	useEffect(() => {
+		dispatch(clearSearch())
+	}, [])
+
 	const searchProduct = async query => {
 		const data = await getResultsByQuery(query)
 		const foundResults = data.results
 		setShowLoader(false)
 		dispatch(setResults(foundResults))
 	}
-
-	useEffect(() => {
-		if (search.search.length <= 0) return
-		setShowResults(true)
-	}, [search.search])
 
 	window.onclick = (event: MouseEvent) => {
 		if (
