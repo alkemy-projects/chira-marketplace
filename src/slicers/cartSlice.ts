@@ -1,11 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { ProductInfo } from '../interfaces/Product.interface'
 
-const initialState: ProductInfo[] = JSON.parse(
-	localStorage.getItem('cart') || '[]'
-)
-	? JSON.parse(localStorage.getItem('cart') || '[]')
-	: ([] as ProductInfo[][])
+type initState = {
+	cart: ProductInfo[]
+	hasBought: boolean
+}
+
+const initialState: initState = {
+	cart: JSON.parse(localStorage.getItem('cart') || '[]')
+		? JSON.parse(localStorage.getItem('cart') || '[]')
+		: ([] as ProductInfo[][]),
+	hasBought: false,
+}
 
 export const cartSlice = createSlice({
 	name: 'cart',
@@ -14,16 +20,16 @@ export const cartSlice = createSlice({
 		addProductToCart: (state, action) => {
 			const productToAdd = action.payload
 			productToAdd.quantity = 1
-			state.push(productToAdd)
-			localStorage.setItem('cart', JSON.stringify(state))
+			state.cart.push(productToAdd)
+			localStorage.setItem('cart', JSON.stringify(state.cart))
 		},
 		updateQuantity: (state, action) => {
 			const { id, event } = action.payload
-			const productIndex = state.findIndex(product => product.id === id)
+			const productIndex = state.cart.findIndex(product => product.id === id)
 			event === '+'
-				? state[productIndex].quantity++
-				: state[productIndex].quantity--
-			localStorage.setItem('cart', JSON.stringify(state))
+				? state.cart[productIndex].quantity++
+				: state.cart[productIndex].quantity--
+			localStorage.setItem('cart', JSON.stringify(state.cart))
 		},
 		clearCart: () => {
 			localStorage.removeItem('cart')

@@ -1,5 +1,6 @@
 import { ChangeEvent, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import {
 	LocationCard,
 	ShipmentMethodCart,
@@ -9,8 +10,11 @@ import {
 import { ProductInfo } from '../../interfaces/Product.interface'
 
 export const Payment = () => {
-	const cart = useSelector((state: { cart: ProductInfo[] }) => state.cart)
+	const { cart } = useSelector(
+		(state: { cart: { cart: ProductInfo[] } }) => state.cart
+	)
 	const [isChecked, setIsChecked] = useState<'shipment' | 'local'>('shipment')
+	const navigate = useNavigate()
 
 	const totalProductCart = useMemo(
 		() =>
@@ -21,10 +25,12 @@ export const Payment = () => {
 		[cart]
 	)
 
-	console.log(totalProductCart)
-
 	const onCheck = (e: ChangeEvent<HTMLInputElement>) => {
 		setIsChecked(e.target.name as 'shipment' | 'local')
+	}
+
+	const handleClick = () => {
+		navigate('/purchase')
 	}
 
 	return (
@@ -83,7 +89,12 @@ export const Payment = () => {
 							})}
 						</p>
 					</div>
-					<button className='button'>Finalizar compra</button>
+					<button
+						onClick={handleClick}
+						className='button'
+					>
+						Finalizar compra
+					</button>
 				</div>
 			</div>
 		</>
