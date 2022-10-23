@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getResultsByQuery } from '../../Services/apiMercadoLibre'
 import { setResults } from '../../slicers/resultsSlice'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export const useHeader = () => {
 	const [showResults, setShowResults] = useState(false)
@@ -10,6 +11,7 @@ export const useHeader = () => {
 	const search = useSelector((state: any) => state.search)
 	const dispatch = useDispatch()
 	const loggedUser = JSON.parse(localStorage.getItem('user') || 'null')
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		if (search.search.length <= 0) return
@@ -34,7 +36,6 @@ export const useHeader = () => {
 	}, [search.search])
 
 	window.onclick = (event: MouseEvent) => {
-		console.log(document.querySelector('.results'))
 		if (
 			showResults &&
 			!(document.querySelector('.results') as HTMLElement).contains(
@@ -46,9 +47,11 @@ export const useHeader = () => {
 			setShowResults(false)
 	}
 
-	const defineFormClassName = () => {
-		if (!showResults) return 'form'
-		else return 'form active'
+	const defineFormClassName = () => (!showResults ? 'form' : 'form active')
+
+	const searching = e => {
+		e.preventDefault()
+		navigate('/products')
 	}
 
 	return {
@@ -61,5 +64,6 @@ export const useHeader = () => {
 		loggedUser,
 		showCloseSession,
 		setShowCloseSession,
+		searching,
 	}
 }

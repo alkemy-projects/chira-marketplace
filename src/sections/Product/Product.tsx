@@ -7,7 +7,7 @@ import Features from '../../components/Features/Features'
 import Picture from '../../components/Picture/Picture'
 import Header from '../../components/Header/Header'
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.min.css'
-import InnerImageZoom from "react-inner-image-zoom"
+import InnerImageZoom from 'react-inner-image-zoom'
 import Description from '../../components/Description/Description'
 
 export default function Product() {

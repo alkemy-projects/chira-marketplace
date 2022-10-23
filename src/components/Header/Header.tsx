@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import { setSearch } from '../../slicers/searchSlice'
 import DiamondIcon from '@mui/icons-material/Diamond'
@@ -14,7 +14,6 @@ import { useGoogleSignIn } from '../../hooks/useGoogleSignIn'
 
 export default function Header() {
 	const [showMenu, setShowMenu] = useState(false)
-	const navigate = useNavigate()
 	const {
 		search,
 		showResults,
@@ -25,16 +24,11 @@ export default function Header() {
 		loggedUser,
 		showCloseSession,
 		setShowCloseSession,
+		searching,
 	} = useHeader()
 	const results = useSelector((state: any) => state.results)
 	const dispatch = useDispatch()
 	const { closeSession } = useGoogleSignIn()
-	const searching = e => {
-		e.preventDefault()
-		if (window.location.href != 'http://localhost:3000/products') {
-			navigate('products')
-		}
-	}
 
 	return (
 		<header className='header'>

@@ -1,20 +1,14 @@
-import {
-	BrowserRouter,
-	Navigate,
-	Route,
-	Routes,
-	useLocation,
-} from 'react-router-dom'
-import Register from './sections/Register/Register'
-import Home from './sections/Home/Home'
-import Login from './sections/login/Login'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import Loader from './components/Loader/Loader'
-import Product from './sections/Product/Product'
 import { ProductsList } from './sections/ProductsList/ProductsList'
+import Register from './sections/Register/Register'
 import NotFound from './sections/NotFound/NotFound'
+import Product from './sections/Product/Product'
+import Login from './sections/login/Login'
 import Cart from './sections/Cart/Cart'
+import Home from './sections/Home/Home'
 import CheckSession from './components/CheckSession/CheckSession'
+import Loader from './components/Loader/Loader'
 
 export default function App() {
 	const loader = useSelector((state: any) => state.loader)

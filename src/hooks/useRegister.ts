@@ -23,7 +23,6 @@ export const useRegister = () => {
 
 	const handleSubmit = async (values: Values) => {
 		dispatch(startLoader())
-		console.log(values)
 		const auth = getAuth()
 		const { email, password } = values
 		try {
