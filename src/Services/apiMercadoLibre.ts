@@ -18,3 +18,4 @@ export const getDescriptionByProductId = id => {
 		res => res.json()
 	)
 }
+

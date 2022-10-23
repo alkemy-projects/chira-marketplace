@@ -10,7 +10,7 @@ export default function CheckSession({ children }: { children: JSX.Element }) {
 	}, [])
 
 	const checkLoggedUser = () => {
-		console.log(loggedUser)
+		
 		if (!loggedUser) {
 			navigate('/login')
 		}
