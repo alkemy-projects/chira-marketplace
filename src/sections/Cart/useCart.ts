@@ -3,7 +3,7 @@ import { updateQuantity } from '../../slicers/cartSlice'
 import { useState, useEffect } from 'react'
 
 export const useCart = () => {
-	const cartState = useSelector((state: any) => state.cart)
+	const { cart: cartState } = useSelector((state: any) => state.cart)
 	const [cart, setCart] = useState(
 		cartState.length >= 1
 			? cartState

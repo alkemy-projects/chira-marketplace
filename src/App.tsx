@@ -10,6 +10,7 @@ import NotFound from './sections/NotFound/NotFound'
 import Cart from './sections/Cart/Cart'
 import CheckSession from './components/CheckSession/CheckSession'
 import { Payment } from './sections/payment/Payment'
+import { GreetfulUI } from './sections/GreetfulUI/GreetfulUI'
 
 export default function App() {
 	const loader = useSelector((state: any) => state.loader)
@@ -32,6 +33,14 @@ export default function App() {
 						element={
 							<CheckSession>
 								<Home />
+							</CheckSession>
+						}
+					/>
+					<Route
+						path='/purchase'
+						element={
+							<CheckSession>
+								<GreetfulUI />
 							</CheckSession>
 						}
 					/>
