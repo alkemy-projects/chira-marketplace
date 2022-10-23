@@ -1,0 +1,33 @@
+.cart-product {
+	display: flex;
+	align-items: center;
+}
+
+.img {
+	object-fit: contain;
+	width: 5rem;
+	height: 5rem;
+	max-height: 5rem;
+	max-width: 5rem;
+	margin-right: 0.5rem;
+}
+
+.cart-product-description {
+	font-size: 0.7rem;
+	margin: 0;
+	letter-spacing: 0.01em;
+}
+
+.cart-product-price {
+	margin: 0;
+}
+
+.total {
+	display: flex;
+	margin-top: auto;
+	justify-content: space-between;
+
+	& p:last-of-type {
+		font-weight: 600;
+	}
+}

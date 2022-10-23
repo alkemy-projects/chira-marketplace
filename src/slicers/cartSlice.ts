@@ -1,15 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { ProductInfo } from '../interfaces/Product.interface'
 
-interface CartProduct {
-	id: string
-	name: string
-	price: number
-	quantity: number
-}
-
-const initialState = JSON.parse(localStorage.getItem('cart') || '[]')
+const initialState: ProductInfo[] = JSON.parse(
+	localStorage.getItem('cart') || '[]'
+)
 	? JSON.parse(localStorage.getItem('cart') || '[]')
-	: ([] as CartProduct[])
+	: ([] as ProductInfo[][])
 
 export const cartSlice = createSlice({
 	name: 'cart',
@@ -29,7 +25,7 @@ export const cartSlice = createSlice({
 				: state[productIndex].quantity--
 			localStorage.setItem('cart', JSON.stringify(state))
 		},
-		clearCart: state => {
+		clearCart: () => {
 			localStorage.removeItem('cart')
 			return initialState
 		},

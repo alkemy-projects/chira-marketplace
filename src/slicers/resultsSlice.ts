@@ -9,7 +9,7 @@ export const resultsSlice = createSlice({
 		setResults: (state, action) => {
 			Object.assign(state, action.payload)
 		},
-		clearResults: state => initialState,
+		clearResults: () => initialState,
 	},
 })
 

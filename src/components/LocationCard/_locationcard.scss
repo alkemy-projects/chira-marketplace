@@ -1,0 +1,57 @@
+.card-payment {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	border-radius: 20px;
+	padding: 1.5rem;
+	box-shadow: -1px 1px 18px -5px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: -1px 1px 18px -5px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: -1px 1px 18px -5px rgba(0, 0, 0, 0.75);
+
+	& a {
+		color: $primaryColor;
+		font-weight: 600;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+.card-middle {
+	flex-grow: 1;
+	margin: 0 2rem;
+}
+
+.location-icon {
+	height: 3rem;
+	width: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $primaryColorLight;
+	border-radius: 50%;
+
+	& svg {
+		width: 1.5rem;
+		height: 1.5rem;
+		color: $primaryColor;
+	}
+}
+
+.location-info {
+	& p:first-of-type {
+		margin-top: 0;
+		color: $primaryColorDark;
+		font-size: 1rem;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+	}
+
+	& p {
+		margin: 0.5rem 0;
+		text-transform: capitalize;
+		font-size: 0.8rem;
+		color: $grayColor;
+	}
+}
