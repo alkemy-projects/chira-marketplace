@@ -1312,6 +1312,8 @@ button:hover {
   cursor: pointer;
   transition: all 0.25s ease-out;
   border: 1px solid rgba(0, 0, 0, 0);
+  text-decoration: none;
+  color: #586666;
 }
 .results .results-list .result:hover {
   background-color: #d8e9a8;
