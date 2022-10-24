@@ -1431,6 +1431,9 @@ footer .repository {
   font-size: 16px;
   margin-top: 10px;
 }
+footer .repository .icon-github {
+  width: 30px;
+}
 
 .results {
   position: absolute;
