@@ -15,7 +15,7 @@ export default function Login() {
 		<div className='cont'>
 			<div className='left-cont'>
 				<header className='left-cont-header'>
-					<h1>Chira</h1>
+					<h1>Chira Marketplace</h1>
 				</header>
 				<img
 					src={loginIllustratio}

@@ -444,6 +444,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 .home-cont .offers {
   width: 100%;
@@ -486,10 +487,6 @@ button:hover {
   .oferts {
     flex-direction: column;
   }
-  .carr-prod {
-    width: 750px !important;
-    margin: 0 auto !important;
-  }
 }
 @media screen and (max-width: 600px) {
   .carrcont {
@@ -503,10 +500,6 @@ button:hover {
   }
   .oferts {
     flex-direction: column;
-  }
-  .carr-prod {
-    width: 250px !important;
-    margin: 0 auto !important;
   }
 }
 @media screen and (min-width: 1260px) {
@@ -625,33 +618,91 @@ button:hover {
     height: 300px;
   }
 }
-.listCont {
-  width: 80%;
-  margin: -100px 0 0 200px;
-  height: 100vh;
+.product-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.product-list h1 {
+  font-size: 24px;
+  margin: 0;
+  margin-top: 20px;
+}
+.product-list .product-list-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  gap: 140px;
+  width: 100%;
+  max-width: 1184px;
+  padding: 30px 0px;
 }
-
-.listCards {
-  width: 250px;
-  height: 400px;
-  margin: 20px 20px -70px 20px;
-}
-
-.selectPrice {
-  padding-top: 110px;
-  margin-left: 20px;
-}
-
-.selectPrice select {
+.product-list .product-list-wrapper .filters select {
   width: 150px;
   height: 30px;
   border-radius: 7px;
-  color: #4e9f3d;
+  color: #191a19;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.product-list .product-list-wrapper .listCont {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+  max-width: 890px;
+  box-sizing: border-box;
+}
+.product-list .product-list-wrapper .listCont .link {
+  text-decoration: none;
+  color: #191a19;
+}
+.product-list .product-list-wrapper .listCont .link .card {
+  height: 100%;
+  max-width: 260px;
+  min-width: 260px;
+  box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.36);
+}
+.product-list .product-list-wrapper .listCont .link .card .card-oculto {
+  display: flex;
+}
+.product-list .product-list-wrapper .listCont .link .card-boxImg {
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.product-list .product-list-wrapper .listCont .link .card-boxImg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 10px;
+}
+.no-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
+@media screen and (max-width: 1180px) {
+  .product-list .product-list-wrapper {
+    justify-content: center;
+    padding: 0 20px;
+    padding-top: 10px;
+    gap: 10px;
+  }
+  .product-list .product-list-wrapper .listCont .link .card {
+    max-width: 200px;
+    min-width: 200px;
+  }
+}
 .not-found {
   display: flex;
   flex-direction: column;
@@ -752,6 +803,24 @@ button:hover {
   align-items: center;
   gap: 10px;
   height: 100%;
+  position: relative;
+}
+.cart .cart-wrapper .cart-list .cart-item .cart-item-wrapper .quantity .remove-product {
+  width: 35px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: transparent;
+  position: absolute;
+  bottom: 160px;
+  left: 90px;
+  transition: all 0.25s;
+}
+.cart .cart-wrapper .cart-list .cart-item .cart-item-wrapper .quantity .remove-product img {
+  width: 100%;
+}
+.cart .cart-wrapper .cart-list .cart-item .cart-item-wrapper .quantity .remove-product:hover {
+  transform: scale(1.1);
 }
 .cart .cart-wrapper .cart-list .cart-item .cart-item-wrapper .quantity .quantity__operation {
   width: 30px;
@@ -1258,8 +1327,8 @@ button:hover {
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease-out;
-  width: 80%;
-  height: 220px;
+  width: 100%;
+  max-width: 220px;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 5px !important;
@@ -1294,7 +1363,7 @@ button:hover {
   font-size: 12px;
 }
 .link .card:hover {
-  height: 320px;
+  height: 100%;
   box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.36);
 }
 .link .card:hover .card-oculto {
@@ -1303,48 +1372,61 @@ button:hover {
 .link .card-title > a {
   color: gray;
 }
-@media screen and (max-width: 640px) {
-  .link .card {
-    height: 150px;
-  }
-  .link .card:hover {
-    height: 300px;
-  }
-}
 @media screen and (max-width: 1150px) {
   .link .card {
-    height: 180px;
+    max-width: 200px;
+    height: 100% !important;
+    box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.36);
   }
-  .link .card:hover {
-    height: 300px;
+  .link .card .card-oculto {
+    display: flex;
   }
 }
 
 .main-developers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 40px;
   width: 100%;
   max-width: 1230px;
-  height: 400px;
-  margin-bottom: 30px;
+  height: 100%;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+.main-developers h3 {
+  font-size: 22px;
+  margin: 0;
+  margin-top: 20px;
 }
 .main-developers .box {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 30px;
+  row-gap: 70px;
   width: 100%;
   height: 100%;
 }
 .main-developers .box-cardProfile {
   transition: all 0.3s ease-out;
-  width: 18%;
-  height: 200px;
+  width: 100%;
+  max-width: 200px;
   background-color: white;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: 1px 1px 11px 0px rgba(0, 0, 0, 0.36);
+}
+.main-developers .box-cardProfile .box-cardProfile-description {
+  display: flex;
 }
 .main-developers .box-cardProfile-boxImg {
   width: 100%;
-  height: 200px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1352,7 +1434,7 @@ button:hover {
 .main-developers .box-cardProfile-boxImg img {
   transition: all 0.3s ease-out;
   width: 100%;
-  height: 200px;
+  max-width: 120px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1366,37 +1448,67 @@ button:hover {
   justify-content: space-evenly;
   align-items: center;
 }
+.main-developers .box-cardProfile-description-redes {
+  display: flex;
+}
 .main-developers .box-cardProfile-description-redes .icon-linkedin {
   color: rgb(115, 115, 240);
+  cursor: pointer;
+  font-size: 40px;
+  width: 30px;
 }
 .main-developers .box-cardProfile-description-redes .icon-github {
   color: rgb(0, 0, 0);
-}
-.main-developers .box-cardProfile:hover {
-  border-radius: 20px;
-  height: 300px;
-  box-shadow: 1px 30px 41px 0px rgba(0, 0, 0, 0.36);
-  -webkit-box-shadow: 1px 30px 41px 0px rgba(0, 0, 0, 0.36);
-  -moz-box-shadow: 1px 30px 41px 0px rgba(0, 0, 0, 0.36);
-}
-.main-developers .box-cardProfile:hover .box-cardProfile-boxImg img {
-  width: 70%;
-  height: 150px;
-}
-.main-developers .box-cardProfile:hover .box-cardProfile-description {
-  display: flex;
+  cursor: pointer;
+  font-size: 40px;
+  width: 30px;
 }
 
+@media screen and (max-width: 640px) {
+  .main-developers .box-cardProfile {
+    max-width: 100px;
+    height: 100%;
+    border-radius: 20px;
+    padding-bottom: 20px;
+  }
+  .main-developers .box-cardProfile .box-cardProfile-description {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .main-developers .box-cardProfile-description-redes .icon-linkedin {
+    font-size: 30px;
+    width: 20px;
+  }
+  .main-developers .box-cardProfile-description-redes .icon-github {
+    font-size: 30px;
+    width: 20px;
+  }
+}
 footer {
-  margin-top: 150px;
-  height: auto;
-  padding: 10px;
-  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 20px;
+  margin-top: 150px;
+  height: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  height: auto;
   background-color: #ffffff;
+  text-align: center;
+}
+footer .repository {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+footer .repository .icon-github {
+  width: 30px;
 }
 
 .results {

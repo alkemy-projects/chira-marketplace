@@ -3,7 +3,6 @@ import {
 	GoogleAuthProvider,
 	signInWithRedirect,
 	getRedirectResult,
-	signOut,
 } from 'firebase/auth'
 import { useEffect } from 'react'
 import { provider } from '../authGoogleProvider'
@@ -14,10 +13,8 @@ export const useGoogleSignIn = () => {
 	useEffect(() => {
 		getRedirectResult(auth)
 			.then((result: any) => {
-				const credential = GoogleAuthProvider.credentialFromResult(result)
-				const token = credential?.accessToken
 				const user = result?.user
-				console.log(token, user)
+				console.log(user)
 			})
 			.catch(error => {
 				const errorCode = error.code
@@ -28,11 +25,7 @@ export const useGoogleSignIn = () => {
 			})
 	}, [])
 
-	const closeSession = () => {
-		localStorage.removeItem('user')
-		signOut(auth)
-	}
 	const signInWithGoogle = () => signInWithRedirect(auth, provider)
 
-	return { signInWithGoogle, closeSession }
+	return { signInWithGoogle }
 }

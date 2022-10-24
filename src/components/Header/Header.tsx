@@ -10,7 +10,6 @@ import menuIcon from '../../assets/icons/menu-icon.svg'
 import Results from '../Results/Results'
 import { useHeader } from './useHeader'
 import { clearResults } from '../../slicers/resultsSlice'
-import { useGoogleSignIn } from '../../hooks/useGoogleSignIn'
 
 export default function Header() {
 	const [showMenu, setShowMenu] = useState(false)
@@ -25,10 +24,11 @@ export default function Header() {
 		showCloseSession,
 		setShowCloseSession,
 		searching,
+		cartItemsQuantity,
+		closeSession,
 	} = useHeader()
 	const results = useSelector((state: any) => state.results)
 	const dispatch = useDispatch()
-	const { closeSession } = useGoogleSignIn()
 
 	return (
 		<header className='header'>
@@ -40,7 +40,7 @@ export default function Header() {
 					<DiamondIcon className='diamond' />
 					<div className='header-top-logo-title'>
 						<h1>Chira</h1>
-						<h3>marketplace</h3>
+						<h3>Marketplace</h3>
 					</div>
 				</Link>
 				<div className='header-top-buscador'>
@@ -141,6 +141,7 @@ export default function Header() {
 					)}
 					<Link to='/cart'>
 						<ShoppingCartIcon className='icon-cart' />
+						<span className='cart-items-quantity'> {cartItemsQuantity()} </span>
 					</Link>
 				</div>
 			</div>

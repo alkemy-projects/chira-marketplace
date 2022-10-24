@@ -1,75 +1,65 @@
 .link {
-    text-decoration: none;
-    color: $blackColor;
-    .card {
-        display: flex;
-        flex-direction: column;
-        transition: all 0.3s ease-out;
-        width: 80%;
-        height: 220px;
-        background-color: $whiteColor;
-        border-radius: 10px;
-        padding: 5px !important;
-        margin: auto;
-        
-        &-boxImg {
-            display: flex;
-            align-items: center;    
-            justify-content: center;
-            width: 100%;
-            img {
-                width: 80%;
-                height: auto;
-            }
-        }
-        &-precio {
-            font-size: 20px;
-            padding: 0px 10px;
-        }
-        &-oculto {
-            width: 100%;
-            transition: all 0.5s ease-out;
-            display: none;
-            flex-direction: column;
-            padding: 5px !important;
-    
-            p {
-                font-size: 12px;
-                color: gray;
-            }
-            h5 {
-                font-size: 12px;
-            }
-        }
-        &:hover {
-            height: 320px;
-            box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.36);
-            .card-oculto {
-                display: flex;
-            }
-        }
-        &-title > a {
-            color: gray;
-        }
-        
-    }
-    
-    @media screen and (max-width: 640px) {
-        .card {
-            height: 150px;
-            
-            &:hover {
-                height: 300px;
-            }
-        }
-    }
-    @media screen and (max-width: 1150px) {
-        .card {
-            height: 180px;
-            
-            &:hover {
-                height: 300px;
-            }
-        }
-    }    
+	text-decoration: none;
+	color: $blackColor;
+	.card {
+		display: flex;
+		flex-direction: column;
+		transition: all 0.3s ease-out;
+		width: 100%;
+		max-width: 220px;
+		background-color: $whiteColor;
+		border-radius: 10px;
+		padding: 5px !important;
+		margin: auto;
+		&-boxImg {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			img {
+				width: 80%;
+				height: auto;
+			}
+		}
+		&-precio {
+			font-size: 20px;
+			padding: 0px 10px;
+		}
+		&-oculto {
+			width: 100%;
+			transition: all 0.5s ease-out;
+			display: none;
+			flex-direction: column;
+			padding: 5px !important;
+
+			p {
+				font-size: 12px;
+				color: gray;
+			}
+			h5 {
+				font-size: 12px;
+			}
+		}
+		&:hover {
+			height: 100%;
+			box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.36);
+			.card-oculto {
+				display: flex;
+			}
+		}
+		&-title > a {
+			color: gray;
+		}
+	}
+
+	@media screen and (max-width: 1150px) {
+		.card {
+			max-width: 200px;
+			height: 100% !important;
+			box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.36);
+			.card-oculto {
+				display: flex;
+			}
+		}
+	}
 }

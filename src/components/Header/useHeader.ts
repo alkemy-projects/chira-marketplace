@@ -4,12 +4,14 @@ import { setResults } from '../../slicers/resultsSlice'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { clearSearch } from '../../slicers/searchSlice'
+import { getAuth, signOut } from 'firebase/auth'
 
 export const useHeader = () => {
 	const [showResults, setShowResults] = useState(false)
 	const [showLoader, setShowLoader] = useState(false)
 	const [showCloseSession, setShowCloseSession] = useState(false)
 	const search = useSelector((state: any) => state.search)
+	const cartState = useSelector((state: any) => state.cart)
 	const dispatch = useDispatch()
 	const loggedUser = JSON.parse(localStorage.getItem('user') || 'null')
 	const navigate = useNavigate()
@@ -52,7 +54,22 @@ export const useHeader = () => {
 
 	const searching = e => {
 		e.preventDefault()
-		navigate('/products')
+		if (e.target[0].value.length <= 0) return
+		navigate(`/products/${e.target[0].value}`)
+	}
+
+	const cartItemsQuantity = () => {
+		const cart =
+			cartState.length >= 1
+				? cartState
+				: JSON.parse(localStorage.getItem('cart') || '[]')
+		return cart.length
+	}
+
+	const closeSession = () => {
+		const auth = getAuth()
+		localStorage.removeItem('user')
+		signOut(auth)
 	}
 
 	return {
@@ -66,5 +83,7 @@ export const useHeader = () => {
 		showCloseSession,
 		setShowCloseSession,
 		searching,
+		cartItemsQuantity,
+		closeSession,
 	}
 }

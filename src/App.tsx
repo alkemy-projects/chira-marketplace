@@ -43,7 +43,7 @@ export default function App() {
 						}
 					/>
 					<Route
-						path='/products'
+						path='/products/:query'
 						element={
 							<CheckSession>
 								<ProductsList />
