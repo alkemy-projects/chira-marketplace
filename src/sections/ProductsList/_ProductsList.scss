@@ -41,6 +41,7 @@
 				.card {
 					height: 100%;
 					max-width: 260px;
+					min-width: 260px;
 					box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.36);
 					.card-oculto {
 						display: flex;
@@ -71,8 +72,18 @@
 		}
 	}
 }
+.no-results {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin-top: 50px;
+	padding: 20px;
+	box-sizing: border-box;
+	text-align: center;
+}
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1180px) {
 	.product-list {
 		.product-list-wrapper {
 			justify-content: center;
@@ -83,6 +94,7 @@
 				.link {
 					.card {
 						max-width: 200px;
+						min-width: 200px;
 					}
 				}
 			}

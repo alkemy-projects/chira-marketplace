@@ -45,10 +45,12 @@ const Cards = ({ title, image, price, id }: Props) => {
 				<span className='card-precio'>{formatPrice(price)}</span>
 				<div className='card-oculto'>
 					<h5>{title.slice(0, 18)}</h5>
-					<p className='card-description'>
-						{description.slice(0, 50)}
-						{50 < description.length && '...'}
-					</p>
+					{description && (
+						<p className='card-description'>
+							{description.slice(0, 50)}
+							{50 < description.length && '...'}
+						</p>
+					)}
 				</div>
 			</div>
 		</Link>

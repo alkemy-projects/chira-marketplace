@@ -55,7 +55,7 @@ export const useHeader = () => {
 	const searching = e => {
 		e.preventDefault()
 		if (e.target[0].value.length <= 0) return
-		navigate('/products')
+		navigate(`/products/${e.target[0].value}`)
 	}
 
 	const cartItemsQuantity = () => {

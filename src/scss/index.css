@@ -662,6 +662,7 @@ button:hover {
 .product-list .product-list-wrapper .listCont .link .card {
   height: 100%;
   max-width: 260px;
+  min-width: 260px;
   box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.36);
 }
 .product-list .product-list-wrapper .listCont .link .card .card-oculto {
@@ -679,7 +680,18 @@ button:hover {
      object-fit: contain;
   border-radius: 10px;
 }
-@media screen and (max-width: 1150px) {
+.no-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+@media screen and (max-width: 1180px) {
   .product-list .product-list-wrapper {
     justify-content: center;
     padding: 0 20px;
@@ -688,6 +700,7 @@ button:hover {
   }
   .product-list .product-list-wrapper .listCont .link .card {
     max-width: 200px;
+    min-width: 200px;
   }
 }
 .not-found {
