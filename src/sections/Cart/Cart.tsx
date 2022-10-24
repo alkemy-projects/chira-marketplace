@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import { clearCart, removeProductFromCart } from '../../slicers/cartSlice'
 import { useCart } from './useCart'
@@ -6,6 +7,7 @@ import removeIcon from '../../assets/icons/remove-icon.svg'
 
 export default function Cart() {
 	const dispatch = useDispatch()
+	const navigate = useNavigate()
 
 	const {
 		handleAddQuantity,
@@ -14,6 +16,10 @@ export default function Cart() {
 		calculateTotal,
 		cart,
 	} = useCart()
+
+	const handlePaymentRedirect = () => {
+		navigate('/payment')
+	}
 
 	return (
 		<>
@@ -95,6 +101,7 @@ export default function Cart() {
 							<button
 								className='summary__checkout'
 								disabled={cart.length <= 0}
+								onClick={handlePaymentRedirect}
 							>
 								Continuar compra
 							</button>

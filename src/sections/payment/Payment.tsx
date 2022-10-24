@@ -1,5 +1,5 @@
 import { ChangeEvent, useMemo, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import {
 	LocationCard,
@@ -8,6 +8,7 @@ import {
 	ProductCart,
 } from '../../components'
 import { ProductInfo } from '../../interfaces/Product.interface'
+import { setHasBought } from '../../slicers/cartSlice'
 
 export const Payment = () => {
 	const { cart } = useSelector(
@@ -15,6 +16,7 @@ export const Payment = () => {
 	)
 	const [isChecked, setIsChecked] = useState<'shipment' | 'local'>('shipment')
 	const navigate = useNavigate()
+	const dispatch = useDispatch()
 
 	const totalProductCart = useMemo(
 		() =>
@@ -30,6 +32,7 @@ export const Payment = () => {
 	}
 
 	const handleClick = () => {
+		dispatch(setHasBought(true))
 		navigate('/purchase')
 	}
 
