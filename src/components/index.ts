@@ -1,6 +1,5 @@
 export * from './Arrow/Arrow'
 export * from './Benefit/Benefit'
-export * from './Card/Card'
 export * from './Cards/Cards'
 export * from './Category/Category'
 export * from './CheckSession/CheckSession'
