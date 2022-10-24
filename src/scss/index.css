@@ -618,33 +618,78 @@ button:hover {
     height: 300px;
   }
 }
-.listCont {
-  width: 80%;
-  margin: -100px 0 0 200px;
-  height: 100vh;
+.product-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.product-list h1 {
+  font-size: 24px;
+  margin: 0;
+  margin-top: 20px;
+}
+.product-list .product-list-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  gap: 140px;
+  width: 100%;
+  max-width: 1184px;
+  padding: 30px 0px;
 }
-
-.listCards {
-  width: 250px;
-  height: 400px;
-  margin: 20px 20px -70px 20px;
-}
-
-.selectPrice {
-  padding-top: 110px;
-  margin-left: 20px;
-}
-
-.selectPrice select {
+.product-list .product-list-wrapper .filters select {
   width: 150px;
   height: 30px;
   border-radius: 7px;
-  color: #4e9f3d;
+  color: #191a19;
+  background-color: #ffffff;
+  cursor: pointer;
 }
-
+.product-list .product-list-wrapper .listCont {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+  max-width: 890px;
+  box-sizing: border-box;
+}
+.product-list .product-list-wrapper .listCont .link {
+  text-decoration: none;
+  color: #191a19;
+}
+.product-list .product-list-wrapper .listCont .link .card {
+  height: 100%;
+  max-width: 260px;
+  box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.36);
+}
+.product-list .product-list-wrapper .listCont .link .card .card-oculto {
+  display: flex;
+}
+.product-list .product-list-wrapper .listCont .link .card-boxImg {
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.product-list .product-list-wrapper .listCont .link .card-boxImg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 10px;
+}
+@media screen and (max-width: 1150px) {
+  .product-list .product-list-wrapper {
+    justify-content: center;
+    padding: 0 20px;
+    padding-top: 10px;
+    gap: 10px;
+  }
+  .product-list .product-list-wrapper .listCont .link .card {
+    max-width: 200px;
+  }
+}
 .not-found {
   display: flex;
   flex-direction: column;
