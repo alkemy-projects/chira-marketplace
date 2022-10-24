@@ -54,6 +54,7 @@ export const useHeader = () => {
 
 	const searching = e => {
 		e.preventDefault()
+		if (e.target[0].value.length <= 0) return
 		navigate('/products')
 	}
 
@@ -62,7 +63,6 @@ export const useHeader = () => {
 			cartState.length >= 1
 				? cartState
 				: JSON.parse(localStorage.getItem('cart') || '[]')
-		console.log(cart)
 		return cart.length
 	}
 
