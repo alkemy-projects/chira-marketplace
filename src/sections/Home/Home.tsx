@@ -31,14 +31,14 @@ export default function Home() {
 					/>
 				</div>
 				<div className='carr-prod'>
-				<SliderCarrousel
-					products={phones}
-					title='Teléfonos en oferta'
-				/>
-				<SliderCarrousel
-					products={televisions}
-					title='Televisores'
-				/>
+					<SliderCarrousel
+						products={phones}
+						title='Teléfonos en oferta'
+					/>
+					<SliderCarrousel
+						products={televisions}
+						title='Televisores'
+					/>
 				</div>
 				<section className='offers'>
 					<h1 className='offers__title'>Ofertas dia de la madre</h1>
