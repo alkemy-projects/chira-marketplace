@@ -17,7 +17,6 @@ export const useGoogleSignIn = () => {
 				const credential = GoogleAuthProvider.credentialFromResult(result)
 				const token = credential?.accessToken
 				const user = result?.user
-				console.log(token, user)
 			})
 			.catch(error => {
 				const errorCode = error.code
@@ -28,11 +27,7 @@ export const useGoogleSignIn = () => {
 			})
 	}, [])
 
-	const closeSession = () => {
-		localStorage.removeItem('user')
-		signOut(auth)
-	}
 	const signInWithGoogle = () => signInWithRedirect(auth, provider)
 
-	return { signInWithGoogle, closeSession }
+	return { signInWithGoogle }
 }
