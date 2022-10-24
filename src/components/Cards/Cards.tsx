@@ -18,6 +18,15 @@ const Cards = ({ title, image, price, id }: Props) => {
 		})
 	}, [])
 
+	const formatPrice = price => {
+		const formatter = new Intl.NumberFormat('es-AR', {
+			style: 'currency',
+			currency: 'ARS',
+			minimumFractionDigits: 0,
+		})
+		return formatter.format(price)
+	}
+
 	return (
 		<Link
 			className='link'
@@ -33,7 +42,7 @@ const Cards = ({ title, image, price, id }: Props) => {
 						alt={title}
 					/>
 				</div>
-				<span className='card-precio'>${price}</span>
+				<span className='card-precio'>{formatPrice(price)}</span>
 				<div className='card-oculto'>
 					<h5>{title.slice(0, 18)}</h5>
 					<p className='card-description'>
