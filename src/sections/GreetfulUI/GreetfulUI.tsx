@@ -1,27 +1,28 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { ProductInfo } from '../../interfaces/Product.interface'
-import { clearCart, setHasBought } from '../../slicers/cartSlice'
+import { setHasBought } from '../../slicers/boughSlice'
+import { clearCart } from '../../slicers/cartSlice'
 
 export const GreetfulUI = () => {
-	const cart = useSelector(
-		(state: { cart: { cart: ProductInfo[]; hasBought: boolean } }) => state.cart
+	const { cart, bought } = useSelector(
+		(state: { cart: ProductInfo[]; bought: { hasBought: boolean } }) => state
 	)
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
 
 	const handleClick = () => {
-		dispatch(clearCart())
 		dispatch(setHasBought(false))
+		dispatch(clearCart())
 		navigate('/')
 	}
 
 	return (
 		<>
-			{cart.hasBought ? (
+			{bought.hasBought ? (
 				<section className='not-found'>
 					<div className='images-container'>
-						{cart.cart.map(cartProduct => (
+						{cart.map(cartProduct => (
 							<div
 								key={cartProduct.id}
 								className='image'
@@ -43,6 +44,7 @@ export const GreetfulUI = () => {
 			) : (
 				<Navigate to='/' />
 			)}
+			)
 		</>
 	)
 }

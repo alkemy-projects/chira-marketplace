@@ -8,10 +8,11 @@ import {
 	ProductCart,
 } from '../../components'
 import { ProductInfo } from '../../interfaces/Product.interface'
-import { setHasBought } from '../../slicers/cartSlice'
+import { setHasBought } from '../../slicers/boughSlice'
 
 export const Payment = () => {
-	const cart = useSelector((state: any) => state.cart)
+	const cart = useSelector((state: { cart: ProductInfo[] }) => state.cart)
+
 	const [isChecked, setIsChecked] = useState<'shipment' | 'local'>('shipment')
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
