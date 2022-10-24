@@ -42,7 +42,7 @@ export default function Product() {
 						<div className='left-column'>
 							<div className='gallery'>
 								{windowWidth > 1151 ? (
-									<>
+									<>								
 										<InnerImageZoom
 											src={currentImage}
 											zoomScale={1.5}

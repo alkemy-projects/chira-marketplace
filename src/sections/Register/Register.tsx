@@ -15,7 +15,7 @@ export default function Register() {
 		<section className='register'>
 			<div className='left'>
 				<header className='register-header'>
-					<h1 className='register__title'>Bienvenido a Chira</h1>
+					<h1 className='register__title'>Bienvenido a Chira Marketplace</h1>
 					<h2 className='register__description'>
 						Crea tu usuario y empieza a explorar todos nuestros productos.
 					</h2>

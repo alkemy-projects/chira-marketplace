@@ -2,17 +2,23 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getResultsByQuery } from '../../Services/apiMercadoLibre'
 import { setResults } from '../../slicers/resultsSlice'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { clearSearch } from '../../slicers/searchSlice'
+import { getAuth, signOut } from 'firebase/auth'
 
 export const useHeader = () => {
 	const [showResults, setShowResults] = useState(false)
 	const [showLoader, setShowLoader] = useState(false)
 	const [showCloseSession, setShowCloseSession] = useState(false)
 	const search = useSelector((state: any) => state.search)
+	const cartState = useSelector((state: any) => state.cart)
 	const dispatch = useDispatch()
 	const loggedUser = JSON.parse(localStorage.getItem('user') || 'null')
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		if (search.search.length <= 0) return
+		setShowResults(true)
 		const timer = setTimeout(() => {
 			searchProduct(search.search)
 		}, 1000)
@@ -21,6 +27,10 @@ export const useHeader = () => {
 		}
 	}, [search.search])
 
+	useEffect(() => {
+		dispatch(clearSearch())
+	}, [])
+
 	const searchProduct = async query => {
 		const data = await getResultsByQuery(query)
 		const foundResults = data.results
@@ -28,13 +38,7 @@ export const useHeader = () => {
 		dispatch(setResults(foundResults))
 	}
 
-	useEffect(() => {
-		if (search.search.length <= 0) return
-		setShowResults(true)
-	}, [search.search])
-
 	window.onclick = (event: MouseEvent) => {
-		console.log(document.querySelector('.results'))
 		if (
 			showResults &&
 			!(document.querySelector('.results') as HTMLElement).contains(
@@ -46,9 +50,26 @@ export const useHeader = () => {
 			setShowResults(false)
 	}
 
-	const defineFormClassName = () => {
-		if (!showResults) return 'form'
-		else return 'form active'
+	const defineFormClassName = () => (!showResults ? 'form' : 'form active')
+
+	const searching = e => {
+		e.preventDefault()
+		if (e.target[0].value.length <= 0) return
+		navigate(`/products/${e.target[0].value}`)
+	}
+
+	const cartItemsQuantity = () => {
+		const cart =
+			cartState.length >= 1
+				? cartState
+				: JSON.parse(localStorage.getItem('cart') || '[]')
+		return cart.length
+	}
+
+	const closeSession = () => {
+		const auth = getAuth()
+		localStorage.removeItem('user')
+		signOut(auth)
 	}
 
 	return {
@@ -61,5 +82,8 @@ export const useHeader = () => {
 		loggedUser,
 		showCloseSession,
 		setShowCloseSession,
+		searching,
+		cartItemsQuantity,
+		closeSession,
 	}
 }

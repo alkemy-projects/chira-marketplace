@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import { setSearch } from '../../slicers/searchSlice'
 import DiamondIcon from '@mui/icons-material/Diamond'
@@ -10,11 +10,9 @@ import menuIcon from '../../assets/icons/menu-icon.svg'
 import Results from '../Results/Results'
 import { useHeader } from './useHeader'
 import { clearResults } from '../../slicers/resultsSlice'
-import { useGoogleSignIn } from '../../hooks/useGoogleSignIn'
 
 export default function Header() {
 	const [showMenu, setShowMenu] = useState(false)
-	const navigate = useNavigate()
 	const {
 		search,
 		showResults,
@@ -25,16 +23,12 @@ export default function Header() {
 		loggedUser,
 		showCloseSession,
 		setShowCloseSession,
+		searching,
+		cartItemsQuantity,
+		closeSession,
 	} = useHeader()
 	const results = useSelector((state: any) => state.results)
 	const dispatch = useDispatch()
-	const { closeSession } = useGoogleSignIn()
-	const searching = e => {
-		e.preventDefault()
-		if (window.location.href != 'http://localhost:3000/products') {
-			navigate('products')
-		}
-	}
 
 	return (
 		<header className='header'>
@@ -46,7 +40,7 @@ export default function Header() {
 					<DiamondIcon className='diamond' />
 					<div className='header-top-logo-title'>
 						<h1>Chira</h1>
-						<h3>marketplace</h3>
+						<h3>Marketplace</h3>
 					</div>
 				</Link>
 				<div className='header-top-buscador'>
@@ -147,6 +141,7 @@ export default function Header() {
 					)}
 					<Link to='/cart'>
 						<ShoppingCartIcon className='icon-cart' />
+						<span className='cart-items-quantity'> {cartItemsQuantity()} </span>
 					</Link>
 				</div>
 			</div>

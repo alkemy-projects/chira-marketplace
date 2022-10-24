@@ -24,10 +24,6 @@ export const useProduct = productId => {
 		})
 	}, [productId])
 
-	useEffect(() => {
-		console.log(currentImage)
-	}, [currentImage])
-
 	const formatPrice = price => {
 		const formatter = new Intl.NumberFormat('es-AR', {
 			style: 'currency',

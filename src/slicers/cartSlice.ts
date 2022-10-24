@@ -6,12 +6,9 @@ type initState = {
 	hasBought: boolean
 }
 
-const initialState: initState = {
-	cart: JSON.parse(localStorage.getItem('cart') || '[]')
-		? JSON.parse(localStorage.getItem('cart') || '[]')
-		: ([] as ProductInfo[][]),
-	hasBought: false,
-}
+const initialState = JSON.parse(localStorage.getItem('cart') || '[]')
+	? JSON.parse(localStorage.getItem('cart') || '[]')
+	: ([] as ProductInfo[][])
 
 export const cartSlice = createSlice({
 	name: 'cart',
@@ -19,17 +16,25 @@ export const cartSlice = createSlice({
 	reducers: {
 		addProductToCart: (state, action) => {
 			const productToAdd = action.payload
+
+			console.log(productToAdd)
 			productToAdd.quantity = 1
-			state.cart.push(productToAdd)
-			localStorage.setItem('cart', JSON.stringify(state.cart))
+			state.push(productToAdd)
+			localStorage.setItem('cart', JSON.stringify(state))
 		},
 		updateQuantity: (state, action) => {
 			const { id, event } = action.payload
-			const productIndex = state.cart.findIndex(product => product.id === id)
+			const productIndex = state.findIndex(product => product.id === id)
 			event === '+'
-				? state.cart[productIndex].quantity++
-				: state.cart[productIndex].quantity--
-			localStorage.setItem('cart', JSON.stringify(state.cart))
+				? state[productIndex].quantity++
+				: state[productIndex].quantity--
+			localStorage.setItem('cart', JSON.stringify(state))
+		},
+		removeProductFromCart: (state, action) => {
+			const id = action.payload
+			const productIndex = state.findIndex(product => product.id === id)
+			state.splice(productIndex, 1)
+			localStorage.setItem('cart', JSON.stringify(state))
 		},
 		clearCart: () => {
 			localStorage.removeItem('cart')
@@ -38,6 +43,11 @@ export const cartSlice = createSlice({
 	},
 })
 
-export const { addProductToCart, clearCart, updateQuantity } = cartSlice.actions
+export const {
+	addProductToCart,
+	clearCart,
+	updateQuantity,
+	removeProductFromCart,
+} = cartSlice.actions
 
 export default cartSlice.reducer

@@ -1,16 +1,16 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Register from './sections/Register/Register'
-import Home from './sections/Home/Home'
-import Login from './sections/login/Login'
 import { useSelector } from 'react-redux'
-import Loader from './components/Loader/Loader'
-import Product from './sections/Product/Product'
 import { ProductsList } from './sections/ProductsList/ProductsList'
+import Register from './sections/Register/Register'
 import NotFound from './sections/NotFound/NotFound'
+import Product from './sections/Product/Product'
+import Login from './sections/login/Login'
 import Cart from './sections/Cart/Cart'
+import Home from './sections/Home/Home'
 import CheckSession from './components/CheckSession/CheckSession'
 import { Payment } from './sections/payment/Payment'
 import { GreetfulUI } from './sections/GreetfulUI/GreetfulUI'
+import Loader from './components/Loader/Loader'
 
 export default function App() {
 	const loader = useSelector((state: any) => state.loader)
@@ -53,7 +53,7 @@ export default function App() {
 						}
 					/>
 					<Route
-						path='/products'
+						path='/products/:query'
 						element={
 							<CheckSession>
 								<ProductsList />
