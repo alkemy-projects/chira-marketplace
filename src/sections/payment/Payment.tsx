@@ -11,9 +11,7 @@ import { ProductInfo } from '../../interfaces/Product.interface'
 import { setHasBought } from '../../slicers/cartSlice'
 
 export const Payment = () => {
-	const { cart } = useSelector(
-		(state: { cart: { cart: ProductInfo[] } }) => state.cart
-	)
+	const cart = useSelector((state: any) => state.cart)
 	const [isChecked, setIsChecked] = useState<'shipment' | 'local'>('shipment')
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
