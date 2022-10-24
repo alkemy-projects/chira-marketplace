@@ -26,7 +26,10 @@
 		border-radius: 10px;
 	}
 	.carr-prod{
-		margin-left: 227px;
+		display: flex;
+		flex-direction: column;
+        align-items: center;
+		justify-content: center;
 	}
 	.offers {
 		width: 100%;

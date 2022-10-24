@@ -12,7 +12,7 @@ const Cards = ({ title, image, price, id }: Props) => {
     const description = 'lorem ipsum dolor sit amet, con secte t ,lorem ipsum lorem, sed diamond lorem, sed diam nonum lorem, sed diam nonum'
 
     return(
-        <>  
+        <Link className='link' to={`/product/${id}`}>
             <div className="card" key={id}>
                 <div className='card-boxImg'>
                     <img src={image} alt={title} />
@@ -23,7 +23,7 @@ const Cards = ({ title, image, price, id }: Props) => {
                     <p className='card-description'>{description.slice(0, 50)}{ 50 < description.length && '...'}</p>
                 </div>
             </div>
-        </>
+        </Link>
     )
 }
 
