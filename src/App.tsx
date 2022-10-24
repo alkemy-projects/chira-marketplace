@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { ProductsList } from './sections/ProductsList/ProductsList'
 import Register from './sections/Register/Register'
@@ -18,7 +18,7 @@ export default function App() {
 	return (
 		<div className='App'>
 			{loader.status && <Loader progress={loader.progress} />}
-			<BrowserRouter>
+			<HashRouter>
 				<Routes>
 					<Route
 						path='/register'
@@ -81,7 +81,7 @@ export default function App() {
 						element={<NotFound />}
 					/>
 				</Routes>
-			</BrowserRouter>
+			</HashRouter>
 		</div>
 	)
 }
