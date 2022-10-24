@@ -444,6 +444,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 .home-cont .offers {
   width: 100%;
@@ -486,10 +487,6 @@ button:hover {
   .oferts {
     flex-direction: column;
   }
-  .carr-prod {
-    width: 750px !important;
-    margin: 0 auto !important;
-  }
 }
 @media screen and (max-width: 600px) {
   .carrcont {
@@ -503,10 +500,6 @@ button:hover {
   }
   .oferts {
     flex-direction: column;
-  }
-  .carr-prod {
-    width: 250px !important;
-    margin: 0 auto !important;
   }
 }
 @media screen and (min-width: 1260px) {
@@ -1258,8 +1251,8 @@ button:hover {
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease-out;
-  width: 80%;
-  height: 220px;
+  width: 100%;
+  max-width: 220px;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 5px !important;
@@ -1294,7 +1287,7 @@ button:hover {
   font-size: 12px;
 }
 .link .card:hover {
-  height: 320px;
+  height: 100%;
   box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.36);
 }
 .link .card:hover .card-oculto {
@@ -1303,20 +1296,14 @@ button:hover {
 .link .card-title > a {
   color: gray;
 }
-@media screen and (max-width: 640px) {
-  .link .card {
-    height: 150px;
-  }
-  .link .card:hover {
-    height: 300px;
-  }
-}
 @media screen and (max-width: 1150px) {
   .link .card {
-    height: 180px;
+    max-width: 200px;
+    height: 100% !important;
+    box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.36);
   }
-  .link .card:hover {
-    height: 300px;
+  .link .card .card-oculto {
+    display: flex;
   }
 }
 
