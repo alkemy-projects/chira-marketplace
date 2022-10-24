@@ -4,6 +4,7 @@ import devolutionIcon from '../../assets/icons/devolution-icon.svg'
 import protectIcon from '../../assets/icons/protect-icon.svg'
 import { useDispatch } from 'react-redux'
 import { addProductToCart } from '../../slicers/cartSlice'
+import { useNavigate } from 'react-router-dom'
 
 export default function ProductInfo({
 	product,
@@ -13,6 +14,7 @@ export default function ProductInfo({
 	formatPrice: (price: number) => string
 }) {
 	const dispatch = useDispatch()
+	const navigate = useNavigate()
 
 	return (
 		<>
@@ -32,7 +34,12 @@ export default function ProductInfo({
 					? `(${product.available_quantity}) disponibles`
 					: '¡Último disponible!'}
 			</p>
-			<button className='product__buy'>Comprar ahora</button>
+			<button
+				className='product__buy'
+				onClick={() => navigate('/payment')}
+			>
+				Comprar ahora
+			</button>
 			<button
 				className='product__add-cart'
 				onClick={() => dispatch(addProductToCart(product))}

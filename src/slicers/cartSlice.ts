@@ -8,7 +8,7 @@ type initState = {
 
 const initialState = JSON.parse(localStorage.getItem('cart') || '[]')
 	? JSON.parse(localStorage.getItem('cart') || '[]')
-	: ([] as ProductInfo[][])
+	: []
 
 export const cartSlice = createSlice({
 	name: 'cart',
@@ -16,8 +16,6 @@ export const cartSlice = createSlice({
 	reducers: {
 		addProductToCart: (state, action) => {
 			const productToAdd = action.payload
-
-			console.log(productToAdd)
 			productToAdd.quantity = 1
 			state.push(productToAdd)
 			localStorage.setItem('cart', JSON.stringify(state))
@@ -36,13 +34,9 @@ export const cartSlice = createSlice({
 			state.splice(productIndex, 1)
 			localStorage.setItem('cart', JSON.stringify(state))
 		},
-		clearCart: state => {
-			state = initialState
+		clearCart: () => {
 			localStorage.removeItem('cart')
 			return initialState
-		},
-		setHasBought: (state, payload) => {
-			state.hasBought = payload.payload
 		},
 	},
 })
@@ -52,7 +46,6 @@ export const {
 	clearCart,
 	updateQuantity,
 	removeProductFromCart,
-	setHasBought,
 } = cartSlice.actions
 
 export default cartSlice.reducer
