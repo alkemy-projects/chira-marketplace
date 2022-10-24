@@ -1,42 +1,48 @@
-import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { ProductInfo } from '../../interfaces/Product.interface'
-import { clearCart } from '../../slicers/cartSlice'
+import { clearCart, setHasBought } from '../../slicers/cartSlice'
 
 export const GreetfulUI = () => {
-	const { cart } = useSelector(
-		(state: { cart: { cart: ProductInfo[] } }) => state.cart
+	const cart = useSelector(
+		(state: { cart: { cart: ProductInfo[]; hasBought: boolean } }) => state.cart
 	)
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
 
 	const handleClick = () => {
 		dispatch(clearCart())
+		dispatch(setHasBought(false))
 		navigate('/')
 	}
 
 	return (
-		<section className='not-found'>
-			<div className='images-container'>
-				{cart.map(cartProduct => (
-					<div
-						key={cartProduct.id}
-						className='image'
-					>
-						<img src={cartProduct.pictures[0].url} />
+		<>
+			{cart.hasBought ? (
+				<section className='not-found'>
+					<div className='images-container'>
+						{cart.cart.map(cartProduct => (
+							<div
+								key={cartProduct.id}
+								className='image'
+							>
+								<img src={cartProduct.pictures[0].url} />
+							</div>
+						))}
+						<h1 className='not-found__title purchase__title'>
+							¡Gracias por tu compra!
+						</h1>
+						<button
+							onClick={handleClick}
+							className='button button-purchase'
+						>
+							Volver al home
+						</button>
 					</div>
-				))}
-				<h1 className='not-found__title purchase__title'>
-					¡Gracias por tu compra!
-				</h1>
-				<button
-					onClick={handleClick}
-					className='button button-purchase'
-				>
-					Volver al home
-				</button>
-			</div>
-		</section>
+				</section>
+			) : (
+				<Navigate to='/' />
+			)}
+		</>
 	)
 }
