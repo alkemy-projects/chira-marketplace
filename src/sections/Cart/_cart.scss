@@ -76,6 +76,22 @@
 						align-items: center;
 						gap: 10px;
 						height: 100%;
+						position: relative;
+						.remove-product {
+							width: 35px;
+							height: max-content;
+							background-color: transparent;
+							position: absolute;
+							bottom: 160px;
+							left: 90px;
+							transition: all 0.25s;
+							img {
+								width: 100%;
+							}
+							&:hover {
+								transform: scale(1.1);
+							}
+						}
 						.quantity__operation {
 							width: 30px;
 							height: 35px;

@@ -803,6 +803,24 @@ button:hover {
   align-items: center;
   gap: 10px;
   height: 100%;
+  position: relative;
+}
+.cart .cart-wrapper .cart-list .cart-item .cart-item-wrapper .quantity .remove-product {
+  width: 35px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: transparent;
+  position: absolute;
+  bottom: 160px;
+  left: 90px;
+  transition: all 0.25s;
+}
+.cart .cart-wrapper .cart-list .cart-item .cart-item-wrapper .quantity .remove-product img {
+  width: 100%;
+}
+.cart .cart-wrapper .cart-list .cart-item .cart-item-wrapper .quantity .remove-product:hover {
+  transform: scale(1.1);
 }
 .cart .cart-wrapper .cart-list .cart-item .cart-item-wrapper .quantity .quantity__operation {
   width: 30px;

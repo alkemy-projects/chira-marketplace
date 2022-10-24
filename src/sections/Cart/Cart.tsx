@@ -1,7 +1,8 @@
 import { useDispatch } from 'react-redux'
 import Header from '../../components/Header/Header'
-import { clearCart } from '../../slicers/cartSlice'
+import { clearCart, removeProductFromCart } from '../../slicers/cartSlice'
 import { useCart } from './useCart'
+import removeIcon from '../../assets/icons/remove-icon.svg'
 
 export default function Cart() {
 	const dispatch = useDispatch()
@@ -42,6 +43,17 @@ export default function Cart() {
 										</p>
 									</div>
 									<div className='quantity'>
+										<button
+											className='remove-product'
+											onClick={() =>
+												dispatch(removeProductFromCart(product.id))
+											}
+										>
+											<img
+												src={removeIcon}
+												alt='Ícono de remover producto del carrito'
+											/>
+										</button>
 										<button
 											className='quantity__operation quantity__operation--rest'
 											onClick={() =>
