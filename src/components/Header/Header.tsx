@@ -40,7 +40,7 @@ export default function Header() {
 					<DiamondIcon className='diamond' />
 					<div className='header-top-logo-title'>
 						<h1>Chira</h1>
-						<h3>marketplace</h3>
+						<h3>Marketplace</h3>
 					</div>
 				</Link>
 				<div className='header-top-buscador'>
