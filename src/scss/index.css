@@ -1340,7 +1340,6 @@ button:hover {
   background-color: white;
   align-items: center;
   border-radius: 10px;
-  cursor: pointer;
   padding: 10px;
   box-sizing: border-box;
   border-radius: 20px;
@@ -1373,11 +1372,20 @@ button:hover {
   justify-content: space-evenly;
   align-items: center;
 }
+.main-developers .box-cardProfile-description-redes {
+  display: flex;
+}
 .main-developers .box-cardProfile-description-redes .icon-linkedin {
   color: rgb(115, 115, 240);
+  cursor: pointer;
+  font-size: 40px;
+  width: 30px;
 }
 .main-developers .box-cardProfile-description-redes .icon-github {
   color: rgb(0, 0, 0);
+  cursor: pointer;
+  font-size: 40px;
+  width: 30px;
 }
 
 @media screen and (max-width: 640px) {
@@ -1391,6 +1399,14 @@ button:hover {
     display: flex;
     justify-content: center;
     text-align: center;
+  }
+  .main-developers .box-cardProfile-description-redes .icon-linkedin {
+    font-size: 30px;
+    width: 20px;
+  }
+  .main-developers .box-cardProfile-description-redes .icon-github {
+    font-size: 30px;
+    width: 20px;
   }
 }
 footer {
@@ -1406,6 +1422,14 @@ footer {
   height: auto;
   background-color: #ffffff;
   text-align: center;
+}
+footer .repository {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 .results {

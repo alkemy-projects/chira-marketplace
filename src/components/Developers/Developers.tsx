@@ -32,7 +32,7 @@ const Developers = ({ developers }: Props) => {
 									<LinkedInIcon className='icon-linkedin' />
 								</a>
 								<a
-									href={dev.gmail}
+									href={dev.github}
 									target='new'
 								>
 									<GitHubIcon className='icon-github' />

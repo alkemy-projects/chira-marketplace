@@ -11,4 +11,12 @@ footer {
 	height: auto;
 	background-color: $whiteColor;
 	text-align: center;
+	.repository {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		font-size: 16px;
+		margin-top: 10px;
+	}
 }
