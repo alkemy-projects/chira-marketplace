@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import Card from '../../components/Card/Card'
 import Cards from '../../components/Cards/Cards'
 import { useHeader } from '../../components/Header/useHeader'
 import Header from '../../components/Header/Header'
