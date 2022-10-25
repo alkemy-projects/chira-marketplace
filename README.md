@@ -1,4 +1,4 @@
-# Chira Marketplace 🌌
+# Chira Marketplace 🛒
 
 Aplicación e-commerce utilizando la API de Mercado Libre.
 
@@ -22,4 +22,4 @@ yarn run dev
 ```
 
 ## Despliegue 🚀
-Puedes utilizar esta página sin necesidad de instalar nada. Has click [aquí]() para ir al despliegue. > ***Aviso:*** Aún no disponible.
+Puedes utilizar esta página sin necesidad de instalar nada. Has click [aquí](https://alkemy-projects.github.io/chira-marketplace/#/) para ir al despliegue.
