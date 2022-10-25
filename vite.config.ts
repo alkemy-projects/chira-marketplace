@@ -7,7 +7,7 @@ export default ({ mode }) => {
 
 	return defineConfig({
 		plugins: [react()],
-		base: '/mercado-libre-clone/',
+		base: '/chira-marketplace/',
 		server: {
 			port: 3000,
 			host: '0.0.0.0',

@@ -9,7 +9,7 @@ export const useProduct = productId => {
 	const [product, setProduct] = useState<any>(null)
 	const [productDescription, setProductDescription] = useState('')
 	const [showMoreFeatures, setShowMoreFeatures] = useState(false)
-	const [currentImage, setCurrentImage] = useState(undefined)
+	const [currentImage, setCurrentImage] = useState('')
 	const navigate = useNavigate()
 
 	useEffect(() => {
